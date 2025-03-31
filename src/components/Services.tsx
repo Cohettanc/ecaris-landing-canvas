@@ -3,26 +3,17 @@ import { useEffect, useRef } from 'react';
 
 const services = [
   {
-    title: "Construction, Production and Integration in processes of Data/AI products",
-    description: "We deliver comprehensive services in the construction, production, and integration of Data/AI products, ensuring your processes are optimized with cutting-edge technology and innovative solutions.",
+    title: "Strategy and IT Architecture",
+    description: "We design and implement IT master plans, ensuring alignment between business and technology. Our services include system urbanization, application portfolio rationalization, and the scoping of complex transformation projects to support your strategic trajectory.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
       </svg>
     )
   },
   {
-    title: "Cybersecurity, Network security and authentification on cloud infrastructure",
-    description: "We strengthen your IT infrastructure with advanced cybersecurity, network security, and authentication solutions, ensuring robust protection and secure access management.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    )
-  },
-  {
-    title: "Architecture Design, Migration and deployment of applications to the Cloud",
-    description: "We offer expert architecture design, migration, and deployment of applications to the Cloud, ensuring seamless transitions and scalable solutions.",
+    title: "Cloud, Infrastructure and Operations",
+    description: "We support your cloud transformation with tailored strategies (public, private, hybrid, multi-cloud), expert migrations to GCP, Azure, or AWS, and robust governance and FinOps practices. Our teams ensure reliable operations through infrastructure administration and environment management across IaaS, PaaS, and SaaS layers.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -30,8 +21,20 @@ const services = [
     )
   },
   {
-    title: "Enterprise Cloud and ERP Infrastructure Implementation",
-    description: "Our expert team provides comprehensive support for the deployment and maintenance of IT resource management tools, along with their underlying infrastructure, ensuring seamless operations and long-term stability.",
+    title: "Data Governance and Data Products",
+    description: "We help you build a strong data foundation through strategic governance, data cataloging, quality frameworks, and role definitions. We also design and deliver advanced data products – BI, AI, ML, dashboards – and industrialize data pipelines via DataOps practices, all while ensuring compliance with GDPR and other regulations.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7l5-3h6l5 3" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v8" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h8" />
+      </svg>
+    )
+  },
+  {
+    title: "ERP, Business Platforms and Applications",
+    description: "We modernize and integrate critical ERP systems and business applications, including CRM and SaaS platforms. Our teams manage core application projects, optimize application lifecycles (ALM), and enable application cloudification to enhance agility, scalability, and performance.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
