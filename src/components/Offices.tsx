@@ -9,7 +9,7 @@ const offices = [
   },
   {
     title: "Representative Office (Paris)",
-    address: ["11 rue de Boulainvilliers", "75016 Paris", "FRANCE"],
+    address: ["78 avenue des Champs Elysées", "75008 Paris", "FRANCE"],
     image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   }
 ];

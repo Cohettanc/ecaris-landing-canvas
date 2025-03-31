@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Stats from '@/components/Stats';
-import OfficesUpdated from '@/components/OfficesUpdated';
+import Offices from '@/components/Offices';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -22,7 +22,7 @@ const Index = () => {
       <About />
       <Services />
       <Stats />
-      <OfficesUpdated />
+      <Offices />
       <Contact />
       <Footer />
     </div>
