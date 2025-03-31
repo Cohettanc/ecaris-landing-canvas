@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const year = new Date().getFullYear();
   
@@ -34,8 +36,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Legal Notice</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Data Protection</a></li>
+              <li><Link to="/legal-notice" className="text-gray-400 hover:text-white transition-colors duration-300">Legal Notice</Link></li>
+              <li><Link to="/data-protection" className="text-gray-400 hover:text-white transition-colors duration-300">Data Protection</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
             </ul>
