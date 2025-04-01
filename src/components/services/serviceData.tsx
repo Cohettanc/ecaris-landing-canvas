@@ -1,5 +1,5 @@
 
-import { Workflow, Building2, ServerCog, Database, Archive, BarChart2, ClipboardCheck, Layers, Shield } from 'lucide-react';
+import { Workflow, Building2, ServerCog, Database, Archive, BarChart2, ClipboardCheck, Layers, Shield, CreditCard, LayoutGrid, Laptop, ArrowRightLeft, Boxes } from 'lucide-react';
 import { ServiceType } from './types';
 
 export const services: ServiceType[] = [
@@ -102,6 +102,39 @@ export const services: ServiceType[] = [
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
-    )
+    ),
+    pagePath: "/erp-applications",
+    detailContent: [
+      {
+        title: "ERP Implementation & Integration",
+        description: "We design, implement, and integrate enterprise resource planning solutions tailored to your specific business requirements and industry challenges.",
+        icon: <Database className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "CRM & Business Platforms",
+        description: "Our experts implement and customize CRM and business platforms to enhance customer relationships, streamline processes, and drive revenue growth.",
+        icon: <LayoutGrid className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Application Modernization",
+        description: "We transform legacy applications into modern, cloud-native solutions that improve performance, scalability, and user experience.",
+        icon: <Laptop className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "SaaS Implementation",
+        description: "We help you select, implement, and optimize Software-as-a-Service applications that align with your business objectives and technical requirements.",
+        icon: <CreditCard className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Application Lifecycle Management",
+        description: "Our comprehensive ALM services optimize your application portfolio from requirements to retirement, ensuring maximum value and minimal technical debt.",
+        icon: <Boxes className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Application Integration",
+        description: "We create seamless connections between your business applications, enabling data flow and process automation across your organization.",
+        icon: <ArrowRightLeft className="h-8 w-8 text-ecaris-green" />
+      }
+    ]
   }
 ];
