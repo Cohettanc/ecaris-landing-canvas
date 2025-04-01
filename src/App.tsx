@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import LegalNotice from "./pages/LegalNotice";
 import DataProtection from "./pages/DataProtection";
 import CloudService from "./pages/CloudService";
+import StrategyArchitecture from "./pages/StrategyArchitecture";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/data-protection" element={<DataProtection />} />
           <Route path="/cloud-service" element={<CloudService />} />
+          <Route path="/strategy-architecture" element={<StrategyArchitecture />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

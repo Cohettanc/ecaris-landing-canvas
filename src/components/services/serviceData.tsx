@@ -13,6 +13,7 @@ export const services: ServiceType[] = [
       </svg>
     ),
     detailImage: "/images/strategy-architecture.jpg",
+    pagePath: "/strategy-architecture",
     detailContent: [
       {
         title: "Strategic IT Planning",
