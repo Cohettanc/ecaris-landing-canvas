@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import LegalNotice from "./pages/LegalNotice";
 import DataProtection from "./pages/DataProtection";
+import CloudService from "./pages/CloudService";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/data-protection" element={<DataProtection />} />
+          <Route path="/cloud-service" element={<CloudService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

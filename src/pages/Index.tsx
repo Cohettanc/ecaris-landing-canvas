@@ -13,6 +13,8 @@ const Index = () => {
   useEffect(() => {
     // Update document title
     document.title = "ECARIS | Excellence in Consulting";
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
   }, []);
 
   return (

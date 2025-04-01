@@ -1,5 +1,5 @@
-
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ExternalLink, Workflow, Building2, ServerCog, Database, Archive } from 'lucide-react';
 
@@ -50,7 +50,8 @@ const services = [
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
-    )
+    ),
+    pagePath: "/cloud-service"
   },
   {
     id: "data-governance",
@@ -78,13 +79,20 @@ const services = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const openServiceDetail = (serviceId: string) => {
-    setSelectedService(serviceId);
+    const service = services.find(s => s.id === serviceId);
+    
+    if (service && service.pagePath) {
+      navigate(service.pagePath);
+    } else {
+      setSelectedService(serviceId);
+    }
   };
 
   const closeServiceDetail = () => {
@@ -157,7 +165,6 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Service Detail Dialog */}
       <Dialog open={selectedService !== null} onOpenChange={closeServiceDetail}>
         <DialogContent className="max-w-4xl p-0 overflow-hidden">
           {selectedServiceData && selectedServiceData.id === "strategy-architecture" && (
