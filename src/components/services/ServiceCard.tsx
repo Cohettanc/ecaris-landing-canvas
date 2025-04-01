@@ -1,13 +1,12 @@
 
 import { ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { ServiceType } from './types';
 
 type ServiceCardProps = {
   service: ServiceType;
   index: number;
   onSelect: (serviceId: string) => void;
-  cardRef: React.RefObject<HTMLDivElement>;
+  cardRef: (el: HTMLDivElement | null) => void;
 };
 
 const ServiceCard = ({ service, index, onSelect, cardRef }: ServiceCardProps) => {

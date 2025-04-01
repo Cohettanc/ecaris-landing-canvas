@@ -57,6 +57,11 @@ const Services = () => {
     };
   }, []);
 
+  // This function sets the refs for the card elements
+  const setCardRef = (el: HTMLDivElement | null, index: number) => {
+    cardsRef.current[index] = el;
+  };
+
   return (
     <section id="services" ref={sectionRef} className="py-24 bg-gray-50">
       <div className="section-container">
@@ -80,7 +85,7 @@ const Services = () => {
               service={service}
               index={index}
               onSelect={openServiceDetail}
-              cardRef={(el) => cardsRef.current[index] = el}
+              cardRef={(el) => setCardRef(el, index)}
             />
           ))}
         </div>
