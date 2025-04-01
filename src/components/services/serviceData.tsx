@@ -1,5 +1,5 @@
 
-import { Workflow, Building2, ServerCog, Database, Archive } from 'lucide-react';
+import { Workflow, Building2, ServerCog, Database, Archive, BarChart2, ClipboardCheck, Layers, Shield } from 'lucide-react';
 import { ServiceType } from './types';
 
 export const services: ServiceType[] = [
@@ -64,7 +64,35 @@ export const services: ServiceType[] = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v8" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h8" />
       </svg>
-    )
+    ),
+    pagePath: "/data-governance",
+    detailContent: [
+      {
+        title: "Data Governance Frameworks",
+        description: "We help you establish comprehensive data governance frameworks with clear roles, responsibilities, and processes to ensure consistent data management across your organization.",
+        icon: <Database className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Data Quality Management",
+        description: "Our data quality solutions implement systematic processes to measure, monitor, and improve data accuracy, completeness, consistency, and reliability throughout your data lifecycle.",
+        icon: <ClipboardCheck className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "BI & Analytics Solutions",
+        description: "We design and implement business intelligence and analytics solutions that transform raw data into meaningful insights through dashboards, reports, and visualizations.",
+        icon: <BarChart2 className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "DataOps Implementation",
+        description: "Our DataOps practices streamline and automate data pipelines, enhancing collaboration between data engineers, scientists, and analysts to deliver higher quality data products faster.",
+        icon: <Layers className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Regulatory Compliance",
+        description: "We ensure your data practices comply with relevant regulations such as GDPR, CCPA, and industry-specific standards, minimizing compliance risks while maximizing data utility.",
+        icon: <Shield className="h-8 w-8 text-ecaris-green" />
+      }
+    ]
   },
   {
     id: "erp-applications",

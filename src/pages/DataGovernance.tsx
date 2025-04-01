@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import DataGovernanceHeader from '@/components/data-governance/DataGovernanceHeader';
@@ -10,6 +10,13 @@ import DataGovernanceCTA from '@/components/data-governance/DataGovernanceCTA';
 import Contact from '@/components/Contact';
 
 const DataGovernance = () => {
+  useEffect(() => {
+    // Update document title
+    document.title = "Data Governance & Data Products | ECARIS";
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
