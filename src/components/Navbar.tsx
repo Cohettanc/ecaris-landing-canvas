@@ -76,7 +76,7 @@ const Navbar = () => {
           "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
-        style={{ top: '80px' }}
+        style={{ top: '140px' }}
       >
         <div className="px-4 py-6 space-y-6 bg-white">
           <button onClick={() => scrollToSection('about')} className="block w-full text-left py-3 border-b border-gray-100">Who Are We</button>
