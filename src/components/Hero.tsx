@@ -20,7 +20,7 @@ const Hero = () => {
             className="heading-xl mb-4 text-gray-900 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
-            <span className="text-ecaris-green">Seeking Excellence</span>
+            <span className="text-ecaris-green font-serif italic">Seeking Excellence</span>
           </h1>
           
           <p 
