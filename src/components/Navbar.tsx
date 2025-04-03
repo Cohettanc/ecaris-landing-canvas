@@ -2,11 +2,14 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -24,8 +27,20 @@ const Navbar = () => {
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/#' + id);
+    } else {
+      // If we're already on the homepage, just scroll to the section
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navigateToHome = () => {
+    setMobileMenuOpen(false);
+    navigate('/');
   };
 
   return (
@@ -38,11 +53,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/e39cb3b2-abde-4150-8b2f-0b3efdd5efee.png" 
-              alt="ECARIS" 
-              className="h-24 md:h-32 w-auto" 
-            />
+            <button 
+              onClick={navigateToHome}
+              className="focus:outline-none" 
+              aria-label="Navigate to homepage"
+            >
+              <img 
+                src="/lovable-uploads/e39cb3b2-abde-4150-8b2f-0b3efdd5efee.png" 
+                alt="ECARIS" 
+                className="h-24 md:h-32 w-auto" 
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}
