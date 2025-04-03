@@ -28,9 +28,9 @@ const LegalNotice = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
             <Button 
+              onClick={handleBackToHome}
               variant="outline" 
               className="flex items-center gap-2"
-              onClick={handleBackToHome}
             >
               <Home size={16} />
               Back to Homepage
