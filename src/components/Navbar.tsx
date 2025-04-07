@@ -1,37 +1,15 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
-
-// Define dropdown menu items with their links
-const navItems = [
-  { label: 'Who Are We', id: 'about', type: 'scroll' },
-  { 
-    label: 'Our Services', 
-    id: 'services', 
-    type: 'dropdown',
-    items: [
-      { label: 'Cloud Service', link: '/cloud-service' },
-      { label: 'Strategy & Architecture', link: '/strategy-architecture' },
-      { label: 'Data Governance', link: '/data-governance' },
-      { label: 'ERP Applications', link: '/erp-applications' }
-    ]
-  },
-  { label: 'Our Clients', id: 'clients', type: 'scroll' },
-  { label: 'Our Offices', id: 'offices', type: 'scroll' },
-  { label: 'Contact Us', id: 'contact', type: 'scroll' }
-];
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   
   useEffect(() => {
     const handleScroll = () => {
@@ -47,26 +25,8 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
-  useEffect(() => {
-    // Close dropdowns when clicking outside
-    const handleClickOutside = (event: MouseEvent) => {
-      if (activeDropdown !== null) {
-        const dropdownEl = dropdownRefs.current[activeDropdown];
-        if (dropdownEl && !dropdownEl.contains(event.target as Node)) {
-          setActiveDropdown(null);
-        }
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [activeDropdown]);
-
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
-    setActiveDropdown(null);
     
     // If we're not on the homepage, navigate to homepage first
     if (location.pathname !== '/') {
@@ -80,16 +40,7 @@ const Navbar = () => {
 
   const navigateToHome = () => {
     setMobileMenuOpen(false);
-    setActiveDropdown(null);
     navigate('/');
-  };
-
-  const handleMouseEnter = (id: string) => {
-    setActiveDropdown(id);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveDropdown(null);
   };
 
   return (
@@ -117,57 +68,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-10">
-            {navItems.map((item) => (
-              <div 
-                key={item.id}
-                className="relative"
-                onMouseEnter={() => item.type === 'dropdown' && handleMouseEnter(item.id)}
-                onMouseLeave={handleMouseLeave}
-                ref={(el) => {
-                  if (item.type === 'dropdown') {
-                    dropdownRefs.current[item.id] = el;
-                  }
-                }}
-              >
-                {item.type === 'scroll' ? (
-                  <button 
-                    onClick={() => scrollToSection(item.id)} 
-                    className="nav-link"
-                  >
-                    {item.label}
-                  </button>
-                ) : (
-                  <div className="flex items-center cursor-pointer nav-link">
-                    <span>{item.label}</span>
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                    
-                    {/* Dropdown Menu */}
-                    <div 
-                      className={cn(
-                        "absolute top-full left-0 bg-white rounded-lg shadow-lg min-w-[200px] transition-all duration-300 z-50 mt-2",
-                        activeDropdown === item.id 
-                          ? "opacity-100 visible transform translate-y-0" 
-                          : "opacity-0 invisible transform -translate-y-3 pointer-events-none"
-                      )}
-                      style={{ boxShadow: '0 6px 16px rgba(0,0,0,0.08)' }}
-                    >
-                      <div className="py-2">
-                        {item.items?.map((subItem) => (
-                          <Link 
-                            key={subItem.link} 
-                            to={subItem.link}
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+            <button onClick={() => scrollToSection('about')} className="nav-link">Who Are We</button>
+            <button onClick={() => scrollToSection('services')} className="nav-link">Our Services</button>
+            <button onClick={() => scrollToSection('clients')} className="nav-link">Our Clients</button>
+            <button onClick={() => scrollToSection('offices')} className="nav-link">Our Offices</button>
+            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact Us</button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -196,49 +101,12 @@ const Navbar = () => {
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 space-y-1 bg-white">
-          {navItems.map((item) => (
-            <div key={item.id}>
-              {item.type === 'scroll' ? (
-                <button 
-                  onClick={() => scrollToSection(item.id)} 
-                  className="block w-full text-left py-3 border-b border-gray-100"
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <>
-                  <button 
-                    onClick={() => setActiveDropdown(activeDropdown === item.id ? null : item.id)}
-                    className="flex items-center justify-between w-full text-left py-3 border-b border-gray-100"
-                  >
-                    <span>{item.label}</span>
-                    <ChevronDown 
-                      className={cn(
-                        "h-4 w-4 transition-transform", 
-                        activeDropdown === item.id ? "transform rotate-180" : ""
-                      )} 
-                    />
-                  </button>
-                  <div className={cn(
-                    "pl-4 space-y-1 overflow-hidden transition-all duration-200",
-                    activeDropdown === item.id ? "max-h-96 opacity-100 py-2" : "max-h-0 opacity-0"
-                  )}>
-                    {item.items?.map((subItem) => (
-                      <Link 
-                        key={subItem.link} 
-                        to={subItem.link}
-                        className="block py-2 text-gray-600 hover:text-ecaris-green"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
+        <div className="px-4 py-6 space-y-6 bg-white">
+          <button onClick={() => scrollToSection('about')} className="block w-full text-left py-3 border-b border-gray-100">Who Are We</button>
+          <button onClick={() => scrollToSection('services')} className="block w-full text-left py-3 border-b border-gray-100">Our Services</button>
+          <button onClick={() => scrollToSection('clients')} className="block w-full text-left py-3 border-b border-gray-100">Our Clients</button>
+          <button onClick={() => scrollToSection('offices')} className="block w-full text-left py-3 border-b border-gray-100">Our Offices</button>
+          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-3 border-b border-gray-100">Contact Us</button>
         </div>
       </div>
     </header>
