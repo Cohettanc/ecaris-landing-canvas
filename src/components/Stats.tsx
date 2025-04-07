@@ -84,7 +84,7 @@ const Stats = () => {
               <div className="flex items-baseline mb-2">
                 <span className="text-4xl font-bold text-ecaris-green">{stat.prefix}</span>
                 <span className="text-5xl font-bold text-ecaris-green">{counts[index].toLocaleString()}</span>
-                {stat.suffix && <span className="text-4xl font-bold text-ecaris-green ml-1">{stat.suffix}</span>}
+                {stat.suffix && <span className="text-2xl text-ecaris-green ml-1">{stat.suffix}</span>}
               </div>
               <h3 className="text-xl font-semibold mb-4">{stat.label}</h3>
               <p className="text-gray-600 text-sm">{stat.description}</p>
