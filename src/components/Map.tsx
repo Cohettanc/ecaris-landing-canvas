@@ -1,7 +1,27 @@
 
-import { useRef, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix for default marker icons in Leaflet with webpack/vite
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+});
+
+// Custom icon for our markers
+const customIcon = new L.Icon({
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 interface MapProps {
   latitude: number;
@@ -11,43 +31,41 @@ interface MapProps {
 }
 
 const Map = ({ latitude, longitude, zoom = 14, title }: MapProps) => {
-  const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstance = useRef<mapboxgl.Map | null>(null);
+  // Make sure to have the correct position format for react-leaflet
+  const position: [number, number] = [latitude, longitude];
 
   useEffect(() => {
-    if (!mapRef.current) return;
-
-    // Mapbox public token - in a production app, this should be in an environment variable
-    mapboxgl.accessToken = 'pk.eyJ1IjoibG92YWJsZWFpIiwiYSI6ImNsdmhodmI5cDBrYmEybXBmdWlpMXZsaWsifQ.bOg7L6rCOTEBEYeN-Q8OLQ';
-
-    // Initialize the map
-    mapInstance.current = new mapboxgl.Map({
-      container: mapRef.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [longitude, latitude],
-      zoom: zoom,
-    });
-
-    // Add navigation controls
-    mapInstance.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    // Add a marker at the office location
-    new mapboxgl.Marker({ color: '#10b981' }) // Use a green color matching ecaris-green
-      .setLngLat([longitude, latitude])
-      .setPopup(new mapboxgl.Popup().setHTML(`<h3>${title || 'Office Location'}</h3>`))
-      .addTo(mapInstance.current);
-
-    // Clean up on unmount
-    return () => {
-      if (mapInstance.current) {
-        mapInstance.current.remove();
+    // This is needed to properly render the map after component mount
+    const container = L.DomUtil.get('map-container');
+    if (container) {
+      // @ts-ignore
+      if (container._leaflet_id) {
+        // @ts-ignore
+        container._leaflet_id = null;
       }
-    };
-  }, [latitude, longitude, zoom, title]);
+    }
+  }, []);
 
   return (
     <div className="relative w-full h-96 rounded-lg border border-gray-200 overflow-hidden">
-      <div ref={mapRef} className="absolute inset-0"></div>
+      <MapContainer 
+        center={position} 
+        zoom={zoom} 
+        style={{ height: "100%", width: "100%" }}
+        id="map-container"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position} icon={customIcon}>
+          <Popup>
+            <div className="text-center p-1">
+              <strong>{title || 'Office Location'}</strong>
+            </div>
+          </Popup>
+        </Marker>
+      </MapContainer>
     </div>
   );
 };
