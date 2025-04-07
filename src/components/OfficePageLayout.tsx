@@ -95,7 +95,7 @@ const OfficePageLayout = () => {
                 title={office.title}
               />
               <div className="mt-3 text-sm text-gray-500 italic">
-                Note: You'll need to provide a Mapbox token to view the interactive map.
+                Note: Static map provided by OpenStreetMap.
               </div>
             </div>
           </div>
