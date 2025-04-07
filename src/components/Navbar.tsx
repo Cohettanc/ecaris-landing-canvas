@@ -101,7 +101,7 @@ const Navbar = () => {
                           <Link 
                             to="/" 
                             onClick={() => scrollToSection('about')}
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             About Us
                           </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/legal-notice" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Legal Notice
                           </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/data-protection" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Data Protection
                           </Link>
@@ -141,7 +141,7 @@ const Navbar = () => {
                           <Link 
                             to="/" 
                             onClick={() => scrollToSection('services')}
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             All Services
                           </Link>
@@ -151,7 +151,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/cloud-service" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Cloud Service
                           </Link>
@@ -161,7 +161,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/strategy-architecture" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Strategy & Architecture
                           </Link>
@@ -171,7 +171,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/data-governance" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Data Governance
                           </Link>
@@ -181,7 +181,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/erp-applications" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             ERP Applications
                           </Link>
@@ -212,7 +212,7 @@ const Navbar = () => {
                           <Link 
                             to="/" 
                             onClick={() => scrollToSection('offices')}
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             All Offices
                           </Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/office/paris" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Paris
                           </Link>
@@ -232,7 +232,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/office/berlin" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             Berlin
                           </Link>
@@ -242,7 +242,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/office/london" 
-                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent/70 hover:text-accent-foreground"
                           >
                             London
                           </Link>
@@ -287,12 +287,12 @@ const Navbar = () => {
       {/* Mobile Menu with Collapsible Sections */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto",
+          "fixed inset-0 bg-white/95 backdrop-blur-sm shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 space-y-2 bg-white">
+        <div className="px-4 py-6 space-y-2">
           {/* About Section */}
           <DropdownMenu>
             <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
