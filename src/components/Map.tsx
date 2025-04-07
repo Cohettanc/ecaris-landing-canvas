@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -31,32 +31,23 @@ interface MapProps {
 }
 
 const Map = ({ latitude, longitude, zoom = 14, title }: MapProps) => {
+  // Generate a unique ID for each map instance
+  const mapId = useRef(`map-${Math.random().toString(36).substring(2, 9)}`);
   // Make sure to have the correct position format for react-leaflet
   const position: [number, number] = [latitude, longitude];
-
-  useEffect(() => {
-    // This is needed to properly render the map after component mount
-    const container = L.DomUtil.get('map-container');
-    if (container) {
-      // @ts-ignore
-      if (container._leaflet_id) {
-        // @ts-ignore
-        container._leaflet_id = null;
-      }
-    }
-  }, []);
 
   return (
     <div className="relative w-full h-96 rounded-lg border border-gray-200 overflow-hidden">
       <MapContainer 
+        id={mapId.current}
+        key={mapId.current} // Key ensures React re-renders the component with a fresh instance
         center={position} 
         zoom={zoom} 
         style={{ height: "100%", width: "100%" }}
-        id="map-container"
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={position} icon={customIcon}>
           <Popup>
