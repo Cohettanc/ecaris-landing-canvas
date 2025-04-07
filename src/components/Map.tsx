@@ -42,16 +42,16 @@ const Map = ({ latitude, longitude, zoom = 11, title }: MapProps) => {
         id={mapId.current}
         key={mapId.current}
         style={{ height: "100%", width: "100%" }}
-        zoomControl={false} // Remove zoom controls for cleaner look
-        // In react-leaflet v4, center and zoom are set via the default view props
+        // Remove zoomControl prop as it's not supported in current version
         defaultView={{center: position, zoom: zoom}}
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          // Remove attribution prop as it's not supported directly in current version
+          // Use attributionControl instead if needed
           url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
           // Using OSM Bright style which has a neutral, professional look that complements the site
         />
-        <Marker position={position} icon={customIcon as L.Icon}>
+        <Marker position={position}>
           <Popup>
             <div className="text-center p-1">
               <strong>{title || 'Office Location'}</strong>
