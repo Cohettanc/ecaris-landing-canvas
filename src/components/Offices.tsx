@@ -56,8 +56,10 @@ const Offices = () => {
           className="text-center mb-16 opacity-0"
         >
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
-            Our Offices
-            <span className="absolute left-0 right-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
+            <span className="inline-block pb-2 relative">
+              Our Offices
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
+            </span>
           </h2>
         </div>
         
