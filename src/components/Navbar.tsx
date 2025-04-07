@@ -1,15 +1,69 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
+
+// Define the structure for dropdown menu items
+interface DropdownItem {
+  name: string;
+  path: string;
+}
+
+// Define the structure for navigation items
+interface NavItem {
+  name: string;
+  id?: string; // For scroll to section functionality
+  path?: string; // For direct navigation
+  dropdown?: DropdownItem[]; // For dropdown menus
+}
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const dropdownRefs = useRef<{[key: string]: HTMLDivElement | null}>({});
+  
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
+  
+  // Define navigation items with their dropdowns
+  const navItems: NavItem[] = [
+    { 
+      name: "Who Are We", 
+      id: "about" 
+    },
+    { 
+      name: "Our Services", 
+      dropdown: [
+        { name: "Cloud Services", path: "/cloud-service" },
+        { name: "Strategy & Architecture", path: "/strategy-architecture" },
+        { name: "Data Governance", path: "/data-governance" },
+        { name: "ERP Applications", path: "/erp-applications" }
+      ]
+    },
+    { 
+      name: "Our Clients", 
+      id: "clients" 
+    },
+    { 
+      name: "Our Offices", 
+      id: "offices" 
+    },
+    { 
+      name: "Contact Us", 
+      id: "contact" 
+    },
+    {
+      name: "Legal",
+      dropdown: [
+        { name: "Legal Notice", path: "/legal-notice" },
+        { name: "Data Protection", path: "/data-protection" }
+      ]
+    }
+  ];
   
   useEffect(() => {
     const handleScroll = () => {
@@ -25,8 +79,24 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (activeDropdown && dropdownRefs.current[activeDropdown] && 
+          !dropdownRefs.current[activeDropdown]?.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeDropdown]);
+
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
+    setActiveDropdown(null);
     
     // If we're not on the homepage, navigate to homepage first
     if (location.pathname !== '/') {
@@ -40,7 +110,18 @@ const Navbar = () => {
 
   const navigateToHome = () => {
     setMobileMenuOpen(false);
+    setActiveDropdown(null);
     navigate('/');
+  };
+
+  const navigateToPage = (path: string) => {
+    setMobileMenuOpen(false);
+    setActiveDropdown(null);
+    navigate(path);
+  };
+
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(prev => prev === name ? null : name);
   };
 
   return (
@@ -67,12 +148,64 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10">
-            <button onClick={() => scrollToSection('about')} className="nav-link">Who Are We</button>
-            <button onClick={() => scrollToSection('services')} className="nav-link">Our Services</button>
-            <button onClick={() => scrollToSection('clients')} className="nav-link">Our Clients</button>
-            <button onClick={() => scrollToSection('offices')} className="nav-link">Our Offices</button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact Us</button>
+          <nav className="hidden md:flex space-x-8">
+            {navItems.map((item) => (
+              <div 
+                key={item.name} 
+                className="relative group"
+                ref={el => dropdownRefs.current[item.name] = el}
+              >
+                {item.dropdown ? (
+                  <>
+                    <button 
+                      onClick={() => toggleDropdown(item.name)}
+                      className={cn(
+                        "nav-link flex items-center gap-1",
+                        activeDropdown === item.name ? "text-ecaris-green" : ""
+                      )}
+                      aria-expanded={activeDropdown === item.name}
+                    >
+                      {item.name}
+                      <ChevronDown size={16} className={cn(
+                        "transition-transform duration-200",
+                        activeDropdown === item.name ? "rotate-180" : ""
+                      )} />
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    <div 
+                      className={cn(
+                        "absolute left-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg z-20 transition-all duration-200 transform origin-top-left",
+                        activeDropdown === item.name 
+                          ? "opacity-100 visible translate-y-0" 
+                          : "opacity-0 invisible translate-y-2 pointer-events-none"
+                      )}
+                      style={{ boxShadow: '0 6px 16px rgba(0,0,0,0.08)' }}
+                    >
+                      <div className="py-2 px-1">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.path}
+                            to={dropdownItem.path}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-150"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <button 
+                    onClick={() => item.id && scrollToSection(item.id)} 
+                    className="nav-link"
+                  >
+                    {item.name}
+                  </button>
+                )}
+              </div>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -80,6 +213,7 @@ const Navbar = () => {
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-gray-700 hover:text-ecaris-green focus:outline-none"
+              aria-expanded={mobileMenuOpen}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
@@ -101,12 +235,54 @@ const Navbar = () => {
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 space-y-6 bg-white">
-          <button onClick={() => scrollToSection('about')} className="block w-full text-left py-3 border-b border-gray-100">Who Are We</button>
-          <button onClick={() => scrollToSection('services')} className="block w-full text-left py-3 border-b border-gray-100">Our Services</button>
-          <button onClick={() => scrollToSection('clients')} className="block w-full text-left py-3 border-b border-gray-100">Our Clients</button>
-          <button onClick={() => scrollToSection('offices')} className="block w-full text-left py-3 border-b border-gray-100">Our Offices</button>
-          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-3 border-b border-gray-100">Contact Us</button>
+        <div className="px-4 py-6 space-y-1 bg-white overflow-y-auto max-h-[calc(100vh-140px)]">
+          {navItems.map((item) => (
+            <div key={item.name} className="border-b border-gray-100">
+              {item.dropdown ? (
+                <div>
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="flex justify-between items-center w-full py-3 text-left"
+                  >
+                    {item.name}
+                    <ChevronDown 
+                      size={16} 
+                      className={cn(
+                        "transition-transform",
+                        activeDropdown === item.name ? "rotate-180" : ""
+                      )} 
+                    />
+                  </button>
+                  
+                  {/* Mobile Dropdown Items */}
+                  <div 
+                    className={cn(
+                      "pl-4 overflow-hidden transition-all duration-200",
+                      activeDropdown === item.name ? "max-h-60" : "max-h-0"
+                    )}
+                  >
+                    {item.dropdown?.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.path}
+                        to={dropdownItem.path}
+                        className="block py-2 text-sm text-gray-600 hover:text-ecaris-green"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {dropdownItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <button 
+                  onClick={() => item.id && scrollToSection(item.id)} 
+                  className="block w-full text-left py-3"
+                >
+                  {item.name}
+                </button>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </header>
