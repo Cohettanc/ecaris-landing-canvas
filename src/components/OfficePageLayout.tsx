@@ -10,7 +10,6 @@ import { getOfficeById } from '@/data/officeData';
 const OfficePageLayout = () => {
   const { officeId } = useParams<{ officeId: string }>();
   const office = getOfficeById(officeId || '');
-  const [scrollY, setScrollY] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(0);
 
   useEffect(() => {
@@ -24,15 +23,6 @@ const OfficePageLayout = () => {
     if (navbar) {
       setNavbarHeight(navbar.offsetHeight);
     }
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, [office]);
 
   if (!office) {
@@ -59,13 +49,8 @@ const OfficePageLayout = () => {
     return 'object-right-top';
   };
 
-  const parallaxStyle = {
-    transform: `translateY(${scrollY * -0.3}px)`,
-    transition: 'transform 0.1s ease-out',
-  };
-
-  // Calculate hero height (increased by 30%)
-  const heroHeight = "70vh"; // Using viewport height for responsiveness
+  // Set a smaller height for the hero section
+  const heroHeight = "50vh"; // Reduced from 70vh to 50vh
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -76,15 +61,14 @@ const OfficePageLayout = () => {
           className="relative bg-gray-900 overflow-hidden"
           style={{ 
             marginTop: `${navbarHeight}px`, // Add margin equal to navbar height
-            height: heroHeight // Set height to 70vh (increased by roughly 30% from previous fixed heights)
+            height: heroHeight // Set height to 50vh (smaller than previous 70vh)
           }}
         >
-          <div className="absolute inset-0" style={{ height: 'calc(100% + 120px)', top: '-60px' }}>
+          <div className="absolute inset-0">
             <img 
               src={office.image} 
               alt={office.title} 
               className={`w-full h-full object-cover ${getImagePositionClass()}`}
-              style={parallaxStyle}
             />
           </div>
           <div className="absolute inset-0 bg-black opacity-60"></div>
