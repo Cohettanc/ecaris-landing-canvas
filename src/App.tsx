@@ -11,6 +11,7 @@ import CloudService from "./pages/CloudService";
 import StrategyArchitecture from "./pages/StrategyArchitecture";
 import DataGovernance from "./pages/DataGovernance";
 import ErpApplications from "./pages/ErpApplications";
+import OfficePageLayout from "./components/OfficePageLayout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/strategy-architecture" element={<StrategyArchitecture />} />
           <Route path="/data-governance" element={<DataGovernance />} />
           <Route path="/erp-applications" element={<ErpApplications />} />
+          <Route path="/office/:officeId" element={<OfficePageLayout />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

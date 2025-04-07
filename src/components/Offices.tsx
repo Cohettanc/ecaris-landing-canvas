@@ -1,18 +1,7 @@
 
 import { useEffect, useRef } from 'react';
-
-const offices = [
-  {
-    title: "Main Office (Luxembourg)",
-    address: ["70, route d'Esch", "1470 Luxembourg", "LUXEMBOURG"],
-    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Representative Office (Paris)",
-    address: ["78 avenue des Champs Elysées", "75008 Paris", "FRANCE"],
-    image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  }
-];
+import { Link } from 'react-router-dom';
+import { offices } from '@/data/officeData';
 
 const Offices = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -65,27 +54,32 @@ const Offices = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {offices.map((office, index) => (
-            <div
-              key={index}
-              ref={(el) => officesRef.current[index] = el}
-              className="rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 opacity-0 bg-white"
+            <Link
+              key={office.id}
+              to={`/office/${office.id}`}
+              className="block"
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src={office.image} 
-                  alt={office.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{office.title}</h3>
-                <div className="text-gray-700">
-                  {office.address.map((line, i) => (
-                    <p key={i} className="mb-1">{line}</p>
-                  ))}
+              <div
+                ref={(el) => officesRef.current[index] = el}
+                className="rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 opacity-0 bg-white"
+              >
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src={office.image} 
+                    alt={office.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{office.title}</h3>
+                  <div className="text-gray-700">
+                    {office.address.map((line, i) => (
+                      <p key={i} className="mb-1">{line}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         
