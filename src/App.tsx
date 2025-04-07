@@ -13,13 +13,6 @@ import DataGovernance from "./pages/DataGovernance";
 import ErpApplications from "./pages/ErpApplications";
 import NotFound from "./pages/NotFound";
 
-// Office pages
-import LuxembourgOffice from "./pages/offices/LuxembourgOffice";
-import ParisOffice from "./pages/offices/ParisOffice";
-import GenevaOffice from "./pages/offices/GenevaOffice";
-import LondonOffice from "./pages/offices/LondonOffice";
-import BerlinOffice from "./pages/offices/BerlinOffice";
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -36,14 +29,6 @@ const App = () => (
           <Route path="/strategy-architecture" element={<StrategyArchitecture />} />
           <Route path="/data-governance" element={<DataGovernance />} />
           <Route path="/erp-applications" element={<ErpApplications />} />
-          
-          {/* Office Routes */}
-          <Route path="/offices/luxembourg" element={<LuxembourgOffice />} />
-          <Route path="/offices/paris" element={<ParisOffice />} />
-          <Route path="/offices/geneva" element={<GenevaOffice />} />
-          <Route path="/offices/london" element={<LondonOffice />} />
-          <Route path="/offices/berlin" element={<BerlinOffice />} />
-          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
