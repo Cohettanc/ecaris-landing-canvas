@@ -93,6 +93,7 @@ const OfficePageLayout = () => {
                 latitude={office.coordinates[1]} 
                 longitude={office.coordinates[0]} 
                 title={office.title}
+                zoom={10}
               />
               <div className="mt-3 text-sm text-gray-500 italic">
                 Map data &copy; OpenStreetMap contributors
