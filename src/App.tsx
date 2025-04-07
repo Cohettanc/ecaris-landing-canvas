@@ -13,6 +13,8 @@ import DataGovernance from "./pages/DataGovernance";
 import ErpApplications from "./pages/ErpApplications";
 import OfficePageLayout from "./components/OfficePageLayout";
 import NotFound from "./pages/NotFound";
+import OurTeam from "./pages/OurTeam";
+import OurValues from "./pages/OurValues";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/strategy-architecture" element={<StrategyArchitecture />} />
           <Route path="/data-governance" element={<DataGovernance />} />
           <Route path="/erp-applications" element={<ErpApplications />} />
+          <Route path="/our-team" element={<OurTeam />} />
+          <Route path="/our-values" element={<OurValues />} />
           <Route path="/office/:officeId" element={<OfficePageLayout />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

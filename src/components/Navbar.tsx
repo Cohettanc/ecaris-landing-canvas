@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -34,7 +33,11 @@ const Navbar = () => {
   const navItems: NavItem[] = [
     { 
       name: "Who Are We", 
-      id: "about" 
+      dropdown: [
+        { name: "About Us", path: "/#about" },
+        { name: "Our Team", path: "/our-team" },
+        { name: "Our Values", path: "/our-values" }
+      ]
     },
     { 
       name: "Our Services", 
@@ -114,14 +117,23 @@ const Navbar = () => {
   const navigateToPage = (path: string) => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    navigate(path);
+    
+    // Handle paths that start with #
+    if (path.startsWith('/#')) {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(path.substring(2));
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      navigate(path);
+    }
   };
 
   const toggleDropdown = (name: string) => {
     setActiveDropdown(prev => prev === name ? null : name);
   };
 
-  // Modified to always use white background
   return (
     <header 
       className={cn(
@@ -182,14 +194,13 @@ const Navbar = () => {
                     >
                       <div className="py-2 px-1">
                         {item.dropdown.map((dropdownItem) => (
-                          <Link
+                          <button
                             key={dropdownItem.path}
-                            to={dropdownItem.path}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-150"
-                            onClick={() => setActiveDropdown(null)}
+                            onClick={() => navigateToPage(dropdownItem.path)}
+                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md transition-colors duration-150"
                           >
                             {dropdownItem.name}
-                          </Link>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -260,14 +271,13 @@ const Navbar = () => {
                     )}
                   >
                     {item.dropdown?.map((dropdownItem) => (
-                      <Link
+                      <button
                         key={dropdownItem.path}
-                        to={dropdownItem.path}
-                        className="block py-2 text-sm text-gray-600 hover:text-ecaris-green"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => navigateToPage(dropdownItem.path)}
+                        className="block w-full text-left py-2 text-sm text-gray-600 hover:text-ecaris-green"
                       >
                         {dropdownItem.name}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 </div>
