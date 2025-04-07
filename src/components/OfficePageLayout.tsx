@@ -61,26 +61,26 @@ const OfficePageLayout = () => {
         </div>
         
         {/* Content Section */}
-        <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="max-w-6xl mx-auto px-4 py-12 text-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">Office Information</h2>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="bg-gray-800 bg-opacity-80 p-6 rounded-lg shadow-sm">
                 <h3 className="text-lg font-semibold mb-3">Address</h3>
-                <div className="text-gray-700 mb-6">
+                <div className="text-white mb-6">
                   {office.address.map((line, i) => (
                     <p key={i} className="mb-1">{line}</p>
                   ))}
                 </div>
                 
                 <h3 className="text-lg font-semibold mb-3">Contact</h3>
-                <div className="text-gray-700">
+                <div className="text-white">
                   <div className="flex items-center mb-2">
-                    <Phone className="h-4 w-4 mr-2 text-ecaris-green" />
+                    <Phone className="h-4 w-4 mr-2 text-ecaris-accent" />
                     <p>+1 234 567 890</p>
                   </div>
                   <div className="flex items-center">
-                    <Mail className="h-4 w-4 mr-2 text-ecaris-green" />
+                    <Mail className="h-4 w-4 mr-2 text-ecaris-accent" />
                     <p>info@ecaris.com</p>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ const OfficePageLayout = () => {
           <div className="mt-12 text-center">
             <Link 
               to="/" 
-              className="inline-flex items-center text-ecaris-green hover:underline"
+              className="inline-flex items-center text-ecaris-accent hover:underline"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
