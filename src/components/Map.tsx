@@ -14,8 +14,8 @@ L.Icon.Default.mergeOptions({
 
 // Custom icon for our markers with color matching ECARIS green
 const customIcon = new L.Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -44,10 +44,10 @@ const Map = ({ latitude, longitude, zoom = 11, title }: MapProps) => {
         style={{ height: "100%", width: "100%" }}
         center={position}
         zoom={zoom}
+        scrollWheelZoom={false}
       >
         <TileLayer
           url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
-          // Using OSM Bright style which has a neutral, professional look that complements the site
         />
         <Marker position={position}>
           <Popup>
