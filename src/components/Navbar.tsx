@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -120,11 +121,12 @@ const Navbar = () => {
     setActiveDropdown(prev => prev === name ? null : name);
   };
 
+  // Modified to always use white background
   return (
     <header 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300', 
-        scrolled ? 'bg-white/90 shadow-sm backdrop-blur-md py-3' : 'bg-transparent py-5'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white', 
+        scrolled ? 'shadow-sm backdrop-blur-md py-3' : 'py-5'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
