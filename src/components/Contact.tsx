@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
 
@@ -77,6 +78,19 @@ const Contact = () => {
                     <p className="text-gray-700">70, route d'Esch</p>
                     <p className="text-gray-700">1470 Luxembourg</p>
                     <p className="text-gray-700">LUXEMBOURG</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ecaris-green mt-0.5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <div>
+                    <p className="font-medium text-gray-900">Paris Office</p>
+                    <p className="text-gray-700">78 avenue des Champs Elysées</p>
+                    <p className="text-gray-700">75008 Paris</p>
+                    <p className="text-gray-700">FRANCE</p>
                   </div>
                 </div>
                 
