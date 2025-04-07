@@ -35,9 +35,9 @@ const DataGovernanceServices = () => {
   return (
     <div className="py-16 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="heading-md text-center text-gray-900 mb-4">Our Data Governance Services</h2>
+        <h2 className="heading-md text-center text-gray-900 mb-4">Our AI, Data Products and Data Governance Services</h2>
         <p className="text-gray-700 text-center mb-12 max-w-3xl mx-auto">
-          We offer a comprehensive suite of data governance and data product services designed to help you maximize the value of your organization's data assets.
+          We offer a comprehensive suite of AI, data products and data governance services designed to help you maximize the value of your organization's data assets.
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -4,6 +4,47 @@ import { ServiceType } from './types';
 
 export const services: ServiceType[] = [
   {
+    id: "data-governance",
+    title: "AI, data products and data governance",
+    description: "We help you build a strong data foundation through strategic governance, data cataloging, quality frameworks, and role definitions. We also design and deliver advanced data products – BI, AI, ML, dashboards – and industrialize data pipelines via DataOps practices, all while ensuring compliance with GDPR and other regulations.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7l5-3h6l5 3" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v8" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h8" />
+      </svg>
+    ),
+    pagePath: "/data-governance",
+    detailContent: [
+      {
+        title: "Data Governance Frameworks",
+        description: "We help you establish comprehensive data governance frameworks with clear roles, responsibilities, and processes to ensure consistent data management across your organization.",
+        icon: <Database className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Data Quality Management",
+        description: "Our data quality solutions implement systematic processes to measure, monitor, and improve data accuracy, completeness, consistency, and reliability throughout your data lifecycle.",
+        icon: <ClipboardCheck className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "BI & Analytics Solutions",
+        description: "We design and implement business intelligence and analytics solutions that transform raw data into meaningful insights through dashboards, reports, and visualizations.",
+        icon: <BarChart2 className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "DataOps Implementation",
+        description: "Our DataOps practices streamline and automate data pipelines, enhancing collaboration between data engineers, scientists, and analysts to deliver higher quality data products faster.",
+        icon: <Layers className="h-8 w-8 text-ecaris-green" />
+      },
+      {
+        title: "Regulatory Compliance",
+        description: "We ensure your data practices comply with relevant regulations such as GDPR, CCPA, and industry-specific standards, minimizing compliance risks while maximizing data utility.",
+        icon: <Shield className="h-8 w-8 text-ecaris-green" />
+      }
+    ]
+  },
+  {
     id: "strategy-architecture",
     title: "Strategy and IT Architecture",
     description: "We design and implement IT master plans, ensuring alignment between business and technology. Our services include system urbanization, application portfolio rationalization, and the scoping of complex transformation projects to support your strategic trajectory.",
@@ -52,47 +93,6 @@ export const services: ServiceType[] = [
       </svg>
     ),
     pagePath: "/cloud-service"
-  },
-  {
-    id: "data-governance",
-    title: "Data Governance and Data Products",
-    description: "We help you build a strong data foundation through strategic governance, data cataloging, quality frameworks, and role definitions. We also design and deliver advanced data products – BI, AI, ML, dashboards – and industrialize data pipelines via DataOps practices, all while ensuring compliance with GDPR and other regulations.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7l5-3h6l5 3" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v8" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h8" />
-      </svg>
-    ),
-    pagePath: "/data-governance",
-    detailContent: [
-      {
-        title: "Data Governance Frameworks",
-        description: "We help you establish comprehensive data governance frameworks with clear roles, responsibilities, and processes to ensure consistent data management across your organization.",
-        icon: <Database className="h-8 w-8 text-ecaris-green" />
-      },
-      {
-        title: "Data Quality Management",
-        description: "Our data quality solutions implement systematic processes to measure, monitor, and improve data accuracy, completeness, consistency, and reliability throughout your data lifecycle.",
-        icon: <ClipboardCheck className="h-8 w-8 text-ecaris-green" />
-      },
-      {
-        title: "BI & Analytics Solutions",
-        description: "We design and implement business intelligence and analytics solutions that transform raw data into meaningful insights through dashboards, reports, and visualizations.",
-        icon: <BarChart2 className="h-8 w-8 text-ecaris-green" />
-      },
-      {
-        title: "DataOps Implementation",
-        description: "Our DataOps practices streamline and automate data pipelines, enhancing collaboration between data engineers, scientists, and analysts to deliver higher quality data products faster.",
-        icon: <Layers className="h-8 w-8 text-ecaris-green" />
-      },
-      {
-        title: "Regulatory Compliance",
-        description: "We ensure your data practices comply with relevant regulations such as GDPR, CCPA, and industry-specific standards, minimizing compliance risks while maximizing data utility.",
-        icon: <Shield className="h-8 w-8 text-ecaris-green" />
-      }
-    ]
   },
   {
     id: "erp-applications",
