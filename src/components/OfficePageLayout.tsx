@@ -42,12 +42,12 @@ const OfficePageLayout = () => {
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section with adjusted image position */}
+        {/* Hero Section with significantly adjusted image position */}
         <div className="relative h-64 md:h-96 bg-gray-900">
           <img 
             src={office.image} 
             alt={office.title} 
-            className="w-full h-full object-cover opacity-70 object-[90%_top]" 
+            className="w-full h-full object-cover opacity-70 object-right-top" 
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
