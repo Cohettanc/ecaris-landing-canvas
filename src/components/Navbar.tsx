@@ -131,14 +131,14 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList className="gap-1">
                 {navigationItems.map((item) => (
-                  <NavigationMenuItem key={item.title}>
+                  <NavigationMenuItem key={item.title} className="relative">
                     <NavigationMenuTrigger className={cn(
                       "bg-transparent hover:bg-white/50 text-gray-700 hover:text-ecaris-green",
                       "data-[state=open]:bg-white/50 data-[state=open]:text-ecaris-green"
                     )}>
                       {item.title}
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-white/90 backdrop-blur-md shadow-sm">
+                    <NavigationMenuContent className="absolute left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md shadow-sm">
                       <ul className="grid w-[200px] gap-0.5 p-3">
                         {item.items.map((subItem) => (
                           <li key={subItem.title}>
