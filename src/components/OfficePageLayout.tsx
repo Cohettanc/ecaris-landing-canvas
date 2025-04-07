@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, ArrowLeft } from 'lucide-react';
+import { MapPin, ArrowLeft, Phone, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Map from '@/components/Map';
@@ -75,8 +75,14 @@ const OfficePageLayout = () => {
                 
                 <h3 className="text-lg font-semibold mb-3">Contact</h3>
                 <div className="text-gray-700">
-                  <p className="mb-1">Phone: +1 234 567 890</p>
-                  <p className="mb-1">Email: info@ecaris.com</p>
+                  <div className="flex items-center mb-2">
+                    <Phone className="h-4 w-4 mr-2 text-ecaris-green" />
+                    <p>+1 234 567 890</p>
+                  </div>
+                  <div className="flex items-center">
+                    <Mail className="h-4 w-4 mr-2 text-ecaris-green" />
+                    <p>info@ecaris.com</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,8 +92,11 @@ const OfficePageLayout = () => {
               <Map 
                 latitude={office.coordinates[1]} 
                 longitude={office.coordinates[0]} 
-                title={office.city}
+                title={office.title}
               />
+              <div className="mt-3 text-sm text-gray-500 italic">
+                Note: You'll need to provide a Mapbox token to view the interactive map.
+              </div>
             </div>
           </div>
           
