@@ -20,7 +20,7 @@ interface MapProps {
   title?: string;
 }
 
-const Map = ({ latitude, longitude, zoom = 12, title }: MapProps) => {
+const Map = ({ latitude, longitude, zoom = 13, title }: MapProps) => {
   return (
     <div className="w-full rounded-lg border border-gray-200 overflow-hidden bg-white p-4">
       <div className="flex flex-col items-center mb-4">
