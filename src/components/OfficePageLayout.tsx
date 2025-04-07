@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, ArrowLeft, Phone, Mail } from 'lucide-react';
@@ -58,7 +59,9 @@ const OfficePageLayout = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <div className="bg-white">
+        <Navbar />
+      </div>
       
       <main className="flex-1">
         <div className="relative h-64 sm:h-92 md:h-112 lg:h-134 bg-gray-900 overflow-hidden">
