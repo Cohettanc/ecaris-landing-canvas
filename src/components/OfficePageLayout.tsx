@@ -62,7 +62,7 @@ const OfficePageLayout = () => {
       <Navbar />
       
       <main className="flex-1">
-        <div className="relative h-64 sm:h-92 md:h-112 lg:h-134 bg-gray-900 mt-24 md:mt-32 overflow-hidden">
+        <div className="relative h-64 sm:h-92 md:h-112 lg:h-134 bg-gray-900 overflow-hidden">
           <div className="absolute inset-0" style={{ height: 'calc(100% + 120px)', top: '-60px' }}>
             <img 
               src={office.image} 
