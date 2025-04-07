@@ -68,7 +68,7 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300', 
-        scrolled ? 'bg-white/90 shadow-sm backdrop-blur-md py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-white/95 shadow-sm backdrop-blur-md py-3' : 'bg-transparent py-5'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,18 +90,18 @@ const Navbar = () => {
           {/* Desktop Navigation with Dropdowns */}
           <nav className="hidden md:block">
             <NavigationMenu>
-              <NavigationMenuList className="space-x-2">
+              <NavigationMenuList className="space-x-4">
                 {/* About Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">Who Are We</NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white">
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Who Are We</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[220px]">
                       <li>
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/" 
                             onClick={() => scrollToSection('about')}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             About Us
                           </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/legal-notice" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Legal Notice
                           </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/data-protection" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Data Protection
                           </Link>
@@ -133,15 +133,15 @@ const Navbar = () => {
 
                 {/* Services Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">Our Services</NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white">
-                    <ul className="grid w-[250px] gap-1 p-2">
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Our Services</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[250px]">
                       <li>
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/" 
                             onClick={() => scrollToSection('services')}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             All Services
                           </Link>
@@ -151,7 +151,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/cloud-service" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Cloud Service
                           </Link>
@@ -161,7 +161,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/strategy-architecture" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Strategy & Architecture
                           </Link>
@@ -171,7 +171,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/data-governance" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Data Governance
                           </Link>
@@ -181,7 +181,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/erp-applications" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             ERP Applications
                           </Link>
@@ -196,7 +196,7 @@ const Navbar = () => {
                   <Link
                     to="/"
                     onClick={() => scrollToSection('clients')}
-                    className={navigationMenuTriggerStyle({ className: "bg-transparent" })}
+                    className={navigationMenuTriggerStyle({ className: "bg-transparent hover:bg-transparent" })}
                   >
                     Our Clients
                   </Link>
@@ -204,15 +204,15 @@ const Navbar = () => {
 
                 {/* Offices Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">Our Offices</NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white">
-                    <ul className="grid w-[200px] gap-1 p-2">
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Our Offices</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[220px]">
                       <li>
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/" 
                             onClick={() => scrollToSection('offices')}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             All Offices
                           </Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/office/paris" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Paris
                           </Link>
@@ -232,7 +232,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/office/berlin" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             Berlin
                           </Link>
@@ -242,7 +242,7 @@ const Navbar = () => {
                         <NavigationMenuLink asChild>
                           <Link 
                             to="/office/london" 
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             London
                           </Link>
@@ -257,7 +257,7 @@ const Navbar = () => {
                   <Link
                     to="/"
                     onClick={() => scrollToSection('contact')}
-                    className={navigationMenuTriggerStyle({ className: "bg-transparent" })}
+                    className={navigationMenuTriggerStyle({ className: "bg-transparent hover:bg-transparent" })}
                   >
                     Contact Us
                   </Link>
@@ -270,7 +270,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-ecaris-green focus:outline-none"
+              className="text-gray-700 hover:text-primary focus:outline-none"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
@@ -292,14 +292,14 @@ const Navbar = () => {
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 space-y-1 bg-white">
+        <div className="px-4 py-6 space-y-2 bg-white">
           {/* About Section */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="w-full flex justify-between items-center py-3 border-b border-gray-100">
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
               <span>Who Are We</span>
-              <ChevronDown className="h-4 w-4" />
+              <ChevronDown className="h-4 w-4 ml-2" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-full">
+            <DropdownMenuContent className="w-[94vw] mx-[3vw]">
               <DropdownMenuItem onSelect={() => scrollToSection('about')}>
                 About Us
               </DropdownMenuItem>
@@ -314,11 +314,11 @@ const Navbar = () => {
 
           {/* Services Section */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="w-full flex justify-between items-center py-3 border-b border-gray-100">
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
               <span>Our Services</span>
-              <ChevronDown className="h-4 w-4" />
+              <ChevronDown className="h-4 w-4 ml-2" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-full">
+            <DropdownMenuContent className="w-[94vw] mx-[3vw]">
               <DropdownMenuItem onSelect={() => scrollToSection('services')}>
                 All Services
               </DropdownMenuItem>
@@ -338,17 +338,20 @@ const Navbar = () => {
           </DropdownMenu>
 
           {/* Clients Link */}
-          <button onClick={() => scrollToSection('clients')} className="block w-full text-left py-3 border-b border-gray-100">
+          <button 
+            onClick={() => scrollToSection('clients')} 
+            className="block w-full text-left py-2.5 text-base font-medium border-b border-gray-100"
+          >
             Our Clients
           </button>
 
           {/* Offices Section */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="w-full flex justify-between items-center py-3 border-b border-gray-100">
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
               <span>Our Offices</span>
-              <ChevronDown className="h-4 w-4" />
+              <ChevronDown className="h-4 w-4 ml-2" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-full">
+            <DropdownMenuContent className="w-[94vw] mx-[3vw]">
               <DropdownMenuItem onSelect={() => scrollToSection('offices')}>
                 All Offices
               </DropdownMenuItem>
@@ -365,7 +368,10 @@ const Navbar = () => {
           </DropdownMenu>
 
           {/* Contact Link */}
-          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-3 border-b border-gray-100">
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="block w-full text-left py-2.5 text-base font-medium border-b border-gray-100"
+          >
             Contact Us
           </button>
         </div>
