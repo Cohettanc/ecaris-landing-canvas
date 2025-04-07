@@ -5,13 +5,18 @@ import { MapPin } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// Fix for default marker icons in Leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-});
+// Create a custom icon for the marker with ECARIS brand color
+const createCustomIcon = () => {
+  return L.divIcon({
+    html: `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="41" viewBox="0 0 25 41">
+      <path fill="#016E42" stroke="#FFFFFF" stroke-width="1.5" d="M12.5 0C5.596 0 0 5.596 0 12.5C0 21.875 12.5 41 12.5 41S25 21.875 25 12.5C25 5.596 19.404 0 12.5 0zm0 17.5c-2.762 0-5-2.238-5-5s2.238-5 5-5 5 2.238 5 5-2.238 5-5 5z"/>
+    </svg>`,
+    iconSize: [25, 41],
+    iconAnchor: [12.5, 41],
+    popupAnchor: [0, -41],
+    className: ''
+  });
+};
 
 interface MapProps {
   latitude: number;
@@ -42,7 +47,10 @@ const Map = ({ latitude, longitude, zoom = 13, title }: MapProps) => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[latitude, longitude]}>
+          <Marker 
+            position={[latitude, longitude]} 
+            icon={createCustomIcon()}
+          >
             <Popup>
               {title || 'Office Location'}<br />
               Lat: {latitude.toFixed(4)}<br />
