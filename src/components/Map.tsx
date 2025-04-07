@@ -42,12 +42,10 @@ const Map = ({ latitude, longitude, zoom = 11, title }: MapProps) => {
         id={mapId.current}
         key={mapId.current}
         style={{ height: "100%", width: "100%" }}
-        // Remove zoomControl prop as it's not supported in current version
-        defaultView={{center: position, zoom: zoom}}
+        center={position}
+        zoom={zoom}
       >
         <TileLayer
-          // Remove attribution prop as it's not supported directly in current version
-          // Use attributionControl instead if needed
           url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
           // Using OSM Bright style which has a neutral, professional look that complements the site
         />
