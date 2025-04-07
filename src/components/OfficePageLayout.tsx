@@ -95,7 +95,7 @@ const OfficePageLayout = () => {
                 title={office.title}
               />
               <div className="mt-3 text-sm text-gray-500 italic">
-                Note: Static map provided by OpenStreetMap.
+                Map data &copy; OpenStreetMap contributors
               </div>
             </div>
           </div>
