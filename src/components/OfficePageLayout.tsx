@@ -69,7 +69,13 @@ const OfficePageLayout = () => {
         description: 'Our Paris office is strategically positioned on the iconic Champs-Élysées, providing our clients with easy access to our consulting services in one of Europe\'s major business centers.',
         teamSize: '10+ consultants',
         established: 'Established in 2024', // Updated from 2012 to 2024
-        specialties: ['Public Sector Consulting', 'Financial Services', 'Retail Strategy', 'Tourism & Hospitality'],
+        specialties: [
+          'Pharmaceutical Laboratory', 
+          'Insurance', 
+          'Energy', 
+          'Public Sector Consulting', 
+          'Financial Services'
+        ],
         workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM',
         facilities: ['Client presentation theater', 'Collaborative workspace', 'Video conferencing suites', 'Rooftop terrace']
       };
