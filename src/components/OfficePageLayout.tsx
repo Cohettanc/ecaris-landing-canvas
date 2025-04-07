@@ -42,7 +42,7 @@ const OfficePageLayout = () => {
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section with white text */}
         <div className="relative h-64 md:h-96 bg-gray-900">
           <img 
             src={office.image} 
