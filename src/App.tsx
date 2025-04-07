@@ -13,6 +13,8 @@ import DataGovernance from "./pages/DataGovernance";
 import ErpApplications from "./pages/ErpApplications";
 import OfficePageLayout from "./components/OfficePageLayout";
 import NotFound from "./pages/NotFound";
+import PageTransition from "./components/PageTransition";
+import "./App.css";
 
 const queryClient = new QueryClient();
 
@@ -22,18 +24,20 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/legal-notice" element={<LegalNotice />} />
-          <Route path="/data-protection" element={<DataProtection />} />
-          <Route path="/cloud-service" element={<CloudService />} />
-          <Route path="/strategy-architecture" element={<StrategyArchitecture />} />
-          <Route path="/data-governance" element={<DataGovernance />} />
-          <Route path="/erp-applications" element={<ErpApplications />} />
-          <Route path="/office/:officeId" element={<OfficePageLayout />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/legal-notice" element={<LegalNotice />} />
+            <Route path="/data-protection" element={<DataProtection />} />
+            <Route path="/cloud-service" element={<CloudService />} />
+            <Route path="/strategy-architecture" element={<StrategyArchitecture />} />
+            <Route path="/data-governance" element={<DataGovernance />} />
+            <Route path="/erp-applications" element={<ErpApplications />} />
+            <Route path="/office/:officeId" element={<OfficePageLayout />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </PageTransition>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
