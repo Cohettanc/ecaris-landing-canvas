@@ -40,7 +40,7 @@ const LegalNotice = () => {
           <h1 className="text-3xl font-bold text-gray-900 mb-8 relative">
             <span className="inline-block pb-2 relative">
               Legal Notice
-              <span className="absolute left-0 bottom-0 w-24 h-1 bg-ecaris-green"></span>
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
             </span>
           </h1>
           

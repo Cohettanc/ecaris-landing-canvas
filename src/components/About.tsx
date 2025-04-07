@@ -39,7 +39,7 @@ const About = () => {
             <h2 className="heading-lg text-gray-900 mb-6 relative">
               <span className="inline-block pb-2 relative">
                 Who Are We?
-                <span className="absolute left-0 bottom-0 w-24 h-1 bg-ecaris-green"></span>
+                <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
               </span>
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">

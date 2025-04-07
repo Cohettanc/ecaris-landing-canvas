@@ -63,8 +63,11 @@ const OfficesUpdated = () => {
     <section id="offices" ref={sectionRef} className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="heading-lg text-gray-900 mb-4">
-            Our Offices
+          <h2 className="heading-lg text-gray-900 mb-4 relative">
+            <span className="inline-block pb-2 relative">
+              Our Offices
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
+            </span>
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-gray-600">
             We have offices in 5 European countries to better serve our clients across the continent. 

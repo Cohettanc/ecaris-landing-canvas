@@ -67,8 +67,10 @@ const Stats = () => {
       <div className="section-container">
         <div className="text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
-            Our Clients
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-1 bg-ecaris-green"></span>
+            <span className="inline-block pb-2 relative">
+              Our Clients
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
+            </span>
           </h2>
         </div>
         
