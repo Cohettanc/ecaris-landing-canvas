@@ -12,6 +12,7 @@ const OfficesUpdated = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           officesRef.current?.classList.add('animate-fade-in-up');
+          officesRef.current?.classList.remove('opacity-0'); // Remove opacity-0 class when visible
         }
       },
       { threshold: 0.1 }
@@ -46,7 +47,7 @@ const OfficesUpdated = () => {
         
         <div 
           ref={officesRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 opacity-0"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 opacity-0 duration-500 transition-all"
         >
           {offices.map((office) => (
             <Link 
