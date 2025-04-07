@@ -144,6 +144,11 @@
   .contact-input {
     @apply w-full bg-gray-50 border border-gray-200 p-3 rounded-md focus:ring-2 focus:ring-ecaris-green/30 focus:border-ecaris-green focus:outline-none transition-all duration-300;
   }
+
+  /* Custom shadow for dropdowns */
+  .shadow-custom {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* Animation delays for staggered animations */

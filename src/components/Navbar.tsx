@@ -2,63 +2,16 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { 
+import { useNavigate, useLocation } from 'react-router-dom';
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu";
-import { ChevronDown } from 'lucide-react';
-
-// Navigation content for dropdown menus
-const navigationItems = [
-  {
-    title: "Who Are We",
-    items: [
-      { title: "About Us", href: "/#about" },
-      { title: "Our Team", href: "/#about" },
-      { title: "Our Story", href: "/#about" }
-    ]
-  },
-  {
-    title: "Our Services",
-    items: [
-      { title: "Cloud Service", href: "/cloud-service" },
-      { title: "Strategy & Architecture", href: "/strategy-architecture" },
-      { title: "Data Governance", href: "/data-governance" },
-      { title: "ERP Applications", href: "/erp-applications" }
-    ]
-  },
-  {
-    title: "Our Clients",
-    items: [
-      { title: "Client Testimonials", href: "/#clients" },
-      { title: "Case Studies", href: "/#clients" },
-      { title: "Industries", href: "/#clients" }
-    ]
-  },
-  {
-    title: "Our Offices",
-    items: [
-      { title: "Paris", href: "/office/paris" },
-      { title: "London", href: "/office/london" },
-      { title: "New York", href: "/office/new-york" },
-      { title: "All Locations", href: "/#offices" }
-    ]
-  },
-  {
-    title: "Contact Us",
-    items: [
-      { title: "Get in Touch", href: "/#contact" },
-      { title: "Careers", href: "/#contact" },
-      { title: "Support", href: "/#contact" }
-    ]
-  }
-];
+} from '@/components/ui/navigation-menu';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -81,26 +34,41 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/#' + id);
+    } else {
+      // If we're already on the homepage, just scroll to the section
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navigateToHome = () => {
     setMobileMenuOpen(false);
     navigate('/');
   };
 
-  const navigateToPath = (path: string) => {
+  const navigateToPage = (path: string) => {
     setMobileMenuOpen(false);
-    if (path.startsWith('/#')) {
-      // If we're not on the homepage, navigate to homepage first
-      if (location.pathname !== '/') {
-        navigate(path);
-      } else {
-        // If we're already on the homepage, just scroll to the section
-        const sectionId = path.substring(2); // Remove the '/#'
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      navigate(path);
-    }
+    navigate(path);
+  };
+
+  // Pages that actually exist in the app (from App.tsx routes)
+  const existingPages = {
+    services: [
+      { label: 'Cloud Service', path: '/cloud-service' },
+      { label: 'Strategy & Architecture', path: '/strategy-architecture' },
+      { label: 'Data Governance', path: '/data-governance' },
+      { label: 'ERP Applications', path: '/erp-applications' },
+    ],
+    legal: [
+      { label: 'Legal Notice', path: '/legal-notice' },
+      { label: 'Data Protection', path: '/data-protection' },
+    ]
   };
 
   return (
@@ -129,33 +97,111 @@ const Navbar = () => {
           {/* Desktop Navigation with Dropdowns */}
           <div className="hidden md:block">
             <NavigationMenu>
-              <NavigationMenuList className="gap-1">
-                {navigationItems.map((item) => (
-                  <NavigationMenuItem key={item.title} className="relative">
-                    <NavigationMenuTrigger className={cn(
-                      "bg-transparent hover:bg-white/50 text-gray-700 hover:text-ecaris-green",
-                      "data-[state=open]:bg-white/50 data-[state=open]:text-ecaris-green"
-                    )}>
-                      {item.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="w-[200px] p-1.5">
-                        {item.items.map((subItem) => (
-                          <li key={subItem.title}>
-                            <NavigationMenuLink asChild>
-                              <button
-                                onClick={() => navigateToPath(subItem.href)}
-                                className="block select-none w-full text-left rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-ecaris-green text-gray-700 text-sm"
-                              >
-                                {subItem.title}
-                              </button>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ))}
+              <NavigationMenuList className="gap-2">
+                {/* About Section */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-ecaris-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent"
+                  >
+                    Who Are We
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-lg p-2 shadow-custom border border-gray-100 min-w-[200px] data-[motion^=from-]:animate-fade-in data-[motion^=to-]:animate-fade-out">
+                    <button
+                      onClick={() => scrollToSection('about')}
+                      className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                    >
+                      About Us
+                    </button>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Services Section */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-ecaris-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent"
+                  >
+                    Our Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-lg p-2 shadow-custom border border-gray-100 min-w-[220px] data-[motion^=from-]:animate-fade-in data-[motion^=to-]:animate-fade-out">
+                    <button
+                      onClick={() => scrollToSection('services')}
+                      className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                    >
+                      All Services
+                    </button>
+                    <div className="h-px bg-gray-100 my-2 mx-2" />
+                    {existingPages.services.map((service) => (
+                      <button
+                        key={service.path}
+                        onClick={() => navigateToPage(service.path)}
+                        className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                      >
+                        {service.label}
+                      </button>
+                    ))}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Clients Section */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-ecaris-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent"
+                  >
+                    Our Clients
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-lg p-2 shadow-custom border border-gray-100 min-w-[200px] data-[motion^=from-]:animate-fade-in data-[motion^=to-]:animate-fade-out">
+                    <button
+                      onClick={() => scrollToSection('clients')}
+                      className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                    >
+                      Client Overview
+                    </button>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Offices Section */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-ecaris-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent"
+                  >
+                    Our Offices
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-lg p-2 shadow-custom border border-gray-100 min-w-[200px] data-[motion^=from-]:animate-fade-in data-[motion^=to-]:animate-fade-out">
+                    <button
+                      onClick={() => scrollToSection('offices')}
+                      className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                    >
+                      All Locations
+                    </button>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Contact Section */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger 
+                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-ecaris-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent"
+                  >
+                    Contact Us
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white rounded-lg p-2 shadow-custom border border-gray-100 min-w-[200px] data-[motion^=from-]:animate-fade-in data-[motion^=to-]:animate-fade-out">
+                    <button
+                      onClick={() => scrollToSection('contact')}
+                      className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                    >
+                      Contact Information
+                    </button>
+                    <div className="h-px bg-gray-100 my-2 mx-2" />
+                    {existingPages.legal.map((page) => (
+                      <button
+                        key={page.path}
+                        onClick={() => navigateToPage(page.path)}
+                        className="flex w-full items-center px-3 py-2 text-sm hover:bg-gray-50 rounded-md transition-colors duration-200 text-gray-700"
+                      >
+                        {page.label}
+                      </button>
+                    ))}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -164,46 +210,90 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-ecaris-green focus:outline-none"
+              className="text-gray-700 hover:text-ecaris-green focus:outline-none p-2"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Slide in from right */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white/95 backdrop-blur-sm shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 divide-y divide-gray-100">
-          {navigationItems.map((category, index) => (
-            <div key={index} className="py-3">
-              <h3 className="text-lg font-medium text-gray-800 mb-2">{category.title}</h3>
-              <ul className="space-y-1 pl-2">
-                {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>
-                    <button 
-                      onClick={() => navigateToPath(item.href)}
-                      className="w-full text-left py-2 text-gray-600 hover:text-ecaris-green text-sm"
-                    >
-                      {item.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+        <div className="px-4 py-6 space-y-6 bg-white">
+          <div className="space-y-2">
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="block w-full text-left py-3 border-b border-gray-100"
+            >
+              Who Are We
+            </button>
+          </div>
+
+          <div className="space-y-2">
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="block w-full text-left py-3 border-b border-gray-100"
+            >
+              Our Services
+            </button>
+            <div className="pl-4 space-y-2 mt-2">
+              {existingPages.services.map((service) => (
+                <button
+                  key={service.path}
+                  onClick={() => navigateToPage(service.path)}
+                  className="block w-full text-left py-2 text-gray-600 hover:text-ecaris-green transition-colors"
+                >
+                  {service.label}
+                </button>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button 
+            onClick={() => scrollToSection('clients')}
+            className="block w-full text-left py-3 border-b border-gray-100"
+          >
+            Our Clients
+          </button>
+
+          <button 
+            onClick={() => scrollToSection('offices')}
+            className="block w-full text-left py-3 border-b border-gray-100"
+          >
+            Our Offices
+          </button>
+
+          <div className="space-y-2">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="block w-full text-left py-3 border-b border-gray-100"
+            >
+              Contact Us
+            </button>
+            <div className="pl-4 space-y-2 mt-2">
+              {existingPages.legal.map((page) => (
+                <button
+                  key={page.path}
+                  onClick={() => navigateToPage(page.path)}
+                  className="block w-full text-left py-2 text-gray-600 hover:text-ecaris-green transition-colors"
+                >
+                  {page.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </header>
