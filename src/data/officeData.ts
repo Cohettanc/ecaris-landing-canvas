@@ -23,7 +23,7 @@ export const offices: Office[] = [
     city: "Paris",
     address: ["78 avenue des Champs Elysées", "75008 Paris", "FRANCE"],
     coordinates: [2.3522, 48.8566], // Paris coordinates
-    image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Arc de Triomphe image
+    image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   }
 ];
 
