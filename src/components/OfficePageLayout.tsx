@@ -58,19 +58,19 @@ const OfficePageLayout = () => {
     if (officeId === 'luxembourg') {
       return {
         description: 'Our Luxembourg headquarters serves as the primary hub for our European operations. Located in the heart of Luxembourg City, this modern facility houses our executive team and primary administrative functions.',
-        teamSize: '120+ professionals',
+        teamSize: '40+ professionals', // Updated from 120+ to 40+
         established: 'Established in 2005',
         specialties: ['Corporate Strategy', 'Finance Consulting', 'Digital Transformation', 'Enterprise Architecture'],
-        workingHours: 'Monday - Friday: 8:30 AM - 6:00 PM',
+        workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM', // Updated working hours
         facilities: ['Modern conference rooms', 'Innovation lab', 'Client meeting spaces', 'Cafeteria', 'Recreation area']
       };
     } else if (officeId === 'paris') {
       return {
         description: 'Our Paris office is strategically positioned on the iconic Champs-Élysées, providing our clients with easy access to our consulting services in one of Europe\'s major business centers.',
-        teamSize: '45+ consultants',
+        teamSize: '10+ consultants', // Updated from 45+ to 10+
         established: 'Established in 2012',
         specialties: ['Public Sector Consulting', 'Financial Services', 'Retail Strategy', 'Tourism & Hospitality'],
-        workingHours: 'Monday - Friday: 9:00 AM - 6:30 PM',
+        workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM', // Updated working hours
         facilities: ['Client presentation theater', 'Collaborative workspace', 'Video conferencing suites', 'Rooftop terrace']
       };
     }
@@ -79,7 +79,7 @@ const OfficePageLayout = () => {
       teamSize: '30+ consultants',
       established: 'Recently established',
       specialties: ['Business Consulting', 'Technology Advisory', 'Digital Strategy'],
-      workingHours: 'Monday - Friday: 9:00 AM - 5:30 PM',
+      workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM', // Updated working hours for consistency
       facilities: ['Meeting rooms', 'Collaborative workspace', 'Client lounge']
     };
   };
