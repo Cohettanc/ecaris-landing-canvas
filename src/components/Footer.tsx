@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -12,7 +11,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/e39cb3b2-abde-4150-8b2f-0b3efdd5efee.png" 
               alt="ECARIS" 
-              className="h-12 w-auto mb-4 invert"
+              className="h-12 w-auto mb-4 invert brightness-0"
             />
             <p className="text-gray-400 mb-4">
               Providing the best talent on a consulting basis to support your business since 2019.
