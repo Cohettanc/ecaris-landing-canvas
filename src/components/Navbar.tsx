@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ChevronDown } from 'lucide-react';
 
-// Navigation content for dropdown menus - updated to only include existing pages
+// Navigation content for dropdown menus
 const navigationItems = [
   {
     title: "Who Are We",
