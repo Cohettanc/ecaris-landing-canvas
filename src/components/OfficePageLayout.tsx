@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, ArrowLeft, Phone, Mail } from 'lucide-react';
@@ -13,14 +12,11 @@ const OfficePageLayout = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    // Update document title
     if (office) {
       document.title = `ECARIS | ${office.title}`;
     }
-    // Scroll to top when page loads
     window.scrollTo(0, 0);
 
-    // Add scroll event listener for parallax effect
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -48,18 +44,16 @@ const OfficePageLayout = () => {
     );
   }
 
-  // Custom image positioning based on office ID
   const getImagePositionClass = () => {
     if (officeId === 'paris') {
-      return 'object-[100%_top]'; // Show more of the right side for Paris
+      return 'object-[100%_top]';
     }
-    return 'object-right-top'; // Default position for other offices
+    return 'object-right-top';
   };
 
-  // Calculate parallax effect - subtle movement in opposite direction as user scrolls
   const parallaxStyle = {
-    transform: `translateY(${scrollY * -0.3}px)`, // Increased the negative multiplier for faster upward movement
-    transition: 'transform 0.1s ease-out', // Smooths out the movement slightly
+    transform: `translateY(${scrollY * -0.3}px)`,
+    transition: 'transform 0.1s ease-out',
   };
 
   return (
@@ -67,10 +61,8 @@ const OfficePageLayout = () => {
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section with parallax effect */}
-        <div className="relative h-56 md:h-80 bg-gray-900 mt-24 md:mt-32 overflow-hidden">
-          {/* Image layer with parallax effect */}
-          <div className="absolute inset-0" style={{ height: 'calc(100% + 80px)', top: '-40px' }}>
+        <div className="relative h-72 sm:h-96 md:h-120 lg:h-144 bg-gray-900 mt-24 md:mt-32 overflow-hidden">
+          <div className="absolute inset-0" style={{ height: 'calc(100% + 120px)', top: '-60px' }}>
             <img 
               src={office.image} 
               alt={office.title} 
@@ -78,21 +70,19 @@ const OfficePageLayout = () => {
               style={parallaxStyle}
             />
           </div>
-          {/* Dark overlay layer for better text visibility */}
           <div className="absolute inset-0 bg-black opacity-60"></div>
           
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">{office.title}</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">{office.title}</h1>
               <div className="flex items-center justify-center">
                 <MapPin className="h-5 w-5 mr-2" />
-                <span>{office.city}</span>
+                <span className="text-lg md:text-xl">{office.city}</span>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Content Section */}
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
