@@ -226,38 +226,18 @@ const OfficePageLayout = () => {
             </div>
           </div>
           
-          {/* Facilities Section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 relative inline-block">
-              <span className="inline-block pb-2 relative">
-                Our Facilities
-                <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
-              </span>
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {officeInfo.facilities.map((facility, index) => (
-                <Card key={index} className="bg-white shadow-sm hover:shadow-md transition-shadow">
-                  <CardContent className="pt-6">
-                    <h3 className="font-semibold text-lg mb-2">{facility}</h3>
-                    <p className="text-gray-600">
-                      Our {facility.toLowerCase()} is designed to enhance productivity and create an optimal environment for our team and clients.
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+          {/* Our Facilities Section has been removed */}
           
-          {/* CTA Section */}
+          {/* CTA Section - updated with Contact Us button */}
           <div className="bg-gray-50 rounded-xl p-8 mb-12">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-4">Visit Our {office.city} Office</h2>
               <p className="text-gray-700 mb-6">
                 We welcome you to schedule a visit to our {office.city} office. Our team would be happy to meet with you and discuss how we can assist with your business needs.
               </p>
-              <div className="inline-block bg-ecaris-green text-white px-6 py-3 rounded-md font-medium hover:bg-ecaris-green/90 transition-colors cursor-pointer">
-                Schedule a Visit
-              </div>
+              <Link to="/#contact" className="inline-block bg-ecaris-green text-white px-6 py-3 rounded-md font-medium hover:bg-ecaris-green/90 transition-colors">
+                Contact Us
+              </Link>
             </div>
           </div>
           
