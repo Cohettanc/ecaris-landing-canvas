@@ -41,17 +41,17 @@ const Map = ({ latitude, longitude, zoom = 11, title }: MapProps) => {
       <MapContainer 
         id={mapId.current}
         key={mapId.current}
-        center={position} 
-        zoom={zoom} 
         style={{ height: "100%", width: "100%" }}
         zoomControl={false} // Remove zoom controls for cleaner look
+        // In react-leaflet v4, center and zoom are set via the default view props
+        defaultView={{center: position, zoom: zoom}}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
           // Using OSM Bright style which has a neutral, professional look that complements the site
         />
-        <Marker position={position} icon={customIcon}>
+        <Marker position={position} icon={customIcon as L.Icon}>
           <Popup>
             <div className="text-center p-1">
               <strong>{title || 'Office Location'}</strong>
