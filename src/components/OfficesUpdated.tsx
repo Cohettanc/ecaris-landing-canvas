@@ -1,8 +1,5 @@
 
 import { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { offices } from '@/data/officeData';
-import { MapPin } from 'lucide-react';
 
 const OfficesUpdated = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,6 +26,39 @@ const OfficesUpdated = () => {
     };
   }, []);
 
+  const offices = [
+    {
+      id: 1,
+      city: 'Luxembourg',
+      address: '70, route d\'Esch\n1470 Luxembourg\nLUXEMBOURG',
+      flagEmoji: '🇱🇺',
+    },
+    {
+      id: 2,
+      city: 'Paris',
+      address: '78 avenue des Champs Elysées\n75008\nParis\nFRANCE',
+      flagEmoji: '🇫🇷',
+    },
+    {
+      id: 3,
+      city: 'Geneva',
+      address: '15 route de Ferney\n1202 Geneva\nSWITZERLAND',
+      flagEmoji: '🇨🇭',
+    },
+    {
+      id: 4,
+      city: 'London',
+      address: '20 Fenchurch Street\nLondon EC3M 3BY\nUNITED KINGDOM',
+      flagEmoji: '🇬🇧',
+    },
+    {
+      id: 5,
+      city: 'Berlin',
+      address: 'Friedrichstraße 76\n10117 Berlin\nGERMANY',
+      flagEmoji: '🇩🇪',
+    },
+  ];
+
   return (
     <section id="offices" ref={sectionRef} className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,25 +80,15 @@ const OfficesUpdated = () => {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 opacity-0"
         >
           {offices.map((office) => (
-            <Link
-              key={office.id}
-              to={`/offices/${office.city.toLowerCase()}`}
-              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group"
-            >
+            <div key={office.id} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center mb-4">
-                <span className="text-4xl mr-3 group-hover:scale-110 transition-transform">{office.flagEmoji}</span>
+                <span className="text-4xl mr-3">{office.flagEmoji}</span>
                 <h3 className="text-xl font-bold text-gray-900">{office.city}</h3>
               </div>
-              <p className="text-gray-700 mb-4">
-                {office.address.map((line, i) => (
-                  <span key={i} className="block">{line}</span>
-                ))}
+              <p className="text-gray-700 whitespace-pre-line">
+                {office.address}
               </p>
-              <div className="flex items-center text-ecaris-green mt-4 group-hover:underline">
-                <MapPin className="w-4 h-4 mr-2" /> 
-                <span>View office details</span>
-              </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
