@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import { offices } from '@/data/officeData';
 
 // Define the structure for dropdown menu items
 interface DropdownItem {
@@ -50,7 +51,10 @@ const Navbar = () => {
     },
     { 
       name: "Our Offices", 
-      id: "offices" 
+      dropdown: [
+        { name: "Luxembourg Office", path: "/office/luxembourg" },
+        { name: "Paris Office", path: "/office/paris" }
+      ]
     },
     { 
       name: "Contact Us", 
