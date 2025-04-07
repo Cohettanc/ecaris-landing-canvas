@@ -95,9 +95,6 @@ const OfficePageLayout = () => {
                 title={office.title}
                 zoom={11}
               />
-              <div className="mt-3 text-sm text-gray-500 italic">
-                Map data &copy; OpenStreetMap contributors
-              </div>
             </div>
           </div>
           

@@ -43,10 +43,6 @@ const Map: React.FC<MapProps> = ({ latitude, longitude, zoom = 13, title }) => {
     <div className="w-full rounded-lg border border-gray-200 overflow-hidden bg-white p-4">
       <div className="flex flex-col items-center mb-4">
         <h3 className="text-lg font-semibold">{title || 'Office Location'}</h3>
-        <div className="flex items-center justify-center mt-2">
-          <MapPin className="h-5 w-5 mr-2 text-ecaris-green" />
-          <span>Lat: {latitude.toFixed(4)}, Lng: {longitude.toFixed(4)}</span>
-        </div>
       </div>
       
       <div className="h-80 relative rounded overflow-hidden">
@@ -57,7 +53,7 @@ const Map: React.FC<MapProps> = ({ latitude, longitude, zoom = 13, title }) => {
           scrollWheelZoom={false}
         >
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution=''
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker 
@@ -65,9 +61,7 @@ const Map: React.FC<MapProps> = ({ latitude, longitude, zoom = 13, title }) => {
             icon={createCustomIcon()}
           >
             <Popup>
-              {title || 'Office Location'}<br />
-              Lat: {latitude.toFixed(4)}<br />
-              Lng: {longitude.toFixed(4)}
+              {title || 'Office Location'}
             </Popup>
           </Marker>
         </MapContainer>
