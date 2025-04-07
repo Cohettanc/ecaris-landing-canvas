@@ -47,9 +47,9 @@ const Map = ({ latitude, longitude, zoom = 14, title }: MapProps) => {
         zoomControl={false} // Remove zoom controls for cleaner look
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-          // This uses CartoDB Light style which is more minimalist
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          // Using Stadia Maps dark theme for a more distinct, less white appearance
         />
         <Marker position={position} icon={customIcon}>
           <Popup>
