@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, ArrowLeft, Phone, Mail } from 'lucide-react';
@@ -57,7 +58,7 @@ const OfficePageLayout = () => {
 
   // Calculate parallax effect - subtle movement in opposite direction as user scrolls
   const parallaxStyle = {
-    transform: `translateY(${scrollY * -0.15}px)`, // Negative multiplier for upward movement
+    transform: `translateY(${scrollY * -0.3}px)`, // Increased the negative multiplier for faster upward movement
     transition: 'transform 0.1s ease-out', // Smooths out the movement slightly
   };
 
