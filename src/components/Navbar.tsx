@@ -2,7 +2,23 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,6 +54,11 @@ const Navbar = () => {
     }
   };
 
+  const navigateToPage = (path: string) => {
+    setMobileMenuOpen(false);
+    navigate(path);
+  };
+
   const navigateToHome = () => {
     setMobileMenuOpen(false);
     navigate('/');
@@ -66,13 +87,183 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10">
-            <button onClick={() => scrollToSection('about')} className="nav-link">Who Are We</button>
-            <button onClick={() => scrollToSection('services')} className="nav-link">Our Services</button>
-            <button onClick={() => scrollToSection('clients')} className="nav-link">Our Clients</button>
-            <button onClick={() => scrollToSection('offices')} className="nav-link">Our Offices</button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">Contact Us</button>
+          {/* Desktop Navigation with Dropdowns */}
+          <nav className="hidden md:block">
+            <NavigationMenu>
+              <NavigationMenuList className="space-x-2">
+                {/* About Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent">Who Are We</NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white">
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/" 
+                            onClick={() => scrollToSection('about')}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            About Us
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/legal-notice" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Legal Notice
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/data-protection" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Data Protection
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Services Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent">Our Services</NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white">
+                    <ul className="grid w-[250px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/" 
+                            onClick={() => scrollToSection('services')}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            All Services
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/cloud-service" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Cloud Service
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/strategy-architecture" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Strategy & Architecture
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/data-governance" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Data Governance
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/erp-applications" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            ERP Applications
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Clients Link */}
+                <NavigationMenuItem>
+                  <Link
+                    to="/"
+                    onClick={() => scrollToSection('clients')}
+                    className={navigationMenuTriggerStyle({ className: "bg-transparent" })}
+                  >
+                    Our Clients
+                  </Link>
+                </NavigationMenuItem>
+
+                {/* Offices Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent">Our Offices</NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white">
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/" 
+                            onClick={() => scrollToSection('offices')}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            All Offices
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/office/paris" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Paris
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/office/berlin" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            Berlin
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/office/london" 
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            London
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Contact Link */}
+                <NavigationMenuItem>
+                  <Link
+                    to="/"
+                    onClick={() => scrollToSection('contact')}
+                    className={navigationMenuTriggerStyle({ className: "bg-transparent" })}
+                  >
+                    Contact Us
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -93,20 +284,90 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu with Collapsible Sections */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 space-y-6 bg-white">
-          <button onClick={() => scrollToSection('about')} className="block w-full text-left py-3 border-b border-gray-100">Who Are We</button>
-          <button onClick={() => scrollToSection('services')} className="block w-full text-left py-3 border-b border-gray-100">Our Services</button>
-          <button onClick={() => scrollToSection('clients')} className="block w-full text-left py-3 border-b border-gray-100">Our Clients</button>
-          <button onClick={() => scrollToSection('offices')} className="block w-full text-left py-3 border-b border-gray-100">Our Offices</button>
-          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-3 border-b border-gray-100">Contact Us</button>
+        <div className="px-4 py-6 space-y-1 bg-white">
+          {/* About Section */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-3 border-b border-gray-100">
+              <span>Who Are We</span>
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-full">
+              <DropdownMenuItem onSelect={() => scrollToSection('about')}>
+                About Us
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/legal-notice')}>
+                Legal Notice
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/data-protection')}>
+                Data Protection
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Services Section */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-3 border-b border-gray-100">
+              <span>Our Services</span>
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-full">
+              <DropdownMenuItem onSelect={() => scrollToSection('services')}>
+                All Services
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/cloud-service')}>
+                Cloud Service
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/strategy-architecture')}>
+                Strategy & Architecture
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/data-governance')}>
+                Data Governance
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/erp-applications')}>
+                ERP Applications
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Clients Link */}
+          <button onClick={() => scrollToSection('clients')} className="block w-full text-left py-3 border-b border-gray-100">
+            Our Clients
+          </button>
+
+          {/* Offices Section */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-3 border-b border-gray-100">
+              <span>Our Offices</span>
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-full">
+              <DropdownMenuItem onSelect={() => scrollToSection('offices')}>
+                All Offices
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/office/paris')}>
+                Paris
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/office/berlin')}>
+                Berlin
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/office/london')}>
+                London
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Contact Link */}
+          <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-3 border-b border-gray-100">
+            Contact Us
+          </button>
         </div>
       </div>
     </header>
