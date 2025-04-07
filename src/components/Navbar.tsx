@@ -138,14 +138,14 @@ const Navbar = () => {
                     )}>
                       {item.title}
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md shadow-sm">
-                      <ul className="grid w-[200px] gap-0.5 p-3">
+                    <NavigationMenuContent>
+                      <ul className="w-[200px] p-1.5">
                         {item.items.map((subItem) => (
                           <li key={subItem.title}>
                             <NavigationMenuLink asChild>
                               <button
                                 onClick={() => navigateToPath(subItem.href)}
-                                className="block select-none w-full text-left rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-ecaris-green/10 hover:text-ecaris-green text-gray-700 text-sm"
+                                className="block select-none w-full text-left rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-ecaris-green text-gray-700 text-sm"
                               >
                                 {subItem.title}
                               </button>
