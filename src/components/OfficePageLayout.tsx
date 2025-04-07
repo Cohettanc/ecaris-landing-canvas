@@ -47,7 +47,7 @@ const OfficePageLayout = () => {
           <img 
             src={office.image} 
             alt={office.title} 
-            className="w-full h-full object-cover opacity-70 object-[70%_top]" 
+            className="w-full h-full object-cover opacity-70 object-[60%_top]" 
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
