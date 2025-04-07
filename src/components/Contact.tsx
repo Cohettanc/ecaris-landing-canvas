@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
 
@@ -38,7 +37,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       toast.success("Message sent successfully. We'll get back to you soon!");
       setName('');
@@ -59,7 +57,7 @@ const Contact = () => {
             <h2 className="heading-lg text-gray-900 mb-6 relative">
               <span className="inline-block pb-2 relative">
                 Get in touch!
-                <span className="absolute left-0 bottom-0 w-24 h-1 bg-ecaris-green"></span>
+                <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
               </span>
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
