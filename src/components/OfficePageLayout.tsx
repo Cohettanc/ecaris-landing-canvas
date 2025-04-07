@@ -58,19 +58,19 @@ const OfficePageLayout = () => {
     if (officeId === 'luxembourg') {
       return {
         description: 'Our Luxembourg headquarters serves as the primary hub for our European operations. Located in the heart of Luxembourg City, this modern facility houses our executive team and primary administrative functions.',
-        teamSize: '40+ professionals', // Updated from 120+ to 40+
-        established: 'Established in 2005',
+        teamSize: '40+ professionals',
+        established: 'Established in 2019', // Updated from 2005 to 2019
         specialties: ['Corporate Strategy', 'Finance Consulting', 'Digital Transformation', 'Enterprise Architecture'],
-        workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM', // Updated working hours
+        workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM',
         facilities: ['Modern conference rooms', 'Innovation lab', 'Client meeting spaces', 'Cafeteria', 'Recreation area']
       };
     } else if (officeId === 'paris') {
       return {
         description: 'Our Paris office is strategically positioned on the iconic Champs-Élysées, providing our clients with easy access to our consulting services in one of Europe\'s major business centers.',
-        teamSize: '10+ consultants', // Updated from 45+ to 10+
-        established: 'Established in 2012',
+        teamSize: '10+ consultants',
+        established: 'Established in 2024', // Updated from 2012 to 2024
         specialties: ['Public Sector Consulting', 'Financial Services', 'Retail Strategy', 'Tourism & Hospitality'],
-        workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM', // Updated working hours
+        workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM',
         facilities: ['Client presentation theater', 'Collaborative workspace', 'Video conferencing suites', 'Rooftop terrace']
       };
     }
