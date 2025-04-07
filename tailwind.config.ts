@@ -19,6 +19,9 @@ export default {
 		},
 		extend: {
 			height: {
+				'92': '23rem',   // ~70% of 32rem
+				'112': '28rem',  // ~70% of 40rem
+				'134': '33.5rem', // ~70% of 48rem
 				'128': '32rem',  // 512px
 				'160': '40rem',  // 640px
 				'192': '48rem',  // 768px
