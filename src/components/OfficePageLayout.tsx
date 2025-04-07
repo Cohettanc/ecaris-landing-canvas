@@ -40,7 +40,7 @@ const OfficePageLayout = () => {
   // Custom image positioning based on office ID
   const getImagePositionClass = () => {
     if (officeId === 'paris') {
-      return 'object-[100%_top]'; // Show more of the right side for Paris
+      return 'object-[95%_top]'; // Show more of the right side for Paris
     }
     return 'object-right-top'; // Default position for other offices
   };
@@ -50,17 +50,13 @@ const OfficePageLayout = () => {
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section with enhanced overlay and positioning */}
-        <div className="relative h-56 md:h-80 bg-gray-900 mt-24 md:mt-32">
-          {/* Image layer */}
+        {/* Hero Section with custom image positioning */}
+        <div className="relative h-64 md:h-96 bg-gray-900">
           <img 
             src={office.image} 
             alt={office.title} 
-            className={`w-full h-full object-cover ${getImagePositionClass()}`}
+            className={`w-full h-full object-cover opacity-70 ${getImagePositionClass()}`}
           />
-          {/* Dark overlay layer for better text visibility */}
-          <div className="absolute inset-0 bg-black opacity-60"></div>
-          
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
               <h1 className="text-3xl md:text-4xl font-bold mb-2">{office.title}</h1>
