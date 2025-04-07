@@ -86,6 +86,7 @@ const OfficePageLayout = () => {
               <Map 
                 latitude={office.coordinates[1]} 
                 longitude={office.coordinates[0]} 
+                zoom={10}
                 title={office.city}
               />
             </div>

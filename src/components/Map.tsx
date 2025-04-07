@@ -30,7 +30,7 @@ interface MapProps {
   title?: string;
 }
 
-const Map = ({ latitude, longitude, zoom = 14, title }: MapProps) => {
+const Map = ({ latitude, longitude, zoom = 11, title }: MapProps) => {
   // Generate a unique ID for each map instance
   const mapId = useRef(`map-${Math.random().toString(36).substring(2, 9)}`);
   // Make sure to have the correct position format for react-leaflet
