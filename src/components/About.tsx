@@ -56,8 +56,8 @@ const About = () => {
             <div className="relative">
               <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-                  alt="Business professionals meeting" 
+                  src="/lovable-uploads/3c35e841-2a19-4149-afe6-610b8807c475.png" 
+                  alt="Tech professionals collaborating on code" 
                   className="object-cover w-full h-full"
                 />
               </div>
