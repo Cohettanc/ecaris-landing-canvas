@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,19 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Page transition styles */
+.content-transition {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fadeOut {
+  opacity: 0.95;
+  transform: scale(0.98);
 }
