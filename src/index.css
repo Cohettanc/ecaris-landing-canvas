@@ -108,6 +108,39 @@
   }
 }
 
+/* Page Transition Animation */
+.page-transition {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page-transition.fadeIn {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.page-transition.fadeOut {
+  animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @layer components {
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
