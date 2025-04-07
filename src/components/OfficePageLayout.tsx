@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, ArrowLeft, Phone, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -10,6 +10,7 @@ import { getOfficeById } from '@/data/officeData';
 const OfficePageLayout = () => {
   const { officeId } = useParams<{ officeId: string }>();
   const office = getOfficeById(officeId || '');
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     // Update document title
@@ -18,6 +19,16 @@ const OfficePageLayout = () => {
     }
     // Scroll to top when page loads
     window.scrollTo(0, 0);
+
+    // Add scroll event listener for parallax effect
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [office]);
 
   if (!office) {
@@ -45,19 +56,28 @@ const OfficePageLayout = () => {
     return 'object-right-top'; // Default position for other offices
   };
 
+  // Calculate parallax effect - subtle movement as user scrolls
+  const parallaxStyle = {
+    transform: `translateY(${scrollY * 0.15}px)`, // Adjust the multiplier for more/less movement
+    transition: 'transform 0.1s ease-out', // Smooths out the movement slightly
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section with enhanced overlay and positioning */}
-        <div className="relative h-56 md:h-80 bg-gray-900 mt-24 md:mt-32">
-          {/* Image layer */}
-          <img 
-            src={office.image} 
-            alt={office.title} 
-            className={`w-full h-full object-cover ${getImagePositionClass()}`}
-          />
+        {/* Hero Section with parallax effect */}
+        <div className="relative h-56 md:h-80 bg-gray-900 mt-24 md:mt-32 overflow-hidden">
+          {/* Image layer with parallax effect */}
+          <div className="absolute inset-0" style={{ height: 'calc(100% + 80px)', top: '-40px' }}>
+            <img 
+              src={office.image} 
+              alt={office.title} 
+              className={`w-full h-full object-cover ${getImagePositionClass()}`}
+              style={parallaxStyle}
+            />
+          </div>
           {/* Dark overlay layer for better text visibility */}
           <div className="absolute inset-0 bg-black opacity-60"></div>
           
