@@ -134,18 +134,18 @@ const Navbar = () => {
                   <NavigationMenuItem key={item.title}>
                     <NavigationMenuTrigger className={cn(
                       "bg-transparent hover:bg-white/50 text-gray-700 hover:text-ecaris-green",
-                      "data-[state=open]:bg-white/80 data-[state=open]:text-ecaris-green"
+                      "data-[state=open]:bg-white/50 data-[state=open]:text-ecaris-green"
                     )}>
                       {item.title}
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-white/95 backdrop-blur-md border border-gray-100 shadow-lg rounded-md p-2 min-w-[12rem]">
-                      <ul className="grid w-[200px] gap-1 p-2">
+                    <NavigationMenuContent className="bg-white/90 backdrop-blur-md shadow-sm">
+                      <ul className="grid w-[200px] gap-0.5 p-3">
                         {item.items.map((subItem) => (
                           <li key={subItem.title}>
                             <NavigationMenuLink asChild>
                               <button
                                 onClick={() => navigateToPath(subItem.href)}
-                                className="block select-none w-full rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-ecaris-green/10 hover:text-ecaris-green text-gray-700 text-sm"
+                                className="block select-none w-full text-left rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-ecaris-green/10 hover:text-ecaris-green text-gray-700 text-sm"
                               >
                                 {subItem.title}
                               </button>
