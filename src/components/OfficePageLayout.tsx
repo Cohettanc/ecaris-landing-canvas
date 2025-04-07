@@ -37,17 +37,25 @@ const OfficePageLayout = () => {
     );
   }
 
+  // Custom image positioning based on office ID
+  const getImagePositionClass = () => {
+    if (officeId === 'paris') {
+      return 'object-[95%_top]'; // Show more of the right side for Paris
+    }
+    return 'object-right-top'; // Default position for other offices
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section with significantly adjusted image position */}
+        {/* Hero Section with custom image positioning */}
         <div className="relative h-64 md:h-96 bg-gray-900">
           <img 
             src={office.image} 
             alt={office.title} 
-            className="w-full h-full object-cover opacity-70 object-right-top" 
+            className={`w-full h-full object-cover opacity-70 ${getImagePositionClass()}`}
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
