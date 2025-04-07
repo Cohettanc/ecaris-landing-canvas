@@ -11,7 +11,7 @@ import Navbar from '@/components/Navbar';
 const DataGovernance = () => {
   useEffect(() => {
     // Update document title
-    document.title = "ECARIS | Data Governance & Data Products";
+    document.title = "ECARIS | AI, Data Products & Data Governance";
     // Scroll to top when page loads
     window.scrollTo(0, 0);
   }, []);
@@ -30,7 +30,7 @@ const DataGovernance = () => {
                 Back to Home
               </Link>
             </div>
-            <h1 className="heading-lg mb-6 max-w-3xl">Data Governance & Data Products</h1>
+            <h1 className="heading-lg mb-6 max-w-3xl">AI, Data Products & Data Governance</h1>
             <p className="text-xl text-white/90 max-w-3xl mb-8">
               We help organizations transform raw data into strategic assets through robust governance frameworks, 
               high-quality data products, and compliant data management practices.

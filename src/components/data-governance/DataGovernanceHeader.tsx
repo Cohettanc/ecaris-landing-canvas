@@ -8,7 +8,7 @@ const DataGovernanceHeader = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="md:w-2/3">
-            <h1 className="heading-lg mb-6">Data Governance and Data Products</h1>
+            <h1 className="heading-lg mb-6">AI, Data Products & Data Governance</h1>
             <p className="text-lg mb-6">
               We help organizations transform raw data into strategic assets through robust governance frameworks, 
               high-quality data products, and compliant data management practices.
