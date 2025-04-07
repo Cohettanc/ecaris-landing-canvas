@@ -15,7 +15,7 @@ export const offices: Office[] = [
     city: "Luxembourg",
     address: ["70, route d'Esch", "1470 Luxembourg", "LUXEMBOURG"],
     coordinates: [6.119735, 49.601451], // Updated Luxembourg coordinates [longitude, latitude]
-    image: "/lovable-uploads/e20fc593-7e73-40ac-8298-42c274f72386.png", // Updated to use the new Luxembourg image
+    image: "/lovable-uploads/be172d23-d8ae-44b5-8647-63dc27d0ea1f.png", // Updated to use the new Luxembourg image
   },
   {
     id: "paris",
