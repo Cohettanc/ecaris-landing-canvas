@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, ArrowLeft, Phone, Mail } from 'lucide-react';
@@ -10,12 +11,19 @@ const OfficePageLayout = () => {
   const { officeId } = useParams<{ officeId: string }>();
   const office = getOfficeById(officeId || '');
   const [scrollY, setScrollY] = useState(0);
+  const [navbarHeight, setNavbarHeight] = useState(0);
 
   useEffect(() => {
     if (office) {
       document.title = `ECARIS | ${office.title}`;
     }
     window.scrollTo(0, 0);
+
+    // Get navbar height on component mount
+    const navbar = document.querySelector('header');
+    if (navbar) {
+      setNavbarHeight(navbar.offsetHeight);
+    }
 
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -56,12 +64,21 @@ const OfficePageLayout = () => {
     transition: 'transform 0.1s ease-out',
   };
 
+  // Calculate hero height (increased by 30%)
+  const heroHeight = "70vh"; // Using viewport height for responsiveness
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1">
-        <div className="relative h-64 sm:h-92 md:h-112 lg:h-134 bg-gray-900 overflow-hidden">
+        <div 
+          className="relative bg-gray-900 overflow-hidden"
+          style={{ 
+            marginTop: `${navbarHeight}px`, // Add margin equal to navbar height
+            height: heroHeight // Set height to 70vh (increased by roughly 30% from previous fixed heights)
+          }}
+        >
           <div className="absolute inset-0" style={{ height: 'calc(100% + 120px)', top: '-60px' }}>
             <img 
               src={office.image} 
