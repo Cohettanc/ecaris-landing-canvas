@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -40,14 +40,16 @@ const Map = ({ latitude, longitude, zoom = 14, title }: MapProps) => {
     <div className="relative w-full h-96 rounded-lg border border-gray-200 overflow-hidden">
       <MapContainer 
         id={mapId.current}
-        key={mapId.current} // Key ensures React re-renders the component with a fresh instance
+        key={mapId.current}
         center={position} 
         zoom={zoom} 
         style={{ height: "100%", width: "100%" }}
+        zoomControl={false} // Remove zoom controls for cleaner look
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+          // This uses CartoDB Light style which is more minimalist
         />
         <Marker position={position} icon={customIcon}>
           <Popup>
