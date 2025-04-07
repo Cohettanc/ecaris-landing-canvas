@@ -3,62 +3,22 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { 
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu";
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { ChevronDown } from 'lucide-react';
-
-// Navigation content for dropdown menus - updated to only include existing pages
-const navigationItems = [
-  {
-    title: "Who Are We",
-    items: [
-      { title: "About Us", href: "/#about" },
-      { title: "Our Team", href: "/#about" },
-      { title: "Our Story", href: "/#about" }
-    ]
-  },
-  {
-    title: "Our Services",
-    items: [
-      { title: "Cloud Service", href: "/cloud-service" },
-      { title: "Strategy & Architecture", href: "/strategy-architecture" },
-      { title: "Data Governance", href: "/data-governance" },
-      { title: "ERP Applications", href: "/erp-applications" }
-    ]
-  },
-  {
-    title: "Our Clients",
-    items: [
-      { title: "Client Testimonials", href: "/#clients" },
-      { title: "Case Studies", href: "/#clients" },
-      { title: "Industries", href: "/#clients" }
-    ]
-  },
-  {
-    title: "Our Offices",
-    items: [
-      { title: "Paris", href: "/office/paris" },
-      { title: "London", href: "/office/london" },
-      { title: "New York", href: "/office/new-york" },
-      { title: "All Locations", href: "/#offices" }
-    ]
-  },
-  {
-    title: "Contact Us",
-    items: [
-      { title: "Get in Touch", href: "/#contact" },
-      { title: "Careers", href: "/#contact" },
-      { title: "Support", href: "/#contact" }
-    ]
-  }
-];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -81,33 +41,34 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/#' + id);
+    } else {
+      // If we're already on the homepage, just scroll to the section
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navigateToPage = (path: string) => {
+    setMobileMenuOpen(false);
+    navigate(path);
+  };
+
   const navigateToHome = () => {
     setMobileMenuOpen(false);
     navigate('/');
-  };
-
-  const navigateToPath = (path: string) => {
-    setMobileMenuOpen(false);
-    if (path.startsWith('/#')) {
-      // If we're not on the homepage, navigate to homepage first
-      if (location.pathname !== '/') {
-        navigate(path);
-      } else {
-        // If we're already on the homepage, just scroll to the section
-        const sectionId = path.substring(2); // Remove the '/#'
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      navigate(path);
-    }
   };
 
   return (
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300', 
-        scrolled ? 'bg-white/90 shadow-sm backdrop-blur-md py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-white/95 shadow-sm backdrop-blur-md py-3' : 'bg-transparent py-5'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,44 +88,189 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation with Dropdowns */}
-          <div className="hidden md:block">
+          <nav className="hidden md:block">
             <NavigationMenu>
-              <NavigationMenuList className="gap-1">
-                {navigationItems.map((item) => (
-                  <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger className={cn(
-                      "bg-transparent hover:bg-white/50 text-gray-700 hover:text-ecaris-green",
-                      "data-[state=open]:bg-white/50 data-[state=open]:text-ecaris-green"
-                    )}>
-                      {item.title}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-white/90 backdrop-blur-md shadow-sm">
-                      <ul className="grid w-[200px] gap-0.5 p-3">
-                        {item.items.map((subItem) => (
-                          <li key={subItem.title}>
-                            <NavigationMenuLink asChild>
-                              <button
-                                onClick={() => navigateToPath(subItem.href)}
-                                className="block select-none w-full text-left rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-ecaris-green/10 hover:text-ecaris-green text-gray-700 text-sm"
-                              >
-                                {subItem.title}
-                              </button>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ))}
+              <NavigationMenuList className="space-x-4">
+                {/* About Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Who Are We</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[220px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/" 
+                            onClick={() => scrollToSection('about')}
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            About Us
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/legal-notice" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Legal Notice
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/data-protection" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Data Protection
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Services Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Our Services</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[250px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/" 
+                            onClick={() => scrollToSection('services')}
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            All Services
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/cloud-service" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Cloud Service
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/strategy-architecture" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Strategy & Architecture
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/data-governance" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Data Governance
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/erp-applications" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            ERP Applications
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Clients Link */}
+                <NavigationMenuItem>
+                  <Link
+                    to="/"
+                    onClick={() => scrollToSection('clients')}
+                    className={navigationMenuTriggerStyle({ className: "bg-transparent hover:bg-transparent" })}
+                  >
+                    Our Clients
+                  </Link>
+                </NavigationMenuItem>
+
+                {/* Offices Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Our Offices</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-2 p-4 w-[220px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/" 
+                            onClick={() => scrollToSection('offices')}
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            All Offices
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/office/paris" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Paris
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/office/berlin" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            Berlin
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link 
+                            to="/office/london" 
+                            className="block select-none space-y-1 rounded-md p-3 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            London
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Contact Link */}
+                <NavigationMenuItem>
+                  <Link
+                    to="/"
+                    onClick={() => scrollToSection('contact')}
+                    className={navigationMenuTriggerStyle({ className: "bg-transparent hover:bg-transparent" })}
+                  >
+                    Contact Us
+                  </Link>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-ecaris-green focus:outline-none"
+              className="text-gray-700 hover:text-primary focus:outline-none"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
@@ -178,32 +284,96 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu with Collapsible Sections */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white/95 backdrop-blur-sm shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden overflow-y-auto",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         style={{ top: '140px' }}
       >
-        <div className="px-4 py-6 divide-y divide-gray-100">
-          {navigationItems.map((category, index) => (
-            <div key={index} className="py-3">
-              <h3 className="text-lg font-medium text-gray-800 mb-2">{category.title}</h3>
-              <ul className="space-y-1 pl-2">
-                {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>
-                    <button 
-                      onClick={() => navigateToPath(item.href)}
-                      className="w-full text-left py-2 text-gray-600 hover:text-ecaris-green text-sm"
-                    >
-                      {item.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="px-4 py-6 space-y-2 bg-white">
+          {/* About Section */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
+              <span>Who Are We</span>
+              <ChevronDown className="h-4 w-4 ml-2" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[94vw] mx-[3vw]">
+              <DropdownMenuItem onSelect={() => scrollToSection('about')}>
+                About Us
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/legal-notice')}>
+                Legal Notice
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/data-protection')}>
+                Data Protection
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Services Section */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
+              <span>Our Services</span>
+              <ChevronDown className="h-4 w-4 ml-2" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[94vw] mx-[3vw]">
+              <DropdownMenuItem onSelect={() => scrollToSection('services')}>
+                All Services
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/cloud-service')}>
+                Cloud Service
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/strategy-architecture')}>
+                Strategy & Architecture
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/data-governance')}>
+                Data Governance
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/erp-applications')}>
+                ERP Applications
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Clients Link */}
+          <button 
+            onClick={() => scrollToSection('clients')} 
+            className="block w-full text-left py-2.5 text-base font-medium border-b border-gray-100"
+          >
+            Our Clients
+          </button>
+
+          {/* Offices Section */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full flex justify-between items-center py-2.5 text-base font-medium border-b border-gray-100">
+              <span>Our Offices</span>
+              <ChevronDown className="h-4 w-4 ml-2" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[94vw] mx-[3vw]">
+              <DropdownMenuItem onSelect={() => scrollToSection('offices')}>
+                All Offices
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/office/paris')}>
+                Paris
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/office/berlin')}>
+                Berlin
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => navigateToPage('/office/london')}>
+                London
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Contact Link */}
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="block w-full text-left py-2.5 text-base font-medium border-b border-gray-100"
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </header>
