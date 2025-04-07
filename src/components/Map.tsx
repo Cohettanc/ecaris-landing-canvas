@@ -1,9 +1,22 @@
 
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { MapPin } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+
+// Fix Leaflet's default icon issue
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+let DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41]
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 // Create a custom icon for the marker with ECARIS brand color
 const createCustomIcon = () => {
@@ -25,7 +38,7 @@ interface MapProps {
   title?: string;
 }
 
-const Map = ({ latitude, longitude, zoom = 13, title }: MapProps) => {
+const Map: React.FC<MapProps> = ({ latitude, longitude, zoom = 13, title }) => {
   return (
     <div className="w-full rounded-lg border border-gray-200 overflow-hidden bg-white p-4">
       <div className="flex flex-col items-center mb-4">
