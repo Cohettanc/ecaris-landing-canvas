@@ -10,25 +10,42 @@ const PageTransition = ({ children }: PageTransitionProps) => {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
   const [transitionStage, setTransitionStage] = useState('fadeIn');
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (location !== displayLocation) {
+    // On initial load, set ready after a small delay to ensure content is loaded
+    if (!isReady) {
+      const timer = setTimeout(() => {
+        setIsReady(true);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [isReady]);
+
+  useEffect(() => {
+    // Only start transition when component is ready and location changes
+    if (isReady && location !== displayLocation) {
       setTransitionStage('fadeOut');
     }
-  }, [location, displayLocation]);
+  }, [location, displayLocation, isReady]);
 
   const handleAnimationEnd = () => {
     if (transitionStage === 'fadeOut') {
-      setTransitionStage('fadeIn');
+      // Update displayed location before starting the fade in
       setDisplayLocation(location);
-      // Scroll to top when navigating to a new page
-      window.scrollTo(0, 0);
+      
+      // Short delay before fade in to ensure new content is ready
+      setTimeout(() => {
+        setTransitionStage('fadeIn');
+        // Scroll to top when navigating to a new page
+        window.scrollTo(0, 0);
+      }, 50);
     }
   };
 
   return (
     <div
-      className={`page-transition ${transitionStage}`}
+      className={`page-transition ${isReady ? transitionStage : 'invisible'}`}
       onAnimationEnd={handleAnimationEnd}
     >
       {children}
