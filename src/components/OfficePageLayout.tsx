@@ -24,7 +24,7 @@ const OfficePageLayout = () => {
     if (navbar) {
       setNavbarHeight(navbar.offsetHeight);
     }
-  }, [office]);
+  }, [office, officeId]); // Add officeId to dependency array
 
   if (!office) {
     return (
@@ -224,6 +224,7 @@ const OfficePageLayout = () => {
             <div>
               <h2 className="text-2xl font-bold mb-4">Location</h2>
               <Map 
+                key={officeId} // Add a key prop with officeId to force re-render
                 latitude={office.coordinates[1]} 
                 longitude={office.coordinates[0]} 
                 title={office.title}
