@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Cloud, Server, Database, Lock, BarChart3, RefreshCw } from 'lucide-react';
@@ -49,9 +50,8 @@ const CloudService = () => {
                   Whether you're looking to migrate to Google Cloud Platform (GCP), Microsoft Azure, or Amazon Web Services (AWS), our team of certified experts will guide you through every step of the journey.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Link to="/#contact">
-                    <Button className="bg-ecaris-green">Contact Us</Button>
-                  </Link>
+                  <Button className="bg-ecaris-green">Request a Consultation</Button>
+                  <Button variant="outline">Download Capabilities</Button>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
@@ -229,11 +229,9 @@ const CloudService = () => {
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
               Let our cloud experts help you build a future-ready infrastructure that drives innovation and operational excellence.
             </p>
-            <Link to="/#contact">
-              <Button className="bg-white text-ecaris-green hover:bg-white/90">
-                Contact Us
-              </Button>
-            </Link>
+            <Button className="bg-white text-ecaris-green hover:bg-white/90">
+              Contact Our Cloud Team
+            </Button>
           </div>
         </section>
       </main>
