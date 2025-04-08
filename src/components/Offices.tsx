@@ -2,26 +2,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { offices } from '@/data/officeData';
-import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from '@/components/ui/carousel';
-
-// Array of all city names for the carousel
-const cityNames = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
 
 const Offices = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const officesRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [api, setApi] = useState<any>(null);
-  const [current, setCurrent] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [activeCity, setActiveCity] = useState(0);
+  
+  const cities = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
 
   // Animation for section entry
   useEffect(() => {
@@ -53,41 +43,22 @@ const Offices = () => {
     };
   }, []);
 
-  // Set up autoplay
+  // Auto-scroll carousel
   useEffect(() => {
-    if (!api) return;
-    
-    const autoplay = () => {
-      intervalRef.current = setInterval(() => {
-        api.scrollNext();
-      }, 3000);
-    };
-    
-    autoplay();
-    
-    // Pause autoplay when user interacts with carousel
-    api.on('pointerDown', () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    });
-    
-    // Resume autoplay after a period of inactivity
-    api.on('pointerUp', () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      setTimeout(autoplay, 5000);
-    });
-    
-    // Track current slide
-    api.on('select', () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-    
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      api.off('select');
-      api.off('pointerDown');
-      api.off('pointerUp');
-    };
-  }, [api]);
+    const interval = setInterval(() => {
+      setActiveCity((prev) => (prev + 1) % cities.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [cities.length]);
+
+  const handlePrevious = () => {
+    setActiveCity((prev) => (prev - 1 + cities.length) % cities.length);
+  };
+
+  const handleNext = () => {
+    setActiveCity((prev) => (prev + 1) % cities.length);
+  };
 
   return (
     <section id="offices" ref={sectionRef} className="py-24 bg-gray-50">
@@ -138,42 +109,60 @@ const Offices = () => {
         <div className="mt-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
           <p className="text-lg text-gray-700 mb-8 text-center">Our presence extends to multiple European countries:</p>
           
-          <div className="cities-slider-container max-w-lg mx-auto">
-            <Carousel
-              setApi={setApi}
-              className="w-full"
-              opts={{
-                align: "center",
-                loop: true,
-              }}
-            >
-              <CarouselContent>
-                {cityNames.map((city, index) => (
-                  <CarouselItem key={city} className="basis-auto">
-                    <div className={`city-slider-item px-8 py-2 ${current === index ? 'active' : ''}`}>
+          <div className="simple-carousel max-w-3xl mx-auto">
+            <div className="relative">
+              <div 
+                ref={carouselRef} 
+                className="overflow-hidden py-8"
+              >
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${activeCity * 20}%)` }}
+                >
+                  {cities.map((city, index) => (
+                    <div 
+                      key={index}
+                      className={`w-1/5 flex-shrink-0 text-center px-4 transition-all duration-500 ${
+                        activeCity === index 
+                          ? 'text-primary font-semibold scale-110' 
+                          : 'text-gray-500'
+                      }`}
+                    >
                       {city}
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              
-              <div className="flex items-center justify-center mt-6">
-                <CarouselPrevious className="relative static mr-2 h-8 w-8" />
-                
-                <div className="flex gap-2">
-                  {cityNames.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => api?.scrollTo(index)}
-                      className={`slider-indicator ${current === index ? 'active' : ''}`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
                   ))}
                 </div>
-                
-                <CarouselNext className="relative static ml-2 h-8 w-8" />
               </div>
-            </Carousel>
+              
+              <button 
+                onClick={handlePrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 hover:text-primary transition-colors z-10"
+                aria-label="Previous city"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              
+              <button 
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 hover:text-primary transition-colors z-10"
+                aria-label="Next city"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+            
+            <div className="flex justify-center gap-2 mt-6">
+              {cities.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveCity(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    activeCity === index ? 'bg-primary w-3 h-3' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to city ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
