@@ -44,11 +44,11 @@ const OurTeam = () => {
                 <h3 className="text-xl font-semibold text-gray-900">Alexander Rhea</h3>
                 <p className="text-ecaris-green font-medium mb-3">CEO & Founder</p>
                 <p className="text-gray-700 mb-4">
-                  With over 20 years in consulting, Alexander founded ECARIS to connect businesses with exceptional talent.
+                  With over 25 years of experience in investment and tech-driven transformation, Alexander founded ECARIS after a global career spanning Europe and the US, including 17 years in Silicon Valley. He has led industrial and tech-focused companies through international growth, process redesign, and digital strategy.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
-                  <span>IT Architecture, ERP Implementation & Migration</span>
+                  <span>🗂️ IT Architecture, ERP Implementation, Strategic Management</span>
                 </div>
               </div>
             </div>
@@ -66,11 +66,11 @@ const OurTeam = () => {
                 <h3 className="text-xl font-semibold text-gray-900">Raphaël Attali</h3>
                 <p className="text-ecaris-green font-medium mb-3">Head of Consulting & Co-founder</p>
                 <p className="text-gray-700 mb-4">
-                  Raphaël leads our technology initiatives with expertise in cloud architecture and data governance.
+                  With a background in Data Science and over 6 years of consulting experience, Raphaël leads ECARIS's technology projects. Previously Agile Delivery Manager at L'Oréal, he oversaw global data deployments and strategy. He also worked at Artefact and Roland Berger on data and cloud transformation programs.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
-                  <span>Data Strategy, Data Governance, Data Products</span>
+                  <span>🗂️ Data Strategy, Data Governance, Analytics</span>
                 </div>
               </div>
             </div>
@@ -88,11 +88,11 @@ const OurTeam = () => {
                 <h3 className="text-xl font-semibold text-gray-900">Tancrède Cohet</h3>
                 <p className="text-ecaris-green font-medium mb-3">Head of Sales & Co-founder</p>
                 <p className="text-gray-700 mb-4">
-                  Tancrède oversees our consulting services, ensuring clients receive tailored solutions for their challenges.
+                  Tancrède brings over 6 years of experience in digital and industrial project management. Prior to ECARIS, he held roles at TotalEnergies and Bolloré, where he led AI product development and major system transitions. He began his career at OPEO Consulting, supporting industrial and digital transformation.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
-                  <span>Infrastructure, Cloud Migration</span>
+                  <span>🗂️ Infrastructure, Cloud Migration, Digital Transformation</span>
                 </div>
               </div>
             </div>
