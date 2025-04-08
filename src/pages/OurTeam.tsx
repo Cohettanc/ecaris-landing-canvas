@@ -36,15 +36,15 @@ const OurTeam = () => {
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
                   src="/lovable-uploads/6ac968f6-0063-497d-88b8-92fe866ea998.png" 
-                  alt="Marc Durand" 
+                  alt="Alexander Rhea" 
                   className="object-cover w-full h-full"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">Marc Durand</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Alexander Rhea</h3>
                 <p className="text-ecaris-green font-medium mb-3">CEO & Founder</p>
                 <p className="text-gray-700 mb-4">
-                  With over 20 years in consulting, Marc founded ECARIS to connect businesses with exceptional talent.
+                  With over 20 years in consulting, Alexander founded ECARIS to connect businesses with exceptional talent.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
@@ -58,15 +58,15 @@ const OurTeam = () => {
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
                   src="/lovable-uploads/3faf8ffe-0155-441c-b464-dc79d15453eb.png" 
-                  alt="Sophie Martin" 
+                  alt="Raphaël Attali" 
                   className="object-cover w-full h-full"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">Sophie Martin</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Raphaël Attali</h3>
                 <p className="text-ecaris-green font-medium mb-3">CTO</p>
                 <p className="text-gray-700 mb-4">
-                  Sophie leads our technology initiatives with expertise in cloud architecture and data governance.
+                  Raphaël leads our technology initiatives with expertise in cloud architecture and data governance.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
@@ -80,15 +80,15 @@ const OurTeam = () => {
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
                   src="/lovable-uploads/f5fa7a37-f599-4636-b917-76c629e2d161.png" 
-                  alt="Thomas Weber" 
+                  alt="Tancrède Cohet" 
                   className="object-cover w-full h-full"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900">Thomas Weber</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Tancrède Cohet</h3>
                 <p className="text-ecaris-green font-medium mb-3">Head of Consulting</p>
                 <p className="text-gray-700 mb-4">
-                  Thomas oversees our consulting services, ensuring clients receive tailored solutions for their challenges.
+                  Tancrède oversees our consulting services, ensuring clients receive tailored solutions for their challenges.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
