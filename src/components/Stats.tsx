@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const stats = [
   { value: 10, prefix: '+', label: 'clients', description: 'ECARIS has been established since 2019 and opened its Paris based subsidiary in 2024. Over the years ECARIS has proved to its customers that experience matters.' },
-  { value: 2, prefix: '~', suffix: ' years', label: 'mandates', description: 'Our average mandate ends up being around two years long which is possible only because we deliver our customers long term committed consultants. Low turn over allows maximal value to our customers.' },
+  { value: 2, prefix: '+', suffix: ' years', label: 'mandates', description: 'Our average mandate ends up being around two years long which is possible only because we deliver our customers long term committed consultants. Low turn over allows maximal value to our customers.' },
   { value: 3000, prefix: '+', label: 'consultants', description: 'Over the years we have built a database of over 3k qualified consultants working with us on a freelance basis. Each of these consultants are screened and must be qualified by one of our roaster of ~10 experts. We are proud to say that our consultants have a high level of engagement and expertise.' },
   { value: 50, prefix: '+', label: 'mandates', description: 'As of september 2024, we have successfully closed on over 50 mandates which position us as a recognized expert in our industry' },
 ];
