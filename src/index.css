@@ -168,3 +168,22 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+/* City light effect */
+.city-light {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.city-light-active span {
+  opacity: 1;
+}
+
+.city-light:hover {
+  color: var(--ecaris-green);
+}
+
+.city-light:hover span {
+  opacity: 0.8;
+}
