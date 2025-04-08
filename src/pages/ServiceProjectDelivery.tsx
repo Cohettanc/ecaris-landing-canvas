@@ -1,9 +1,8 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ArrowRight, ArrowDown, Circle } from 'lucide-react';
+import { Check, ArrowRight, ArrowDown, Circle, Server, Shield, Database, Plug, FileCode } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
@@ -67,7 +66,6 @@ const ServiceProjectDelivery = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Project Approach</h2>
             
-            {/* New Process Diagram */}
             <div className="bg-gray-50 rounded-xl p-8 shadow-lg">
               <div className="grid grid-cols-1 gap-4">
                 {/* Step 1: Diagnosis */}
@@ -156,13 +154,104 @@ const ServiceProjectDelivery = () => {
                 </div>
               </div>
               
-              {/* Diagram description */}
               <div className="mt-8 text-center text-gray-700 max-w-2xl mx-auto">
                 <p>
                   Our structured approach ensures successful project delivery from initial diagnosis 
                   through continuous improvement, with a focus on quality and client satisfaction.
                 </p>
               </div>
+            </div>
+          </div>
+          
+          {/* Project Categories - NEW SECTION */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Project Categories</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card 1: New Product Development */}
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-ecaris-green/10 p-2 rounded-full">
+                      <FileCode className="h-6 w-6 text-ecaris-green" />
+                    </div>
+                    <CardTitle className="text-xl">New Product Development</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">
+                    Development of new products or secondary products included in the product roadmap, including version updates and quality assurance.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Card 2: IT Infrastructure */}
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-ecaris-green/10 p-2 rounded-full">
+                      <Server className="h-6 w-6 text-ecaris-green" />
+                    </div>
+                    <CardTitle className="text-xl">IT Infrastructure</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">
+                    Deployment and management of new hardware, software, or networks to support your business operations and growth.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Card 3: Systems Integration */}
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-ecaris-green/10 p-2 rounded-full">
+                      <Plug className="h-6 w-6 text-ecaris-green" />
+                    </div>
+                    <CardTitle className="text-xl">Systems Integration</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">
+                    Connecting different IT systems to work together seamlessly, ensuring data flows efficiently across your organization.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Card 4: IT Security */}
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-ecaris-green/10 p-2 rounded-full">
+                      <Shield className="h-6 w-6 text-ecaris-green" />
+                    </div>
+                    <CardTitle className="text-xl">IT Security Assessments</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">
+                    Comprehensive security assessments to identify vulnerabilities and implement robust protection measures for your IT assets.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Card 5: Business Process Automation */}
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-ecaris-green/10 p-2 rounded-full">
+                      <Database className="h-6 w-6 text-ecaris-green" />
+                    </div>
+                    <CardTitle className="text-xl">Business Process Automation</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">
+                    Using technology to streamline workflows, reduce manual effort, and improve overall operational efficiency.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
           
