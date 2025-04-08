@@ -66,7 +66,7 @@ const OurTeam = () => {
                 <h3 className="text-xl font-semibold text-gray-900">Raphaël Attali</h3>
                 <p className="text-ecaris-green font-medium mb-3">Head of Consulting & Co-founder</p>
                 <p className="text-gray-700 mb-4">
-                  With a background in Data Science and over 6 years of consulting experience, Raphaël leads ECARIS's technology projects. Previously Agile Delivery Manager at L'Oréal, he oversaw global data deployments and strategy. He also worked at Artefact and Roland Berger on data and cloud transformation programs.
+                  Raphaël drives ECARIS's technology strategy with deep expertise in data architecture, governance, and digital transformation. He previously led global product and data initiatives at L'Oréal, and advised major players in the luxury, automotive, and telecom sectors at Artefact and Roland Berger.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
@@ -88,7 +88,7 @@ const OurTeam = () => {
                 <h3 className="text-xl font-semibold text-gray-900">Tancrède Cohet</h3>
                 <p className="text-ecaris-green font-medium mb-3">Head of Sales & Co-founder</p>
                 <p className="text-gray-700 mb-4">
-                  Tancrède brings over 6 years of experience in digital and industrial project management. Prior to ECARIS, he held roles at TotalEnergies and Bolloré, where he led AI product development and major system transitions. He began his career at OPEO Consulting, supporting industrial and digital transformation.
+                  Tancrède leads ECARIS's consulting delivery, drawing on a strong background in industrial IT and AI project management. At TotalEnergies, he developed AI-driven tools with direct oversight from top leadership, and at Bolloré, he managed large-scale system transitions. He started his career supporting digital transformation in the manufacturing sector.
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
