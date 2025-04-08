@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, ArrowLeft, Phone, Mail, Clock, Users, Calendar, Building } from 'lucide-react';
+import { MapPin, ArrowLeft, Mail, Clock, Users, Calendar, Building } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Map from '@/components/Map';
@@ -209,10 +208,6 @@ const OfficePageLayout = () => {
                 
                 <h3 className="text-lg font-semibold mb-3">Contact</h3>
                 <div className="text-gray-700">
-                  <div className="flex items-center mb-2">
-                    <Phone className="h-4 w-4 mr-2 text-ecaris-green" />
-                    <p>+1 234 567 890</p>
-                  </div>
                   <div className="flex items-center">
                     <Mail className="h-4 w-4 mr-2 text-ecaris-green" />
                     <p>info@ecaris.com</p>
@@ -232,8 +227,6 @@ const OfficePageLayout = () => {
               />
             </div>
           </div>
-          
-          {/* Our Facilities Section has been removed */}
           
           {/* CTA Section - updated with Contact Us button */}
           <div className="bg-gray-50 rounded-xl p-8 mb-12">
