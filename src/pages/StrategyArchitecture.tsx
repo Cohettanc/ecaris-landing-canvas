@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Workflow, Building2, ServerCog, Database, Archive } from 'lucide-react';
@@ -57,8 +56,9 @@ const StrategyArchitecture = () => {
                   our recommendations can be implemented effectively to achieve tangible results.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-ecaris-green">Request a Consultation</Button>
-                  <Button variant="outline">Download Capabilities</Button>
+                  <Link to="/#contact">
+                    <Button className="bg-ecaris-green">Contact Us</Button>
+                  </Link>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
@@ -228,9 +228,11 @@ const StrategyArchitecture = () => {
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
               Let our experts help you build a future-proof IT foundation that aligns with your business objectives and drives growth.
             </p>
-            <Button className="bg-white text-ecaris-green hover:bg-white/90">
-              Contact Our Strategy Team
-            </Button>
+            <Link to="/#contact">
+              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

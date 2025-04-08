@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Database, ClipboardCheck, BarChart2, Layers, Shield } from 'lucide-react';
@@ -54,8 +53,9 @@ const DataGovernance = () => {
                   business intelligence, and machine learning solutions that drive informed decision-making and competitive advantage.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-ecaris-green">Request a Consultation</Button>
-                  <Button variant="outline">Download Capabilities</Button>
+                  <Link to="/#contact">
+                    <Button className="bg-ecaris-green">Contact Us</Button>
+                  </Link>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
@@ -225,9 +225,11 @@ const DataGovernance = () => {
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
               Let our data experts help you unlock the full potential of your data assets and drive informed decision-making across your organization.
             </p>
-            <Button className="bg-white text-ecaris-green hover:bg-white/90">
-              Contact Our Data Team
-            </Button>
+            <Link to="/#contact">
+              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

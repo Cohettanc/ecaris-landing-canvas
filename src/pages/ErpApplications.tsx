@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Database, LayoutGrid, Laptop, CreditCard, Boxes, ArrowRightLeft } from 'lucide-react';
@@ -50,8 +49,9 @@ const ErpApplications = () => {
                   Our expertise spans across leading enterprise platforms including SAP, Oracle, Microsoft Dynamics, Salesforce, and other SaaS solutions, ensuring your business systems align with your organizational goals.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-ecaris-green">Request a Consultation</Button>
-                  <Button variant="outline">Download Capabilities</Button>
+                  <Link to="/#contact">
+                    <Button className="bg-ecaris-green">Contact Us</Button>
+                  </Link>
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-xl">
@@ -229,9 +229,11 @@ const ErpApplications = () => {
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
               Let our application experts help you modernize your enterprise systems to drive innovation, efficiency, and growth.
             </p>
-            <Button className="bg-white text-ecaris-green hover:bg-white/90">
-              Contact Our Application Team
-            </Button>
+            <Link to="/#contact">
+              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
