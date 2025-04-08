@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ArrowRight, Circle, ArrowDown } from 'lucide-react';
+import { Check, ArrowRight, ArrowDown, Circle } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 
 const ServiceProjectDelivery = () => {
   useEffect(() => {
@@ -48,254 +49,118 @@ const ServiceProjectDelivery = () => {
           <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
                 alt="Software Development" 
                 className="w-full h-64 object-cover"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
                 alt="Team Collaboration" 
                 className="w-full h-64 object-cover"
               />
             </div>
           </div>
           
-          {/* Project Types */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Examples of Previously Completed Projects</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">New Product Development</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Development of a new product or a secondary product included in the product roadmap
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">IT Infrastructure Implementation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Deployment of new hardware, software, or networks
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">Systems Integration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Connecting different IT systems to work together seamlessly
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">IT Security Assessments</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Identifying and mitigating security vulnerabilities
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">Business Process Automation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Using technology to streamline workflows and improve efficiency
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-          
-          {/* Project Approach - Vertical Timeline Diagram */}
+          {/* Project Approach - New Modern Diagram */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Project Approach</h2>
             
-            <div className="relative bg-gray-50 rounded-lg p-8 overflow-hidden">
-              {/* Vertical timeline */}
-              <div className="flex flex-col items-center">
-                
+            {/* New Process Diagram */}
+            <div className="bg-gray-50 rounded-xl p-8 shadow-lg">
+              <div className="grid grid-cols-1 gap-4">
                 {/* Step 1: Diagnosis */}
-                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
-                    1
-                  </div>
-                  <div className="md:ml-8 w-full">
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Diagnosis</h3>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Understanding needs</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Defining the scope of the solution</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Setting objectives</span>
-                        </li>
-                      </ul>
+                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                      1
                     </div>
+                    <h3 className="text-xl font-bold text-gray-900">Diagnosis</h3>
                   </div>
+                  <p className="ml-16 text-gray-700 mt-2">
+                    Understand needs and define the solution's scope.
+                  </p>
                 </div>
-                
-                {/* Connecting arrow */}
-                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
-                <div className="h-6 w-6 flex items-center justify-center mb-4">
-                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
+
+                {/* Arrow Connector */}
+                <div className="flex justify-center">
+                  <ArrowDown className="text-ecaris-green h-8 w-8" />
                 </div>
-                
+
                 {/* Step 2: Scoping */}
-                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "150ms" }}>
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
-                    2
-                  </div>
-                  <div className="md:ml-8 w-full">
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Scoping (Specification Drafting)</h3>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Definition of business and IT architecture</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Technical scoping</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Definition of a roadmap (timeline)</span>
-                        </li>
-                      </ul>
+                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                      2
                     </div>
+                    <h3 className="text-xl font-bold text-gray-900">Scoping (Specification Drafting)</h3>
                   </div>
+                  <p className="ml-16 text-gray-700 mt-2">
+                    Establish business and technical architecture; define the roadmap.
+                  </p>
                 </div>
-                
-                {/* Connecting arrow */}
-                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
-                <div className="h-6 w-6 flex items-center justify-center mb-4">
-                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
+
+                {/* Arrow Connector */}
+                <div className="flex justify-center">
+                  <ArrowDown className="text-ecaris-green h-8 w-8" />
                 </div>
-                
+
                 {/* Step 3: Build */}
-                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "300ms" }}>
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
-                    3
-                  </div>
-                  <div className="md:ml-8 w-full">
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Build</h3>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Data collection and annotation</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Model implementation</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Testing and performance optimization</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Model adjustment based on feedback</span>
-                        </li>
-                      </ul>
+                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                      3
                     </div>
+                    <h3 className="text-xl font-bold text-gray-900">Build</h3>
                   </div>
+                  <p className="ml-16 text-gray-700 mt-2">
+                    Collect data, implement the model, and optimize performance.
+                  </p>
                 </div>
-                
-                {/* Connecting arrow */}
-                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
-                <div className="h-6 w-6 flex items-center justify-center mb-4">
-                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
+
+                {/* Arrow Connector */}
+                <div className="flex justify-center">
+                  <ArrowDown className="text-ecaris-green h-8 w-8" />
                 </div>
-                
+
                 {/* Step 4: Integration and Deployment */}
-                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "450ms" }}>
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
-                    4
-                  </div>
-                  <div className="md:ml-8 w-full">
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Integration and Deployment</h3>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Integration of the solution into the environment</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Implementation of the user interface</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Unit and integration testing</span>
-                        </li>
-                      </ul>
+                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                      4
                     </div>
+                    <h3 className="text-xl font-bold text-gray-900">Integration and Deployment</h3>
                   </div>
+                  <p className="ml-16 text-gray-700 mt-2">
+                    Integrate the solution into the environment and conduct necessary tests.
+                  </p>
                 </div>
-                
-                {/* Connecting arrow */}
-                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
-                <div className="h-6 w-6 flex items-center justify-center mb-4">
-                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
+
+                {/* Arrow Connector */}
+                <div className="flex justify-center">
+                  <ArrowDown className="text-ecaris-green h-8 w-8" />
                 </div>
-                
+
                 {/* Step 5: Continuous Improvement */}
-                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "600ms" }}>
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
-                    5
-                  </div>
-                  <div className="md:ml-8 w-full">
-                    <div className="bg-white p-6 rounded-lg shadow-md">
-                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Continuous Improvement</h3>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Collecting and analyzing user feedback</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Implementation of monitoring and reporting systems</span>
-                        </li>
-                        <li className="flex items-start">
-                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                          <span>Planning of new features and improvements</span>
-                        </li>
-                      </ul>
+                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                      5
                     </div>
+                    <h3 className="text-xl font-bold text-gray-900">Continuous Improvement</h3>
                   </div>
+                  <p className="ml-16 text-gray-700 mt-2">
+                    Analyze user feedback and plan future enhancements.
+                  </p>
                 </div>
               </div>
               
               {/* Diagram description */}
-              <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
-                <p className="text-gray-700 text-center">
-                  Our comprehensive project approach ensures successful delivery from initial diagnosis to 
-                  continuous improvement, with a focus on quality, efficiency, and client satisfaction at every step.
+              <div className="mt-8 text-center text-gray-700 max-w-2xl mx-auto">
+                <p>
+                  Our structured approach ensures successful project delivery from initial diagnosis 
+                  through continuous improvement, with a focus on quality and client satisfaction.
                 </p>
               </div>
             </div>
@@ -305,7 +170,7 @@ const ServiceProjectDelivery = () => {
           <div className="mb-16">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
                 alt="Software Development" 
                 className="w-full h-72 object-cover"
               />
@@ -355,9 +220,9 @@ const ServiceProjectDelivery = () => {
           <p className="text-xl mb-8 text-ecaris-light">
             Contact us today to discuss how our project-based services can help you achieve your business objectives.
           </p>
-          <button className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors duration-300">
+          <Button className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-6 rounded-md font-medium transition-colors duration-300">
             Contact Us
-          </button>
+          </Button>
         </div>
       </section>
       
