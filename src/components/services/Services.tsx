@@ -71,7 +71,7 @@ const Services = () => {
         >
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
             <span className="inline-block pb-2 relative">
-              Our Services
+              Our Expertise
               <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
             </span>
           </h2>
