@@ -64,7 +64,7 @@ const OurTeam = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Raphaël Attali</h3>
-                <p className="text-ecaris-green font-medium mb-3">CTO</p>
+                <p className="text-ecaris-green font-medium mb-3">Head of Consulting & Co-founder</p>
                 <p className="text-gray-700 mb-4">
                   Raphaël leads our technology initiatives with expertise in cloud architecture and data governance.
                 </p>
@@ -86,7 +86,7 @@ const OurTeam = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Tancrède Cohet</h3>
-                <p className="text-ecaris-green font-medium mb-3">Head of Consulting</p>
+                <p className="text-ecaris-green font-medium mb-3">Head of Sales & Co-founder</p>
                 <p className="text-gray-700 mb-4">
                   Tancrède oversees our consulting services, ensuring clients receive tailored solutions for their challenges.
                 </p>
