@@ -1,5 +1,7 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ServiceType } from './types';
 
 type ServiceDetailProps = {
@@ -58,12 +60,14 @@ const ServiceDetail = ({ service, isOpen, onClose }: ServiceDetailProps) => {
               </div>
               
               <div className="mt-8 flex justify-center">
-                <button
-                  onClick={onClose}
-                  className="bg-ecaris-green hover:bg-ecaris-green/90 text-white px-6 py-3 rounded transition-colors"
-                >
-                  Contact Us About This Service
-                </button>
+                <Link to="/#contact">
+                  <Button 
+                    onClick={onClose}
+                    className="bg-ecaris-green hover:bg-ecaris-green/90 text-white px-6 py-3 rounded transition-colors"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
