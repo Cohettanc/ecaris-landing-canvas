@@ -47,16 +47,16 @@ const Offices = () => {
           city.classList.add('city-light-active');
           setTimeout(() => {
             city.classList.remove('city-light-active');
-          }, 2000);
-        }, index * 800);
+          }, 1500);
+        }, index * 600);
       });
     };
 
     // Initial animation
     setTimeout(animateCities, 1500);
     
-    // Repeat the animation every 5 seconds
-    const interval = setInterval(animateCities, 5000);
+    // Repeat the animation every 6 seconds
+    const interval = setInterval(animateCities, 6000);
     
     return () => clearInterval(interval);
   }, []);
@@ -110,30 +110,15 @@ const Offices = () => {
         <div className="mt-12 text-center opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
           <p className="text-lg text-gray-700 mb-4">Our presence extends to multiple European countries:</p>
           <div className="flex flex-wrap justify-center gap-x-3 text-lg font-medium">
-            <span className="city-light relative inline-block px-2">
-              Luxembourg
-              <span className="absolute inset-0 bg-ecaris-green/10 rounded-full blur-md -z-10 opacity-0 transition-opacity duration-700 ease-in-out"></span>
-            </span>
+            <span className="city-light inline-block px-2">Luxembourg</span>
             <span className="text-gray-500">–</span>
-            <span className="city-light relative inline-block px-2">
-              Paris
-              <span className="absolute inset-0 bg-ecaris-green/10 rounded-full blur-md -z-10 opacity-0 transition-opacity duration-700 ease-in-out"></span>
-            </span>
+            <span className="city-light inline-block px-2">Paris</span>
             <span className="text-gray-500">–</span>
-            <span className="city-light relative inline-block px-2">
-              Geneva
-              <span className="absolute inset-0 bg-ecaris-green/10 rounded-full blur-md -z-10 opacity-0 transition-opacity duration-700 ease-in-out"></span>
-            </span>
+            <span className="city-light inline-block px-2">Geneva</span>
             <span className="text-gray-500">–</span>
-            <span className="city-light relative inline-block px-2">
-              London
-              <span className="absolute inset-0 bg-ecaris-green/10 rounded-full blur-md -z-10 opacity-0 transition-opacity duration-700 ease-in-out"></span>
-            </span>
+            <span className="city-light inline-block px-2">London</span>
             <span className="text-gray-500">–</span>
-            <span className="city-light relative inline-block px-2">
-              Berlin
-              <span className="absolute inset-0 bg-ecaris-green/10 rounded-full blur-md -z-10 opacity-0 transition-opacity duration-700 ease-in-out"></span>
-            </span>
+            <span className="city-light inline-block px-2">Berlin</span>
           </div>
         </div>
       </div>
