@@ -53,7 +53,7 @@ const OurTeam = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
-                  src="/lovable-uploads/3faf8ffe-0155-441c-b464-dc79d15453eb.png" 
+                  src="/lovable-uploads/404c1b2e-1a2b-47cc-9ddb-0e7fdf059c91.png" 
                   alt="Raphaël Attali" 
                   className="object-cover w-full h-full"
                 />
