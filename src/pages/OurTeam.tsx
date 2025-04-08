@@ -38,7 +38,7 @@ const OurTeam = () => {
               <div className="w-full max-w-xs mx-auto p-4">
                 <AspectRatio ratio={1/1} className="rounded-full overflow-hidden">
                   <img 
-                    src="/lovable-uploads/313ea64e-9f59-4f41-a593-838d460bead0.png" 
+                    src="/lovable-uploads/a766b90c-3881-4690-b129-aad84671a6e3.png" 
                     alt="Alexander Rhea" 
                     className="object-cover w-full h-full"
                   />
