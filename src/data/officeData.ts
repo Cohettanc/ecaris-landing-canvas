@@ -11,7 +11,7 @@ export interface Office {
 export const offices: Office[] = [
   {
     id: "luxembourg",
-    title: "Luxembourg",
+    title: "Main Office (Luxembourg)",
     city: "Luxembourg",
     address: ["70, route d'Esch", "1470 Luxembourg", "LUXEMBOURG"],
     coordinates: [6.119735, 49.601451], // Updated Luxembourg coordinates [longitude, latitude]
@@ -19,7 +19,7 @@ export const offices: Office[] = [
   },
   {
     id: "paris",
-    title: "Paris",
+    title: "Representative Office (Paris)",
     city: "Paris",
     address: ["78 avenue des Champs Elysées", "75008 Paris", "FRANCE"],
     coordinates: [2.304120, 48.871705], // Updated Paris coordinates [longitude, latitude]
