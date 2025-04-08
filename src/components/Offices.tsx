@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { offices } from '@/data/officeData';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -51,7 +50,7 @@ const Offices = () => {
     if (autoplay) {
       autoplayRef.current = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % cityNames.length);
-      }, 3000);
+      }, 4000);
     }
 
     return () => {
@@ -129,59 +128,54 @@ const Offices = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-          <p className="text-lg text-gray-700 mb-4">Our presence extends to multiple European countries:</p>
+        <div className="mt-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+          <p className="text-lg text-gray-700 mb-6">Our presence extends to multiple European countries:</p>
           
-          <div className="cities-carousel-container relative max-w-lg mx-auto">
-            <div className="overflow-hidden px-10">
-              <div 
-                className="cities-carousel flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
+          <div className="city-carousel-wrapper max-w-md mx-auto">
+            <div className="city-carousel-container relative">
+              <div className="city-carousel-track">
                 {cityNames.map((city, index) => (
                   <div 
-                    key={city} 
-                    className="cities-carousel-item w-full flex-shrink-0 flex justify-center"
+                    key={city}
+                    className={`city-carousel-item ${index === currentSlide ? 'active' : ''}`}
                   >
-                    <span className={`text-lg font-medium ${index === currentSlide ? 'text-ecaris-green font-semibold' : 'text-gray-900'}`}>
-                      {city}
-                    </span>
+                    {city}
                   </div>
                 ))}
               </div>
-            </div>
-            
-            <Button 
-              variant="outline" 
-              size="icon" 
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
-              onClick={prevSlide}
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="sr-only">Previous city</span>
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full"
-              onClick={nextSlide}
-            >
-              <ChevronRight className="h-4 w-4" />
-              <span className="sr-only">Next city</span>
-            </Button>
-            
-            <div className="city-indicators flex justify-center mt-4 space-x-2">
-              {cityNames.map((_, index) => (
-                <button
-                  key={index}
-                  className={`h-2 w-2 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-ecaris-green' : 'bg-gray-300'
-                  }`}
-                  onClick={() => handleManualNavigation(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+              
+              <div className="city-carousel-navigation">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="city-carousel-nav-btn prev"
+                  onClick={prevSlide}
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                  <span className="sr-only">Previous city</span>
+                </Button>
+                
+                <div className="city-carousel-indicators">
+                  {cityNames.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`city-carousel-indicator ${index === currentSlide ? 'active' : ''}`}
+                      onClick={() => handleManualNavigation(index)}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="city-carousel-nav-btn next"
+                  onClick={nextSlide}
+                >
+                  <ChevronRight className="h-5 w-5" />
+                  <span className="sr-only">Next city</span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
