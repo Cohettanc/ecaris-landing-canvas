@@ -157,6 +157,16 @@
   .cities-carousel-item {
     @apply px-3 py-2 text-center;
   }
+  
+  /* Fix for leaflet maps z-index */
+  .leaflet-pane {
+    z-index: 5 !important;
+  }
+  
+  .leaflet-top,
+  .leaflet-bottom {
+    z-index: 5 !important;
+  }
 }
 
 /* Animation delays for staggered animations */

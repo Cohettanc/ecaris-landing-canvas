@@ -40,7 +40,7 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({ latitude, longitude, zoom = 13, title }) => {
   return (
-    <div className="w-full rounded-lg border border-gray-200 overflow-hidden bg-white p-4">
+    <div className="w-full rounded-lg border border-gray-200 overflow-hidden bg-white p-4 relative" style={{ zIndex: 1 }}>
       <div className="flex flex-col items-center mb-4">
         <h3 className="text-lg font-semibold">{title || 'Office Location'}</h3>
       </div>
@@ -51,6 +51,7 @@ const Map: React.FC<MapProps> = ({ latitude, longitude, zoom = 13, title }) => {
           zoom={zoom} 
           style={{ height: "100%", width: "100%" }}
           scrollWheelZoom={false}
+          zoomControl={true}
         >
           <TileLayer
             attribution=''
