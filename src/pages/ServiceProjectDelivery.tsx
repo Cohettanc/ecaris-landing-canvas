@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -48,79 +49,17 @@ const ServiceProjectDelivery = () => {
           <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
                 alt="Software Development" 
                 className="w-full h-64 object-cover"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
                 alt="Team Collaboration" 
                 className="w-full h-64 object-cover"
               />
-            </div>
-          </div>
-          
-          {/* Project Types */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Examples of Previously Completed Projects</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">New Product Development</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Development of a new product or a secondary product included in the product roadmap
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">IT Infrastructure Implementation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Deployment of new hardware, software, or networks
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">Systems Integration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Connecting different IT systems to work together seamlessly
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">IT Security Assessments</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Identifying and mitigating security vulnerabilities
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-ecaris-green">Business Process Automation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Using technology to streamline workflows and improve efficiency
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
           
@@ -231,7 +170,7 @@ const ServiceProjectDelivery = () => {
           <div className="mb-16">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
                 alt="Software Development" 
                 className="w-full h-72 object-cover"
               />
