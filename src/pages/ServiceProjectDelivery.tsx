@@ -123,54 +123,60 @@ const ServiceProjectDelivery = () => {
             </div>
           </div>
           
-          {/* Project Approach */}
+          {/* Project Approach - Updated for better aesthetics */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Project Approach</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Diagnosis</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-ecaris-green mb-4 border-b pb-2">01. Diagnosis</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>Understanding needs</li>
-                  <li>Defining the scope of the solution</li>
-                  <li>Setting objectives</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Understanding needs</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Defining solution scope</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Setting objectives</li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Scoping (Specification drafting)</h3>
+              <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-ecaris-green mb-4 border-b pb-2">02. Scoping</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>Definition of business and IT architecture</li>
-                  <li>Technical scoping</li>
-                  <li>Definition of a roadmap (timeline)</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Business & IT architecture</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Technical requirements</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Project roadmap</li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Build</h3>
+              <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-ecaris-green mb-4 border-b pb-2">03. Build</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>Data collection and annotation</li>
-                  <li>Model implementation</li>
-                  <li>Testing and performance optimization</li>
-                  <li>Model adjustment based on internal user feedback</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Data collection</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Implementation</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Testing & optimization</li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Integration and Deployment</h3>
+              <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-ecaris-green mb-4 border-b pb-2">04. Integration</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>Integration of the solution into the environment</li>
-                  <li>Implementation of the user interface</li>
-                  <li>Unit and integration testing</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Solution deployment</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>UI implementation</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Testing & validation</li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg md:col-span-2">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Continuous Improvement</h3>
+              <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-ecaris-green mb-4 border-b pb-2">05. Improvement</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>Collecting and analyzing user feedback</li>
-                  <li>Implementation of monitoring and reporting systems</li>
-                  <li>Planning of new features and improvements</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Feedback analysis</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Monitoring systems</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 rounded-full bg-ecaris-green mr-2"></div>Feature planning</li>
                 </ul>
+              </div>
+              
+              <div className="bg-gradient-to-br from-ecaris-green/5 to-ecaris-green/10 p-6 rounded-lg shadow-sm border border-ecaris-green/20 hover:shadow-md transition-all duration-300">
+                <h3 className="text-lg font-semibold text-ecaris-green mb-4 border-b pb-2">Our Methodology</h3>
+                <p className="text-gray-700">
+                  Our proven 5-step methodology ensures seamless project delivery, from initial diagnosis to continuous improvement, with dedicated expertise at every stage.
+                </p>
               </div>
             </div>
           </div>
