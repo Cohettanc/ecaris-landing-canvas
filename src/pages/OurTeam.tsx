@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Users, Award, Briefcase } from 'lucide-react';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const OurTeam = () => {
   useEffect(() => {
@@ -34,14 +33,12 @@ const OurTeam = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
             {/* Team Member 1 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="w-full h-80">
-                <AspectRatio ratio={3/4} className="bg-gray-100">
-                  <img 
-                    src="/lovable-uploads/6ac968f6-0063-497d-88b8-92fe866ea998.png" 
-                    alt="Alexander Rhea" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
+              <div className="aspect-w-3 aspect-h-4 bg-gray-100">
+                <img 
+                  src="/lovable-uploads/6ac968f6-0063-497d-88b8-92fe866ea998.png" 
+                  alt="Alexander Rhea" 
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Alexander Rhea</h3>
@@ -54,14 +51,12 @@ const OurTeam = () => {
 
             {/* Team Member 2 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="w-full h-80">
-                <AspectRatio ratio={3/4} className="bg-gray-100">
-                  <img 
-                    src="/lovable-uploads/404c1b2e-1a2b-47cc-9ddb-0e7fdf059c91.png" 
-                    alt="Raphaël Attali" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
+              <div className="aspect-w-3 aspect-h-4 bg-gray-100">
+                <img 
+                  src="/lovable-uploads/404c1b2e-1a2b-47cc-9ddb-0e7fdf059c91.png" 
+                  alt="Raphaël Attali" 
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Raphaël Attali</h3>
@@ -74,14 +69,12 @@ const OurTeam = () => {
 
             {/* Team Member 3 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="w-full h-80">
-                <AspectRatio ratio={3/4} className="bg-gray-100">
-                  <img 
-                    src="/lovable-uploads/f5fa7a37-f599-4636-b917-76c629e2d161.png" 
-                    alt="Tancrède Cohet" 
-                    className="object-cover w-full h-full"
-                  />
-                </AspectRatio>
+              <div className="aspect-w-3 aspect-h-4 bg-gray-100">
+                <img 
+                  src="/lovable-uploads/f5fa7a37-f599-4636-b917-76c629e2d161.png" 
+                  alt="Tancrède Cohet" 
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Tancrède Cohet</h3>
