@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -47,6 +46,13 @@ const Navbar = () => {
         { name: "Strategy & Architecture", path: "/strategy-architecture" },
         { name: "Data Governance", path: "/data-governance" },
         { name: "ERP Applications", path: "/erp-applications" }
+      ]
+    },
+    { 
+      name: "Our Services", 
+      dropdown: [
+        { name: "Daily Rate Services", path: "/service-daily-rate" },
+        { name: "Project Delivery Services", path: "/service-project-delivery" }
       ]
     },
     { 

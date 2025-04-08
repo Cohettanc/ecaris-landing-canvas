@@ -15,6 +15,8 @@ import OfficePageLayout from "./components/OfficePageLayout";
 import NotFound from "./pages/NotFound";
 import OurTeam from "./pages/OurTeam";
 import OurValues from "./pages/OurValues";
+import ServiceDailyRate from "./pages/ServiceDailyRate";
+import ServiceProjectDelivery from "./pages/ServiceProjectDelivery";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
           <Route path="/erp-applications" element={<ErpApplications />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/our-values" element={<OurValues />} />
+          <Route path="/service-daily-rate" element={<ServiceDailyRate />} />
+          <Route path="/service-project-delivery" element={<ServiceProjectDelivery />} />
           <Route path="/office/:officeId" element={<OfficePageLayout />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
