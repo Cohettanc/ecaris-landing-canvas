@@ -42,7 +42,14 @@ const OurTeam = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Alexander Rhea</h3>
-                <p className="text-ecaris-green font-medium">CEO & Founder</p>
+                <p className="text-ecaris-green font-medium mb-3">CEO & Founder</p>
+                <p className="text-gray-700 mb-4">
+                  With over 25 years of experience in investment and tech-driven transformation, Alexander founded ECARIS after a global career spanning Europe and the US, including 17 years in Silicon Valley. He has led industrial and tech-focused companies through international growth, process redesign, and digital strategy.
+                </p>
+                <div className="flex items-center text-gray-600">
+                  <Briefcase size={18} className="mr-2" />
+                  <span>🗂️ IT Architecture, ERP Implementation, Strategic Management</span>
+                </div>
               </div>
             </div>
 
@@ -57,7 +64,14 @@ const OurTeam = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Raphaël Attali</h3>
-                <p className="text-ecaris-green font-medium">Head of Consulting & Co-founder</p>
+                <p className="text-ecaris-green font-medium mb-3">Head of Consulting & Co-founder</p>
+                <p className="text-gray-700 mb-4">
+                  Raphaël drives ECARIS's technology strategy with deep expertise in data architecture, governance, and digital transformation. He previously led global product and data initiatives at L'Oréal, and advised major players in the luxury, automotive, and telecom sectors at Artefact and Roland Berger.
+                </p>
+                <div className="flex items-center text-gray-600">
+                  <Briefcase size={18} className="mr-2" />
+                  <span>🗂️ Data Strategy, Data Governance, Analytics</span>
+                </div>
               </div>
             </div>
 
@@ -72,7 +86,14 @@ const OurTeam = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900">Tancrède Cohet</h3>
-                <p className="text-ecaris-green font-medium">Head of Sales & Co-founder</p>
+                <p className="text-ecaris-green font-medium mb-3">Head of Sales & Co-founder</p>
+                <p className="text-gray-700 mb-4">
+                  Tancrède leads ECARIS's consulting delivery, drawing on a strong background in industrial IT and AI project management. At TotalEnergies, he developed AI-driven tools with direct oversight from top leadership, and at Bolloré, he managed large-scale system transitions. He started his career supporting digital transformation in the manufacturing sector.
+                </p>
+                <div className="flex items-center text-gray-600">
+                  <Briefcase size={18} className="mr-2" />
+                  <span>🗂️ Infrastructure, Cloud Migration, Digital Transformation</span>
+                </div>
               </div>
             </div>
           </div>
