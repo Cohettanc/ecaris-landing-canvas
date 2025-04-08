@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ArrowRight, Circle } from 'lucide-react';
+import { Check, ArrowRight, Circle, ArrowDown } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const ServiceProjectDelivery = () => {
@@ -124,170 +124,175 @@ const ServiceProjectDelivery = () => {
             </div>
           </div>
           
-          {/* Project Approach - New Diagram Section */}
+          {/* Project Approach - Vertical Timeline Diagram */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Project Approach</h2>
             
-            <div className="relative bg-gray-50 rounded-lg p-8">
-              {/* Main diagram container */}
-              <div className="flex flex-col space-y-12 md:space-y-24">
-                {/* Stages 1-2 */}
-                <div className="flex flex-col md:flex-row gap-6 md:gap-12">
-                  {/* Stage 1: Diagnosis */}
-                  <div className="flex-1 bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-in">
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-ecaris-green rounded-full flex items-center justify-center text-white font-bold mr-3">
-                        1
-                      </div>
-                      <h3 className="text-xl font-semibold text-ecaris-green">Diagnosis</h3>
-                    </div>
-                    <ul className="space-y-2 pl-4">
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Understanding needs</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Defining the scope of the solution</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Setting objectives</span>
-                      </li>
-                    </ul>
+            <div className="relative bg-gray-50 rounded-lg p-8 overflow-hidden">
+              {/* Vertical timeline */}
+              <div className="flex flex-col items-center">
+                
+                {/* Step 1: Diagnosis */}
+                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
+                    1
                   </div>
-                  
-                  {/* Arrow between 1-2 */}
-                  <div className="hidden md:flex items-center justify-center">
-                    <ArrowRight className="h-8 w-8 text-ecaris-green" />
-                  </div>
-                  
-                  {/* Stage 2: Scoping */}
-                  <div className="flex-1 bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: "150ms" }}>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-ecaris-green rounded-full flex items-center justify-center text-white font-bold mr-3">
-                        2
-                      </div>
-                      <h3 className="text-xl font-semibold text-ecaris-green">Scoping</h3>
+                  <div className="md:ml-8 w-full">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Diagnosis</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Understanding needs</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Defining the scope of the solution</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Setting objectives</span>
+                        </li>
+                      </ul>
                     </div>
-                    <ul className="space-y-2 pl-4">
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Definition of business and IT architecture</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Technical scoping</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Definition of a roadmap (timeline)</span>
-                      </li>
-                    </ul>
                   </div>
                 </div>
                 
-                {/* Center arrow pointing down */}
-                <div className="flex justify-center">
-                  <div className="h-12 w-1 bg-ecaris-green/30"></div>
+                {/* Connecting arrow */}
+                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
+                <div className="h-6 w-6 flex items-center justify-center mb-4">
+                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
                 </div>
                 
-                {/* Stage 3: Build */}
-                <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: "300ms" }}>
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 bg-ecaris-green rounded-full flex items-center justify-center text-white font-bold mr-3">
-                      3
-                    </div>
-                    <h3 className="text-xl font-semibold text-ecaris-green">Build</h3>
+                {/* Step 2: Scoping */}
+                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "150ms" }}>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
+                    2
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <ul className="space-y-2 pl-4">
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Data collection and annotation</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Model implementation</span>
-                      </li>
-                    </ul>
-                    <ul className="space-y-2 pl-4">
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Testing and performance optimization</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Model adjustment based on internal user feedback</span>
-                      </li>
-                    </ul>
+                  <div className="md:ml-8 w-full">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Scoping (Specification Drafting)</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Definition of business and IT architecture</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Technical scoping</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Definition of a roadmap (timeline)</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 
-                {/* Center arrow pointing down */}
-                <div className="flex justify-center">
-                  <div className="h-12 w-1 bg-ecaris-green/30"></div>
+                {/* Connecting arrow */}
+                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
+                <div className="h-6 w-6 flex items-center justify-center mb-4">
+                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
                 </div>
                 
-                {/* Stages 4-5 */}
-                <div className="flex flex-col md:flex-row gap-6 md:gap-12">
-                  {/* Stage 4: Integration and Deployment */}
-                  <div className="flex-1 bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: "450ms" }}>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-ecaris-green rounded-full flex items-center justify-center text-white font-bold mr-3">
-                        4
-                      </div>
-                      <h3 className="text-xl font-semibold text-ecaris-green">Integration and Deployment</h3>
-                    </div>
-                    <ul className="space-y-2 pl-4">
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Integration of the solution into the environment</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Implementation of the user interface</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Unit and integration testing</span>
-                      </li>
-                    </ul>
+                {/* Step 3: Build */}
+                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "300ms" }}>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
+                    3
                   </div>
-                  
-                  {/* Arrow between 4-5 */}
-                  <div className="hidden md:flex items-center justify-center">
-                    <ArrowRight className="h-8 w-8 text-ecaris-green" />
-                  </div>
-                  
-                  {/* Stage 5: Continuous Improvement */}
-                  <div className="flex-1 bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: "600ms" }}>
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-ecaris-green rounded-full flex items-center justify-center text-white font-bold mr-3">
-                        5
-                      </div>
-                      <h3 className="text-xl font-semibold text-ecaris-green">Continuous Improvement</h3>
+                  <div className="md:ml-8 w-full">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Build</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Data collection and annotation</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Model implementation</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Testing and performance optimization</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Model adjustment based on feedback</span>
+                        </li>
+                      </ul>
                     </div>
-                    <ul className="space-y-2 pl-4">
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Collecting and analyzing user feedback</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Implementation of monitoring and reporting systems</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
-                        <span className="text-sm">Planning of new features and improvements</span>
-                      </li>
-                    </ul>
+                  </div>
+                </div>
+                
+                {/* Connecting arrow */}
+                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
+                <div className="h-6 w-6 flex items-center justify-center mb-4">
+                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
+                </div>
+                
+                {/* Step 4: Integration and Deployment */}
+                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "450ms" }}>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
+                    4
+                  </div>
+                  <div className="md:ml-8 w-full">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Integration and Deployment</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Integration of the solution into the environment</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Implementation of the user interface</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Unit and integration testing</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Connecting arrow */}
+                <div className="h-12 w-1 bg-ecaris-green mb-4"></div>
+                <div className="h-6 w-6 flex items-center justify-center mb-4">
+                  <ArrowDown className="h-8 w-8 text-ecaris-green" />
+                </div>
+                
+                {/* Step 5: Continuous Improvement */}
+                <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center mb-12 animate-fade-in" style={{ animationDelay: "600ms" }}>
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-ecaris-green flex items-center justify-center text-white font-bold text-xl z-10 mb-4 md:mb-0">
+                    5
+                  </div>
+                  <div className="md:ml-8 w-full">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                      <h3 className="text-xl font-semibold text-ecaris-green mb-3">Continuous Improvement</h3>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Collecting and analyzing user feedback</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Implementation of monitoring and reporting systems</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Circle className="h-3 w-3 text-ecaris-green mt-1.5 mr-2 flex-shrink-0" />
+                          <span>Planning of new features and improvements</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
               
               {/* Diagram description */}
-              <div className="mt-12 p-6 bg-white rounded-lg shadow-sm">
+              <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
                 <p className="text-gray-700 text-center">
                   Our comprehensive project approach ensures successful delivery from initial diagnosis to 
                   continuous improvement, with a focus on quality, efficiency, and client satisfaction at every step.
