@@ -46,10 +46,6 @@ const OurTeam = () => {
                 <p className="text-gray-700 mb-4">
                   Alexander founded ECARIS after a global career in investment and digital transformation, including 17 years in Silicon Valley. He has led industrial and tech firms through complex growth and IT modernization.
                 </p>
-                <div className="flex items-center text-gray-600">
-                  <Briefcase size={18} className="mr-2" />
-                  <span>🗂️ IT Architecture, ERP Implementation, Strategic Management</span>
-                </div>
               </div>
             </div>
 
@@ -68,10 +64,6 @@ const OurTeam = () => {
                 <p className="text-gray-700 mb-4">
                   Raphaël leads ECARIS's tech strategy, with expertise in data, cloud, and digital transformation. He previously managed global data programs at L'Oréal and advised leading firms at Artefact and Roland Berger.
                 </p>
-                <div className="flex items-center text-gray-600">
-                  <Briefcase size={18} className="mr-2" />
-                  <span>🗂️ Data Strategy, Data Governance, Analytics</span>
-                </div>
               </div>
             </div>
 
@@ -90,10 +82,6 @@ const OurTeam = () => {
                 <p className="text-gray-700 mb-4">
                   Tancrède oversees project delivery at ECARIS, with a focus on infrastructure and AI solutions. He held key roles at TotalEnergies and Bolloré, managing major digital and system transitions.
                 </p>
-                <div className="flex items-center text-gray-600">
-                  <Briefcase size={18} className="mr-2" />
-                  <span>🗂️ Infrastructure, Cloud Migration, Digital Transformation</span>
-                </div>
               </div>
             </div>
           </div>
