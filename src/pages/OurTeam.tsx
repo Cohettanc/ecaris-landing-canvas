@@ -7,7 +7,7 @@ import { Users, Award, Briefcase } from 'lucide-react';
 const OurTeam = () => {
   useEffect(() => {
     // Update document title
-    document.title = "Our Team | ECARIS";
+    document.title = "Founding Team | ECARIS";
     // Scroll to top when page loads
     window.scrollTo(0, 0);
   }, []);
@@ -21,12 +21,12 @@ const OurTeam = () => {
           <div className="text-center mb-16">
             <h1 className="heading-lg text-gray-900 mb-6">
               <span className="inline-block pb-2 relative">
-                Our Team
+                Founding Team
                 <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
               </span>
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Meet the experts who make ECARIS a leader in consulting and talent solutions.
+              Discover the founders of ECARIS, whose leadership and vision shape our consulting and technology expertise.
             </p>
           </div>
 
