@@ -35,7 +35,7 @@ const OurTeam = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
-                  src="/lovable-uploads/f980c288-3118-4697-9b32-90b150f12368.png" 
+                  src="/lovable-uploads/6ac968f6-0063-497d-88b8-92fe866ea998.png" 
                   alt="Marc Durand" 
                   className="object-cover w-full h-full"
                 />
@@ -57,7 +57,7 @@ const OurTeam = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
-                  src="/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png" 
+                  src="/lovable-uploads/3faf8ffe-0155-441c-b464-dc79d15453eb.png" 
                   alt="Sophie Martin" 
                   className="object-cover w-full h-full"
                 />
@@ -79,7 +79,7 @@ const OurTeam = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-w-3 aspect-h-4 bg-gray-100">
                 <img 
-                  src="/lovable-uploads/bbbd0569-3b9a-4cc6-8901-915388c2d3d5.png" 
+                  src="/lovable-uploads/f5fa7a37-f599-4636-b917-76c629e2d161.png" 
                   alt="Thomas Weber" 
                   className="object-cover w-full h-full"
                 />
