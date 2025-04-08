@@ -48,7 +48,7 @@ const OurTeam = () => {
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
-                  <span>Strategic Planning, Business Development</span>
+                  <span>IT Architecture, ERP Implementation & Migration</span>
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@ const OurTeam = () => {
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
-                  <span>Cloud Architecture, Data Strategy</span>
+                  <span>Data Strategy, Data Governance, Data Products</span>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ const OurTeam = () => {
                 </p>
                 <div className="flex items-center text-gray-600">
                   <Briefcase size={18} className="mr-2" />
-                  <span>ERP Implementation, Digital Transformation</span>
+                  <span>Infrastructure, Cloud Migration</span>
                 </div>
               </div>
             </div>
