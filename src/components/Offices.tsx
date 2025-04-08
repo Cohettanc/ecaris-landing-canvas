@@ -1,18 +1,13 @@
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { offices } from '@/data/officeData';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Offices = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const officesRef = useRef<(HTMLDivElement | null)[]>([]);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [activeCity, setActiveCity] = useState(0);
   
-  const cities = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
-
   // Animation for section entry
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,22 +38,10 @@ const Offices = () => {
     };
   }, []);
 
-  // Auto-scroll carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCity((prev) => (prev + 1) % cities.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [cities.length]);
-
-  const handlePrevious = () => {
-    setActiveCity((prev) => (prev - 1 + cities.length) % cities.length);
-  };
-
-  const handleNext = () => {
-    setActiveCity((prev) => (prev + 1) % cities.length);
-  };
+  // Our city names for the infinite scroll
+  const cities = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
+  // Duplicate the cities to create the illusion of infinite scrolling
+  const allCities = [...cities, ...cities, ...cities];
 
   return (
     <section id="offices" ref={sectionRef} className="py-24 bg-gray-50">
@@ -109,58 +92,12 @@ const Offices = () => {
         <div className="mt-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
           <p className="text-lg text-gray-700 mb-8 text-center">Our presence extends to multiple European countries:</p>
           
-          <div className="simple-carousel max-w-3xl mx-auto">
-            <div className="relative">
-              <div 
-                ref={carouselRef} 
-                className="overflow-hidden py-8"
-              >
-                <div 
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${activeCity * 20}%)` }}
-                >
-                  {cities.map((city, index) => (
-                    <div 
-                      key={index}
-                      className={`w-1/5 flex-shrink-0 text-center px-4 transition-all duration-500 ${
-                        activeCity === index 
-                          ? 'text-primary font-semibold scale-110' 
-                          : 'text-gray-500'
-                      }`}
-                    >
-                      {city}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <button 
-                onClick={handlePrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 hover:text-primary transition-colors z-10"
-                aria-label="Previous city"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              
-              <button 
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 hover:text-primary transition-colors z-10"
-                aria-label="Next city"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-            
-            <div className="flex justify-center gap-2 mt-6">
-              {cities.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveCity(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    activeCity === index ? 'bg-primary w-3 h-3' : 'bg-gray-300'
-                  }`}
-                  aria-label={`Go to city ${index + 1}`}
-                />
+          <div className="infinite-scroll-container max-w-3xl mx-auto overflow-hidden relative bg-white p-6 rounded-lg shadow-sm">
+            <div className="infinite-scroll-content">
+              {allCities.map((city, index) => (
+                <span key={index} className="infinite-scroll-item">
+                  {city}
+                </span>
               ))}
             </div>
           </div>

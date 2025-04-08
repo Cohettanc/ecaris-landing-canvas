@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -144,12 +145,38 @@
     @apply w-full bg-gray-50 border border-gray-200 p-3 rounded-md focus:ring-2 focus:ring-ecaris-green/30 focus:border-ecaris-green focus:outline-none transition-all duration-300;
   }
   
-  /* Simple Carousel */
-  .simple-carousel {
-    @apply bg-white rounded-lg shadow-sm p-6 relative;
+  /* Infinite Scroll Carousel */
+  .infinite-scroll-container {
+    @apply relative overflow-hidden;
+    height: 60px;
   }
   
-  /* Remove all other carousel styles since we're using a new approach */
+  .infinite-scroll-content {
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scrollText 30s linear infinite;
+  }
+  
+  .infinite-scroll-content:hover {
+    animation-play-state: paused;
+  }
+  
+  .infinite-scroll-item {
+    @apply text-xl font-medium mx-8 text-gray-700;
+    display: inline-block;
+  }
+}
+
+/* Animation for infinite scroll */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.33%); /* Move by one full cycle of the duplicated list */
+  }
 }
 
 /* Animation delays for staggered animations */
