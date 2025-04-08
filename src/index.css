@@ -145,37 +145,17 @@
     @apply w-full bg-gray-50 border border-gray-200 p-3 rounded-md focus:ring-2 focus:ring-ecaris-green/30 focus:border-ecaris-green focus:outline-none transition-all duration-300;
   }
   
-  /* Infinite Scroll Carousel */
-  .infinite-scroll-container {
-    @apply relative overflow-hidden;
-    height: 60px;
+  /* Cities carousel specific styles */
+  .cities-carousel-container {
+    @apply relative bg-white rounded-md shadow-sm p-4;
   }
   
-  .infinite-scroll-content {
-    display: flex;
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: scrollText 30s linear infinite;
+  .cities-carousel {
+    @apply flex items-center;
   }
   
-  .infinite-scroll-content:hover {
-    animation-play-state: paused;
-  }
-  
-  .infinite-scroll-item {
-    @apply text-xl font-medium mx-8 text-gray-700;
-    display: inline-block;
-  }
-}
-
-/* Animation for infinite scroll */
-@keyframes scrollText {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.33%); /* Move by one full cycle of the duplicated list */
+  .cities-carousel-item {
+    @apply px-3 py-2 text-center;
   }
 }
 
