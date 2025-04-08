@@ -102,7 +102,7 @@ const Offices = () => {
             {cities.map((city, index) => (
               <span 
                 key={index}
-                className={`city-highlight transition-all duration-300 ${activeCity === index ? 'text-ecaris-green scale-110' : 'text-gray-900'}`}
+                className={`city-highlight transition-all duration-300 ${activeCity === index ? 'active-city' : 'text-gray-900'}`}
               >
                 {city}
               </span>

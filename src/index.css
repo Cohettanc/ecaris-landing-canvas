@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -149,8 +148,9 @@
     @apply relative px-1 py-0.5;
   }
   
-  .city-highlight.text-ecaris-green {
+  .city-highlight.active-city {
     @apply font-semibold;
+    color: #006C4C;
   }
   
   .city-highlight:hover {
