@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { offices } from '@/data/officeData';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
@@ -10,12 +10,22 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const cityNames = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
 
 const Offices = () => {
+  const location = useLocation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const officesRef = useRef<(HTMLDivElement | null)[]>([]);
   const [autoplay, setAutoplay] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Check if we should scroll to this section on mount
+  useEffect(() => {
+    if (location.hash === '#offices' && sectionRef.current) {
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

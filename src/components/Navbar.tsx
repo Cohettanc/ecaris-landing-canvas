@@ -100,33 +100,60 @@ const Navbar = () => {
     
     // If we're not on the homepage, navigate to homepage first
     if (location.pathname !== '/') {
-      navigate('/#' + id);
-    } else {
-      // If we're already on the homepage, just scroll to the section
-      const element = document.getElementById(id);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      navigate('/#' + id, { replace: false });
+      return;
+    }
+    
+    // If we're already on the homepage, just scroll to the section
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
 
   const navigateToHome = () => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    navigate('/');
+    navigate('/', { replace: false });
   };
 
   const navigateToPage = (path: string) => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
     
-    // Handle paths that start with #
+    // Handle paths that start with /#
     if (path.startsWith('/#')) {
-      navigate('/');
+      const id = path.substring(2);
+      
+      // If we're already on the homepage, just scroll
+      if (location.pathname === '/') {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+        return;
+      }
+      
+      // If we're not on the homepage, navigate to homepage and then scroll
+      navigate('/', { replace: false });
       setTimeout(() => {
-        const element = document.getElementById(path.substring(2));
-        element?.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       }, 100);
     } else {
-      navigate(path);
+      // For regular pages, just navigate without replacing history
+      navigate(path, { replace: false });
     }
   };
 

@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ExternalLink, Workflow, Building2, ServerCog, Database, Archive } from 'lucide-react';
 
@@ -84,10 +84,20 @@ const services = [
 
 const Services = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  // Check if we should scroll to this section on mount
+  useEffect(() => {
+    if (location.hash === '#services' && sectionRef.current) {
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, [location.hash]);
 
   const openServiceDetail = (serviceId: string) => {
     const service = services.find(s => s.id === serviceId);
