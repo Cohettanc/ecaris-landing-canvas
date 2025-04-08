@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 import { offices } from '@/data/officeData';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from '@/components/ui/carousel';
 
 // Array of all city names for the carousel
 const cityNames = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
@@ -12,10 +19,11 @@ const Offices = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const officesRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [autoplay, setAutoplay] = useState(true);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const [api, setApi] = useState<any>(null);
+  const [current, setCurrent] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Animation for section entry
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -45,42 +53,41 @@ const Offices = () => {
     };
   }, []);
 
-  // Handle autoplay for the city carousel
+  // Set up autoplay
   useEffect(() => {
-    if (autoplay) {
-      autoplayRef.current = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % cityNames.length);
-      }, 4000);
-    }
-
-    return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
-    };
-  }, [autoplay]);
-
-  // Pause autoplay when user interacts with the carousel
-  const handleManualNavigation = (index: number) => {
-    if (autoplayRef.current) {
-      clearInterval(autoplayRef.current);
-      setAutoplay(false);
-    }
-    setCurrentSlide(index);
+    if (!api) return;
     
-    // Resume autoplay after 10 seconds of inactivity
-    setTimeout(() => {
-      setAutoplay(true);
-    }, 10000);
-  };
-
-  const nextSlide = () => {
-    handleManualNavigation((currentSlide + 1) % cityNames.length);
-  };
-
-  const prevSlide = () => {
-    handleManualNavigation((currentSlide - 1 + cityNames.length) % cityNames.length);
-  };
+    const autoplay = () => {
+      intervalRef.current = setInterval(() => {
+        api.scrollNext();
+      }, 3000);
+    };
+    
+    autoplay();
+    
+    // Pause autoplay when user interacts with carousel
+    api.on('pointerDown', () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    });
+    
+    // Resume autoplay after a period of inactivity
+    api.on('pointerUp', () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      setTimeout(autoplay, 5000);
+    });
+    
+    // Track current slide
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+    
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      api.off('select');
+      api.off('pointerDown');
+      api.off('pointerUp');
+    };
+  }, [api]);
 
   return (
     <section id="offices" ref={sectionRef} className="py-24 bg-gray-50">
@@ -92,7 +99,7 @@ const Offices = () => {
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
             <span className="inline-block pb-2 relative">
               Our Offices
-              <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-primary"></span>
             </span>
           </h2>
         </div>
@@ -129,54 +136,44 @@ const Offices = () => {
         </div>
         
         <div className="mt-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-          <p className="text-lg text-gray-700 mb-6">Our presence extends to multiple European countries:</p>
+          <p className="text-lg text-gray-700 mb-8 text-center">Our presence extends to multiple European countries:</p>
           
-          <div className="city-carousel-wrapper max-w-md mx-auto">
-            <div className="city-carousel-container relative">
-              <div className="city-carousel-track">
+          <div className="cities-slider-container max-w-lg mx-auto">
+            <Carousel
+              setApi={setApi}
+              className="w-full"
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
                 {cityNames.map((city, index) => (
-                  <div 
-                    key={city}
-                    className={`city-carousel-item ${index === currentSlide ? 'active' : ''}`}
-                  >
-                    {city}
-                  </div>
+                  <CarouselItem key={city} className="basis-auto">
+                    <div className={`city-slider-item px-8 py-2 ${current === index ? 'active' : ''}`}>
+                      {city}
+                    </div>
+                  </CarouselItem>
                 ))}
-              </div>
+              </CarouselContent>
               
-              <div className="city-carousel-navigation">
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="city-carousel-nav-btn prev"
-                  onClick={prevSlide}
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                  <span className="sr-only">Previous city</span>
-                </Button>
+              <div className="flex items-center justify-center mt-6">
+                <CarouselPrevious className="relative static mr-2 h-8 w-8" />
                 
-                <div className="city-carousel-indicators">
+                <div className="flex gap-2">
                   {cityNames.map((_, index) => (
                     <button
                       key={index}
-                      className={`city-carousel-indicator ${index === currentSlide ? 'active' : ''}`}
-                      onClick={() => handleManualNavigation(index)}
+                      onClick={() => api?.scrollTo(index)}
+                      className={`slider-indicator ${current === index ? 'active' : ''}`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
                 
-                <Button 
-                  variant="ghost" 
-                  size="icon"
-                  className="city-carousel-nav-btn next"
-                  onClick={nextSlide}
-                >
-                  <ChevronRight className="h-5 w-5" />
-                  <span className="sr-only">Next city</span>
-                </Button>
+                <CarouselNext className="relative static ml-2 h-8 w-8" />
               </div>
-            </div>
+            </Carousel>
           </div>
         </div>
       </div>
