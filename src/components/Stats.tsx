@@ -63,8 +63,17 @@ const Stats = () => {
   }, [inView]);
 
   return (
-    <section id="stats" ref={sectionRef} className="py-24 bg-white">
+    <section id="clients" ref={sectionRef} className="py-24 bg-white">
       <div className="section-container">
+        <div className="text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
+            <span className="inline-block pb-2 relative">
+              ECARIS at a Glance
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
+            </span>
+          </h2>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div 

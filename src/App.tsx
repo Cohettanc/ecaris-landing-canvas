@@ -18,7 +18,6 @@ import OurValues from "./pages/OurValues";
 import ServiceDailyRate from "./pages/ServiceDailyRate";
 import ServiceProjectDelivery from "./pages/ServiceProjectDelivery";
 import Careers from "./pages/Careers";
-import EcarisAtGlance from "./pages/EcarisAtGlance";
 import PageTransition from "./components/PageTransition";
 
 const queryClient = new QueryClient();
@@ -40,7 +39,6 @@ const AppRoutes = () => {
         <Route path="/service-daily-rate" element={<ServiceDailyRate />} />
         <Route path="/service-project-delivery" element={<ServiceProjectDelivery />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/ecaris-at-glance" element={<EcarisAtGlance />} />
         <Route path="/office/:officeId" element={<OfficePageLayout />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
