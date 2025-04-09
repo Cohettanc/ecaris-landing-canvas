@@ -6,7 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import StrategyCaseStudy from '@/components/strategy/StrategyCaseStudy';
 
 const StrategyArchitecture = () => {
   useEffect(() => {

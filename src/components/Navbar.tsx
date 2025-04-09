@@ -57,7 +57,7 @@ const Navbar = () => {
       ]
     },
     { 
-      name: "ECARIS at a Glance", 
+      name: "Our Clients", 
       id: "clients" 
     },
     { 
