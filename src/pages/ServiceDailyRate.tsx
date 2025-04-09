@@ -1,8 +1,9 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Users, Clock, BarChart, Zap } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const ServiceDailyRate = () => {
   useEffect(() => {
@@ -38,22 +39,6 @@ const ServiceDailyRate = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">How it works</h2>
-            
-            {/* Updated banner with the uploaded image */}
-            <div className="relative rounded-xl overflow-hidden mb-10 shadow-lg">
-              <img 
-                src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
-                alt="Team of IT professionals collaborating" 
-                className="w-full h-64 md:h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-ecaris-green/70 to-transparent flex items-center">
-                <div className="px-8 py-6 max-w-md text-white">
-                  <h3 className="text-2xl font-bold mb-2">Expert Consultants</h3>
-                  <p className="text-ecaris-light">Our consultants bring specialized skills directly to your team when you need them most.</p>
-                </div>
-              </div>
-            </div>
-            
             <p className="text-lg text-gray-700 mb-4">
               Our daily rate service model provides you with access to skilled consultants who can augment your team, provide specialized expertise, or lead key initiatives on a flexible basis.
             </p>
@@ -62,19 +47,9 @@ const ServiceDailyRate = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <Card className="overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png" 
-                    alt="Resource flexibility" 
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                  />
-                </div>
+              <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Users className="h-5 w-5 mr-2 text-ecaris-green" />
-                    Resource Flexibility
-                  </CardTitle>
+                  <CardTitle>Resource Flexibility</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">
@@ -83,19 +58,9 @@ const ServiceDailyRate = () => {
                 </CardContent>
               </Card>
               
-              <Card className="overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/f980c288-3118-4697-9b32-90b150f12368.png" 
-                    alt="Specialized expertise" 
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                  />
-                </div>
+              <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <BarChart className="h-5 w-5 mr-2 text-ecaris-green" />
-                    Specialized Expertise
-                  </CardTitle>
+                  <CardTitle>Specialized Expertise</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">
@@ -104,19 +69,9 @@ const ServiceDailyRate = () => {
                 </CardContent>
               </Card>
               
-              <Card className="overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
-                    alt="Team integration" 
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                  />
-                </div>
+              <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Zap className="h-5 w-5 mr-2 text-ecaris-green" />
-                    Team Integration
-                  </CardTitle>
+                  <CardTitle>Team Integration</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">
@@ -129,26 +84,6 @@ const ServiceDailyRate = () => {
           
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
-            
-            {/* Added image and text in a flex layout */}
-            <div className="flex flex-col md:flex-row gap-8 mb-10">
-              <div className="md:w-1/2">
-                <img 
-                  src="/lovable-uploads/7c1ab946-adcb-4577-ae92-6699efe5c3d8.png" 
-                  alt="Professionals working together" 
-                  className="rounded-lg shadow-md w-full h-full object-cover"
-                />
-              </div>
-              <div className="md:w-1/2 flex flex-col justify-center">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Choose Daily Rate Services?</h3>
-                <p className="text-gray-700 mb-4">
-                  With our daily rate model, you gain the flexibility to adapt to changing project requirements while maintaining budget control. Our experienced consultants integrate seamlessly with your team, bringing specialized knowledge exactly when you need it.
-                </p>
-                <p className="text-gray-700">
-                  This approach enables knowledge transfer within your organization, ensuring that your team develops capabilities alongside our consultants.
-                </p>
-              </div>
-            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
               <div className="flex items-start">
@@ -193,89 +128,34 @@ const ServiceDailyRate = () => {
             </div>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-lg relative overflow-hidden">
-            <div className="absolute right-0 top-0 h-full w-1/3 opacity-10">
-              <img 
-                src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
-                alt="" 
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Ideal for</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                    <Check className="h-6 w-6" />
-                  </div>
-                  <p className="ml-3 text-gray-700">Teams needing temporary specialized expertise</p>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                    <Check className="h-6 w-6" />
-                  </div>
-                  <p className="ml-3 text-gray-700">Projects with evolving requirements</p>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                    <Check className="h-6 w-6" />
-                  </div>
-                  <p className="ml-3 text-gray-700">Multi-phase initiatives where needs may change</p>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                    <Check className="h-6 w-6" />
-                  </div>
-                  <p className="ml-3 text-gray-700">Organizations seeking to augment their internal capabilities</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Case Study Section - New */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-10 text-center">Client Success Story</h2>
-          
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <div className="md:flex">
-              <div className="md:w-1/2">
-                <img 
-                  src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
-                  alt="Case study client" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="md:w-1/2 p-8">
-                <div className="text-sm font-medium text-ecaris-green mb-2">Financial Services</div>
-                <h3 className="text-xl font-bold mb-4">System Migration Support</h3>
-                <p className="text-gray-700 mb-4">
-                  A leading financial institution needed specialized expertise to support their core banking system migration. Rather than hiring full-time employees for this temporary need, they engaged our consultants on a daily rate basis.
-                </p>
-                <p className="text-gray-700 mb-4">
-                  Our team provided technical migration expertise, testing support, and knowledge transfer to internal teams. The client was able to scale resources up during critical phases and down during quieter periods.
-                </p>
-                <div className="mt-6 border-t pt-4">
-                  <div className="font-medium">Results:</div>
-                  <ul className="mt-2 space-y-2">
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-ecaris-green flex-shrink-0 mr-2 mt-0.5" />
-                      <span>Successfully migrated within aggressive timeline</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-ecaris-green flex-shrink-0 mr-2 mt-0.5" />
-                      <span>30% cost savings compared to fixed-price contract</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-ecaris-green flex-shrink-0 mr-2 mt-0.5" />
-                      <span>Internal team upskilled through knowledge transfer</span>
-                    </li>
-                  </ul>
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Ideal for</h2>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                  <Check className="h-6 w-6" />
                 </div>
-              </div>
-            </div>
+                <p className="ml-3 text-gray-700">Teams needing temporary specialized expertise</p>
+              </li>
+              <li className="flex items-start">
+                <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                  <Check className="h-6 w-6" />
+                </div>
+                <p className="ml-3 text-gray-700">Projects with evolving requirements</p>
+              </li>
+              <li className="flex items-start">
+                <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                  <Check className="h-6 w-6" />
+                </div>
+                <p className="ml-3 text-gray-700">Multi-phase initiatives where needs may change</p>
+              </li>
+              <li className="flex items-start">
+                <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                  <Check className="h-6 w-6" />
+                </div>
+                <p className="ml-3 text-gray-700">Organizations seeking to augment their internal capabilities</p>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
