@@ -10,22 +10,19 @@ interface PageTransitionProps {
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: 10,
   },
   in: {
     opacity: 1,
-    y: 0,
   },
   out: {
     opacity: 0,
-    y: -10,
   },
 };
 
 const pageTransition = {
   type: "tween",
   ease: "easeInOut",
-  duration: 0.4,
+  duration: 0.3,
 };
 
 const PageTransition = ({ children }: PageTransitionProps) => {
@@ -37,19 +34,21 @@ const PageTransition = ({ children }: PageTransitionProps) => {
   }, [location.pathname]);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-        className="w-full min-h-screen"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div className="relative overflow-hidden w-full min-h-screen">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={location.pathname}
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={pageTransition}
+          className="w-full min-h-screen bg-background"
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 };
 

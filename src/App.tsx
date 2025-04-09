@@ -48,10 +48,12 @@ const AppRoutes = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
-        <AppRoutes />
+        <div className="app-container bg-background">
+          <AppRoutes />
+          <Toaster />
+          <Sonner />
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
