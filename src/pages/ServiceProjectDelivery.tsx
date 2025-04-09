@@ -1,8 +1,9 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ArrowRight, ArrowDown, Circle, Server, Shield, Database, Plug, FileCode } from 'lucide-react';
+import { Check, ArrowRight, ArrowDown, Circle, Server, Shield, Database, Plug, FileCode, Cloud, BarChart, Settings, Users, Activity } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
@@ -163,92 +164,92 @@ const ServiceProjectDelivery = () => {
             </div>
           </div>
           
-          {/* Project Categories - NEW SECTION */}
+          {/* Project Categories - UPDATED SECTION */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Project Categories</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card 1: New Product Development */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Card 1: AI, Data & Governance */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <FileCode className="h-6 w-6 text-ecaris-green" />
+                      <BarChart className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">New Product Development</CardTitle>
+                    <CardTitle className="text-xl">AI, Data & Governance</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Development of new products or secondary products included in the product roadmap, including version updates and quality assurance.
+                  <p className="text-gray-700 mb-3">
+                    Design of data/AI products, launch of data governance programs (maturity assessment, policies, tooling), business-focused use cases.
                   </p>
                 </CardContent>
               </Card>
               
-              {/* Card 2: IT Infrastructure */}
+              {/* Card 2: Cloud & Infrastructure */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Server className="h-6 w-6 text-ecaris-green" />
+                      <Cloud className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">IT Infrastructure</CardTitle>
+                    <CardTitle className="text-xl">Cloud & Infrastructure</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Deployment and management of new hardware, software, or networks to support your business operations and growth.
+                  <p className="text-gray-700 mb-3">
+                    Cloud strategy (public, private, hybrid), infrastructure migration (audit, target architecture, execution, FinOps), cloud cost optimization.
                   </p>
                 </CardContent>
               </Card>
               
-              {/* Card 3: Systems Integration */}
+              {/* Card 3: ERP & Business Applications */}
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-ecaris-green/10 p-2 rounded-full">
+                      <Settings className="h-6 w-6 text-ecaris-green" />
+                    </div>
+                    <CardTitle className="text-xl">ERP & Business Applications</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-3">
+                    ERP modernization sprints, targeted implementation or evolution projects (modules, integrations, UX), cloud readiness assessments.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Card 4: System Integration & APIs */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
                       <Plug className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">Systems Integration</CardTitle>
+                    <CardTitle className="text-xl">System Integration & APIs</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Connecting different IT systems to work together seamlessly, ensuring data flows efficiently across your organization.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              {/* Card 4: IT Security */}
-              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Shield className="h-6 w-6 text-ecaris-green" />
-                    </div>
-                    <CardTitle className="text-xl">IT Security Assessments</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Comprehensive security assessments to identify vulnerabilities and implement robust protection measures for your IT assets.
+                  <p className="text-gray-700 mb-3">
+                    Integration architecture (ESB, iPaaS, microservices), API lifecycle management (exposure, security, developer portals), system interoperability.
                   </p>
                 </CardContent>
               </Card>
               
               {/* Card 5: Business Process Automation */}
-              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1 lg:col-start-1 lg:col-end-3">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Database className="h-6 w-6 text-ecaris-green" />
+                      <Activity className="h-6 w-6 text-ecaris-green" />
                     </div>
                     <CardTitle className="text-xl">Business Process Automation</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Using technology to streamline workflows, reduce manual effort, and improve overall operational efficiency.
+                  <p className="text-gray-700 mb-3">
+                    Process automation using RPA, low-code, and BPM tools. Focus on high-ROI workflows (e.g., Order-to-Cash, Procure-to-Pay).
                   </p>
                 </CardContent>
               </Card>
