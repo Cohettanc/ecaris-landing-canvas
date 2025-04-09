@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -86,6 +87,24 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  // Handle scrolling to sections when the URL has a hash
+  useEffect(() => {
+    // Check if there's a hash in the URL (for section scrolling)
+    if (location.hash && location.pathname === '/') {
+      const id = location.hash.substring(1); // Remove the # symbol
+      const element = document.getElementById(id);
+      if (element) {
+        // Use a small delay to ensure the page has fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -105,9 +124,9 @@ const Navbar = () => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
     
-    // If we're not on the homepage, navigate to homepage first
+    // If we're not on the homepage, navigate to homepage with the section hash
     if (location.pathname !== '/') {
-      navigate('/#' + id, { replace: false });
+      navigate(`/#${id}`);
       return;
     }
     
@@ -147,17 +166,8 @@ const Navbar = () => {
         return;
       }
       
-      // If we're not on the homepage, navigate to homepage and then scroll
-      navigate('/', { replace: false });
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
+      // If we're not on the homepage, navigate directly to homepage with hash
+      navigate(path);
     } else {
       // For regular pages, just navigate without replacing history
       navigate(path, { replace: false });

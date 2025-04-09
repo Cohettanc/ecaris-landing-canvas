@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -10,12 +11,34 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const location = useLocation();
+
   useEffect(() => {
     // Update document title
     document.title = "ECARIS | Excellence in Consulting";
-    // Scroll to top when page loads
-    window.scrollTo(0, 0);
-  }, []);
+    
+    // Check if there's a hash in the URL (for section scrolling)
+    if (location.hash) {
+      const id = location.hash.substring(1); // Remove the # symbol
+      const element = document.getElementById(id);
+      
+      if (element) {
+        // Use a small delay to ensure the page has fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      } else {
+        // If no matching element, scroll to top
+        window.scrollTo(0, 0);
+      }
+    } else {
+      // No hash in URL, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen antialiased">
