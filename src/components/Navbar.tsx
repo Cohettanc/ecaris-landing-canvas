@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -37,7 +36,8 @@ const Navbar = () => {
       dropdown: [
         { name: "About Us", path: "/#about" },
         { name: "Our Team", path: "/our-team" },
-        { name: "Our Values", path: "/our-values" }
+        { name: "Our Values", path: "/our-values" },
+        { name: "ECARIS at a Glance", path: "/ecaris-at-glance" }
       ]
     },
     { 
@@ -55,10 +55,6 @@ const Navbar = () => {
         { name: "Daily Rate Services", path: "/service-daily-rate" },
         { name: "Project Delivery Services", path: "/service-project-delivery" }
       ]
-    },
-    { 
-      name: "ECARIS at a Glance", 
-      id: "clients" 
     },
     { 
       name: "Our Offices", 
@@ -91,14 +87,11 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
-  // Handle scrolling to sections when the URL has a hash
   useEffect(() => {
-    // Check if there's a hash in the URL (for section scrolling)
     if (location.hash && location.pathname === '/') {
-      const id = location.hash.substring(1); // Remove the # symbol
+      const id = location.hash.substring(1);
       const element = document.getElementById(id);
       if (element) {
-        // Use a small delay to ensure the page has fully loaded
         setTimeout(() => {
           element.scrollIntoView({ 
             behavior: 'smooth',
@@ -109,7 +102,6 @@ const Navbar = () => {
     }
   }, [location]);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (activeDropdown && dropdownRefs.current[activeDropdown] && 
@@ -128,13 +120,11 @@ const Navbar = () => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
     
-    // If we're not on the homepage, navigate to homepage with the section hash
     if (location.pathname !== '/') {
       navigate(`/#${id}`, { replace: true });
       return;
     }
     
-    // If we're already on the homepage, just scroll to the section
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ 
@@ -154,11 +144,9 @@ const Navbar = () => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
     
-    // Handle paths that start with /#
     if (path.startsWith('/#')) {
       const id = path.substring(2);
       
-      // If we're already on the homepage, just scroll
       if (location.pathname === '/') {
         const element = document.getElementById(id);
         if (element) {
@@ -170,10 +158,8 @@ const Navbar = () => {
         return;
       }
       
-      // If we're not on the homepage, navigate directly to homepage with hash
       navigate(path, { replace: true });
     } else {
-      // For regular pages, use replace for smoother transition
       navigate(path, { replace: true });
     }
   };
@@ -205,7 +191,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <div 
@@ -230,7 +215,6 @@ const Navbar = () => {
                       )} />
                     </button>
                     
-                    {/* Dropdown Menu */}
                     <div 
                       className={cn(
                         "absolute left-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg z-20 transition-all duration-200 transform origin-top-left",
@@ -272,7 +256,6 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -291,7 +274,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div 
         className={cn(
           "fixed inset-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out md:hidden",
@@ -318,7 +300,6 @@ const Navbar = () => {
                     />
                   </button>
                   
-                  {/* Mobile Dropdown Items */}
                   <div 
                     className={cn(
                       "pl-4 overflow-hidden transition-all duration-200",
