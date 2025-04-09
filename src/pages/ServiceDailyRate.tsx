@@ -17,8 +17,8 @@ const ServiceDailyRate = () => {
     <div className="min-h-screen antialiased">
       <Navbar />
       
-      {/* Header Section */}
-      <section className="pt-40 pb-16 bg-gray-50">
+      {/* Header Section - Updated padding top from pt-40 to pt-32 to ensure it's visible below navbar */}
+      <section className="pt-32 pb-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
