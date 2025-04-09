@@ -20,13 +20,13 @@ const ServiceProjectDelivery = () => {
       <Navbar />
       
       {/* Header Section - Significantly increased padding top to pt-48 to ensure it's fully visible below navbar */}
-      <section className="pt-48 pb-16 bg-gray-50">
+      <section className="pt-48 pb-16 bg-ecaris-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Project Delivery Services
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-ecaris-light max-w-3xl mx-auto">
               Delivering targeted IT initiatives within defined timelines and budgets
             </p>
           </div>
