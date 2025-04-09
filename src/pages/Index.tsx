@@ -34,10 +34,8 @@ const Index = () => {
         // If no matching element, scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-    } else {
-      // No hash in URL, scroll to top with smooth behavior
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    // We don't automatically scroll to top here since the PageTransition component handles that
   }, [location.hash]);
 
   return (
