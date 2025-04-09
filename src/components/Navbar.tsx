@@ -253,6 +253,13 @@ const Navbar = () => {
                       </div>
                     </div>
                   </>
+                ) : item.path ? (
+                  <button 
+                    onClick={() => navigateToPage(item.path!)}
+                    className="nav-link"
+                  >
+                    {item.name}
+                  </button>
                 ) : (
                   <button 
                     onClick={() => item.id && scrollToSection(item.id)} 
@@ -329,6 +336,13 @@ const Navbar = () => {
                     ))}
                   </div>
                 </div>
+              ) : item.path ? (
+                <button 
+                  onClick={() => navigateToPage(item.path!)}
+                  className="block w-full text-left py-3"
+                >
+                  {item.name}
+                </button>
               ) : (
                 <button 
                   onClick={() => item.id && scrollToSection(item.id)} 
