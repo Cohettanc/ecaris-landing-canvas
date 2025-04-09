@@ -9,14 +9,14 @@ const MainServices = () => {
     {
       id: "daily-rate",
       title: "Daily Rate Services",
-      description: "Expert consultants available on a daily rate basis for flexible staffing needs and specialized skills.",
+      description: "Expert consultants available on a daily rate basis for flexible staffing needs and specialized skills. Our consultants seamlessly integrate with your teams to provide targeted expertise exactly when you need it, allowing for maximum flexibility and knowledge transfer while maintaining cost control.",
       icon: <Clock className="w-10 h-10 text-ecaris-green" />,
       path: "/service-daily-rate"
     },
     {
       id: "project-delivery",
       title: "Project Delivery Services",
-      description: "Full project management and delivery with fixed scope, timeline and budget for your transformation initiatives.",
+      description: "Full project management and delivery with fixed scope, timeline and budget for your transformation initiatives. We take full responsibility for delivering your projects from initial planning through execution to final delivery, managing risks and ensuring quality outcomes that align perfectly with your business objectives.",
       icon: <FileCheck className="w-10 h-10 text-ecaris-green" />,
       path: "/service-project-delivery"
     }
@@ -33,7 +33,7 @@ const MainServices = () => {
             </span>
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            We offer flexible service models to meet your exact business needs and project requirements.
+            We offer flexible service models to meet your exact business needs and project requirements. Our service offerings are designed to adapt to your organization's specific challenges, whether you need targeted expertise or end-to-end project delivery.
           </p>
         </div>
         
@@ -57,6 +57,9 @@ const MainServices = () => {
         </div>
         
         <div className="mt-12 text-center">
+          <p className="text-gray-700 mb-6 max-w-3xl mx-auto">
+            In addition to our service delivery models, we offer deep expertise across multiple domains including IT Strategy, Cloud Infrastructure, Data Governance, and Business Applications.
+          </p>
           <button 
             onClick={() => navigate("/#services")}
             className="inline-flex items-center text-gray-700 hover:text-ecaris-green transition-colors font-medium"
