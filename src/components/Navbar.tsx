@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -41,19 +40,19 @@ const Navbar = () => {
       ]
     },
     { 
+      name: "Our Services", 
+      dropdown: [
+        { name: "Daily Rate Services", path: "/service-daily-rate" },
+        { name: "Project Delivery Services", path: "/service-project-delivery" }
+      ]
+    },
+    { 
       name: "Our Expertise", 
       dropdown: [
         { name: "Cloud Services", path: "/cloud-service" },
         { name: "Strategy & Architecture", path: "/strategy-architecture" },
         { name: "Data Governance", path: "/data-governance" },
         { name: "ERP Applications", path: "/erp-applications" }
-      ]
-    },
-    { 
-      name: "Our Services", 
-      dropdown: [
-        { name: "Daily Rate Services", path: "/service-daily-rate" },
-        { name: "Project Delivery Services", path: "/service-project-delivery" }
       ]
     },
     { 
@@ -126,7 +125,7 @@ const Navbar = () => {
     
     // If we're not on the homepage, navigate to homepage with the section hash
     if (location.pathname !== '/') {
-      navigate(`/#${id}`);
+      navigate(`/#${id}`, { replace: true });
       return;
     }
     
@@ -143,7 +142,7 @@ const Navbar = () => {
   const navigateToHome = () => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    navigate('/', { replace: false });
+    navigate('/', { replace: true });
   };
 
   const navigateToPage = (path: string) => {
@@ -167,10 +166,10 @@ const Navbar = () => {
       }
       
       // If we're not on the homepage, navigate directly to homepage with hash
-      navigate(path);
+      navigate(path, { replace: true });
     } else {
-      // For regular pages, just navigate without replacing history
-      navigate(path, { replace: false });
+      // For regular pages, use replace for smoother transition
+      navigate(path, { replace: true });
     }
   };
 

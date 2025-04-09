@@ -32,11 +32,11 @@ const Index = () => {
         }, 100);
       } else {
         // If no matching element, scroll to top
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else {
-      // No hash in URL, scroll to top
-      window.scrollTo(0, 0);
+      // No hash in URL, scroll to top with smooth behavior
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location.hash]);
 
