@@ -17,14 +17,17 @@ const ServiceDailyRate = () => {
     <div className="min-h-screen antialiased">
       <Navbar />
       
-      {/* Header Section - Consistent padding with other service pages */}
-      <section className="pt-64 pb-20 bg-ecaris-green text-white">
+      {/* Completely redesigned header with larger padding and more presence */}
+      <section className="pt-72 pb-24 bg-ecaris-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+              <span className="text-ecaris-light font-medium">Flexibility & Expertise</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
               Services on Daily Rate Basis
             </h1>
-            <p className="text-xl text-ecaris-light max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-ecaris-light max-w-3xl mx-auto">
               Flexible expertise delivery tailored to your specific needs with skilled consultants available on a daily rate.
             </p>
           </div>
