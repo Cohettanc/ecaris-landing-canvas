@@ -19,9 +19,16 @@ const ServiceProjectDelivery = () => {
     <div className="min-h-screen antialiased">
       <Navbar />
       
-      {/* Completely redesigned header with larger padding and more presence - matched with Daily Rate page */}
-      <section className="pt-72 pb-24 bg-ecaris-green text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Completely redesigned header with larger padding, more presence, and background image */}
+      <section className="pt-72 pb-24 bg-ecaris-green text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 mix-blend-overlay">
+          <img 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+            alt="Project delivery workspace" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
               <span className="text-ecaris-light font-medium">Defined Timelines & Budgets</span>
