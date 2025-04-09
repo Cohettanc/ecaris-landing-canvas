@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -42,6 +43,7 @@ const Navbar = () => {
     { 
       name: "Our Expertise", 
       dropdown: [
+        { name: "All Our Expertise", path: "/#services" },
         { name: "Cloud Services", path: "/cloud-service" },
         { name: "Strategy & Architecture", path: "/strategy-architecture" },
         { name: "Data Governance", path: "/data-governance" },
@@ -51,6 +53,7 @@ const Navbar = () => {
     { 
       name: "Our Services", 
       dropdown: [
+        { name: "All Our Services", path: "/#services" },
         { name: "Daily Rate Services", path: "/service-daily-rate" },
         { name: "Project Delivery Services", path: "/service-project-delivery" }
       ]
@@ -62,6 +65,7 @@ const Navbar = () => {
     { 
       name: "Our Offices", 
       dropdown: [
+        { name: "All Our Offices", path: "/#offices" },
         { name: "Luxembourg", path: "/office/luxembourg" },
         { name: "Paris", path: "/office/paris" }
       ]
