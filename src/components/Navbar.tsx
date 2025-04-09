@@ -53,7 +53,7 @@ const Navbar = () => {
     { 
       name: "Our Services", 
       dropdown: [
-        { name: "All Our Services", path: "/#services" },
+        { name: "All Our Services", path: "/#main-services" }, // Updated to point to main-services section
         { name: "Daily Rate Services", path: "/service-daily-rate" },
         { name: "Project Delivery Services", path: "/service-project-delivery" }
       ]
