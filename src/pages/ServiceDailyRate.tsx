@@ -21,8 +21,8 @@ const ServiceDailyRate = () => {
       <section className="pt-72 pb-24 bg-ecaris-green text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 mix-blend-overlay">
           <img 
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
-            alt="Professional consultants working" 
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
+            alt="Professional consultant workspace" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -60,13 +60,6 @@ const ServiceDailyRate = () => {
                   <CardTitle>Resource Flexibility</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
-                      alt="Resource scaling visualization" 
-                      className="w-full h-40 object-cover rounded-md mb-4"
-                    />
-                  </div>
                   <p className="text-gray-700">
                     Scale resources up or down based on your project needs. Bring in experts only when you need them.
                   </p>
@@ -79,13 +72,6 @@ const ServiceDailyRate = () => {
                   <CardTitle>Specialized Expertise</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-                      alt="Expert consultant working" 
-                      className="w-full h-40 object-cover rounded-md mb-4"
-                    />
-                  </div>
                   <p className="text-gray-700">
                     Access to consultants with specific skills and industry knowledge to address your unique challenges.
                   </p>
@@ -98,13 +84,6 @@ const ServiceDailyRate = () => {
                   <CardTitle>Team Integration</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                      alt="Seamless team integration" 
-                      className="w-full h-40 object-cover rounded-md mb-4"
-                    />
-                  </div>
                   <p className="text-gray-700">
                     Our consultants work seamlessly with your team, following your processes while bringing external perspective.
                   </p>
@@ -124,13 +103,6 @@ const ServiceDailyRate = () => {
                 <div className="ml-3">
                   <h3 className="text-lg font-medium text-gray-900">Cost Control</h3>
                   <p className="mt-2 text-gray-700">Transparent pricing with agreed-upon daily rates and no hidden costs.</p>
-                  <div className="mt-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1460574283810-2aab119d8511" 
-                      alt="Cost control visualization" 
-                      className="w-full h-32 object-cover rounded-md"
-                    />
-                  </div>
                 </div>
               </div>
               
@@ -141,13 +113,6 @@ const ServiceDailyRate = () => {
                 <div className="ml-3">
                   <h3 className="text-lg font-medium text-gray-900">Adaptability</h3>
                   <p className="mt-2 text-gray-700">Easily adjust to changing requirements or priorities without contract renegotiation.</p>
-                  <div className="mt-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df" 
-                      alt="Adaptable project management" 
-                      className="w-full h-32 object-cover rounded-md"
-                    />
-                  </div>
                 </div>
               </div>
               
@@ -158,13 +123,6 @@ const ServiceDailyRate = () => {
                 <div className="ml-3">
                   <h3 className="text-lg font-medium text-gray-900">Knowledge Transfer</h3>
                   <p className="mt-2 text-gray-700">Our consultants work closely with your team, sharing expertise and best practices.</p>
-                  <div className="mt-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" 
-                      alt="Knowledge transfer session" 
-                      className="w-full h-32 object-cover rounded-md"
-                    />
-                  </div>
                 </div>
               </div>
               
@@ -175,64 +133,48 @@ const ServiceDailyRate = () => {
                 <div className="ml-3">
                   <h3 className="text-lg font-medium text-gray-900">Quick Start</h3>
                   <p className="mt-2 text-gray-700">Rapid deployment of resources without lengthy procurement processes.</p>
-                  <div className="mt-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3" 
-                      alt="Quick project startup" 
-                      className="w-full h-32 object-cover rounded-md"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-lg relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                alt="Background pattern" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Ideal for</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                        <Check className="h-6 w-6" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Teams needing temporary specialized expertise</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                        <Check className="h-6 w-6" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Projects with evolving requirements</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                        <Check className="h-6 w-6" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Multi-phase initiatives where needs may change</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
-                        <Check className="h-6 w-6" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Organizations seeking to augment their internal capabilities</p>
-                    </li>
-                  </ul>
-                </div>
-                <div className="flex items-center justify-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
-                    alt="Teams collaborating" 
-                    className="max-w-full h-auto rounded-lg shadow-lg"
-                  />
-                </div>
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Ideal for</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Teams needing temporary specialized expertise</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Projects with evolving requirements</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Multi-phase initiatives where needs may change</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Organizations seeking to augment their internal capabilities</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
+                  alt="Teams collaborating" 
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                />
               </div>
             </div>
           </div>
@@ -274,14 +216,7 @@ const ServiceDailyRate = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-ecaris-green text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978" 
-            alt="Background pattern" 
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <section className="py-16 bg-ecaris-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6">Ready to enhance your team with our expertise?</h2>
           <p className="text-xl mb-8 text-ecaris-light">
