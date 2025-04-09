@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -40,10 +39,10 @@ const ServiceDailyRate = () => {
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">How it works</h2>
             
-            {/* Added image banner */}
+            {/* Updated banner with the uploaded image */}
             <div className="relative rounded-xl overflow-hidden mb-10 shadow-lg">
               <img 
-                src="/images/daily-rate-team.jpg" 
+                src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
                 alt="Team of IT professionals collaborating" 
                 className="w-full h-64 md:h-96 object-cover"
               />
@@ -66,7 +65,7 @@ const ServiceDailyRate = () => {
               <Card className="overflow-hidden">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/public/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png" 
+                    src="/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png" 
                     alt="Resource flexibility" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                   />
@@ -87,7 +86,7 @@ const ServiceDailyRate = () => {
               <Card className="overflow-hidden">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/public/lovable-uploads/f980c288-3118-4697-9b32-90b150f12368.png" 
+                    src="/lovable-uploads/f980c288-3118-4697-9b32-90b150f12368.png" 
                     alt="Specialized expertise" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                   />
@@ -108,7 +107,7 @@ const ServiceDailyRate = () => {
               <Card className="overflow-hidden">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/images/team-integration.jpg" 
+                    src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
                     alt="Team integration" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                   />
@@ -135,7 +134,7 @@ const ServiceDailyRate = () => {
             <div className="flex flex-col md:flex-row gap-8 mb-10">
               <div className="md:w-1/2">
                 <img 
-                  src="/public/lovable-uploads/7c1ab946-adcb-4577-ae92-6699efe5c3d8.png" 
+                  src="/lovable-uploads/7c1ab946-adcb-4577-ae92-6699efe5c3d8.png" 
                   alt="Professionals working together" 
                   className="rounded-lg shadow-md w-full h-full object-cover"
                 />
@@ -197,7 +196,7 @@ const ServiceDailyRate = () => {
           <div className="bg-gray-50 p-8 rounded-lg relative overflow-hidden">
             <div className="absolute right-0 top-0 h-full w-1/3 opacity-10">
               <img 
-                src="/images/daily-rate-pattern.jpg" 
+                src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
                 alt="" 
                 className="h-full w-full object-cover"
               />
@@ -244,7 +243,7 @@ const ServiceDailyRate = () => {
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src="/images/case-study-daily-rate.jpg" 
+                  src="/lovable-uploads/57f19343-8a06-4e7f-9c97-0727f90441cb.png" 
                   alt="Case study client" 
                   className="w-full h-full object-cover"
                 />
