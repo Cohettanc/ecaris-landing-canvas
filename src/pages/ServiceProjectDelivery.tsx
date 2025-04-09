@@ -19,8 +19,8 @@ const ServiceProjectDelivery = () => {
     <div className="min-h-screen antialiased">
       <Navbar />
       
-      {/* Header Section - Increased padding top to pt-40 to ensure it's fully visible below navbar */}
-      <section className="pt-40 pb-16 bg-gray-50">
+      {/* Header Section - Significantly increased padding top to pt-48 to ensure it's fully visible below navbar */}
+      <section className="pt-48 pb-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
