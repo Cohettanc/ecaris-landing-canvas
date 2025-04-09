@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, Users, FileCheck, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const MainServices = () => {
   const navigate = useNavigate();
@@ -51,18 +50,8 @@ const MainServices = () => {
   ];
 
   return (
-    <section id="main-services" className="py-24 relative">
-      <div className="absolute inset-0 z-0">
-        <AspectRatio ratio={16/9} className="h-full">
-          <img 
-            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop" 
-            alt="Technology background" 
-            className="w-full h-full object-cover opacity-10"
-          />
-        </AspectRatio>
-      </div>
-      
-      <div className="section-container relative z-10">
+    <section id="main-services" className="py-24 bg-white">
+      <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
             <span className="inline-block pb-2 relative">
