@@ -19,6 +19,8 @@ const MainServices = () => {
       description: "Expert consultants available on a daily rate basis for flexible staffing needs and specialized skills.",
       longDescription: "Our consultants seamlessly integrate with your teams to provide targeted expertise exactly when you need it, allowing for maximum flexibility and knowledge transfer while maintaining cost control. We carefully match consultants with your specific technical and business requirements to ensure successful outcomes.",
       icon: <Clock className="w-10 h-10 text-ecaris-green" />,
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
+      imageAlt: "Team of IT consultants collaborating around a table",
       path: "/service-daily-rate",
       benefits: [
         "Flexible engagement model to adapt to changing project needs",
@@ -34,6 +36,8 @@ const MainServices = () => {
       description: "Full project management and delivery with fixed scope, timeline and budget for your transformation initiatives.",
       longDescription: "We take full responsibility for delivering your projects from initial planning through execution to final delivery, managing risks and ensuring quality outcomes that align perfectly with your business objectives. Our experienced project teams use proven methodologies to ensure successful delivery on time and within budget.",
       icon: <FileCheck className="w-10 h-10 text-ecaris-green" />,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+      imageAlt: "Project management team reviewing delivery timeline",
       path: "/service-project-delivery",
       benefits: [
         "End-to-end project management and delivery",
@@ -60,7 +64,7 @@ const MainServices = () => {
           </p>
         </div>
         
-        <div className="space-y-6">
+        <div className="space-y-8">
           {services.map((service) => (
             <Card
               key={service.id}
@@ -94,8 +98,16 @@ const MainServices = () => {
               
               {expandedService === service.id && (
                 <CardContent className="px-6 pt-0 pb-6 border-t border-gray-100 animate-fade-in">
-                  <div className="mt-4 text-gray-700">
-                    <p className="mb-4">{service.longDescription}</p>
+                  <div className="mt-4">
+                    <div className="aspect-video w-full mb-6 bg-gray-100 rounded-lg overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.imageAlt}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    <p className="mb-4 text-gray-700">{service.longDescription}</p>
                     
                     <h4 className="font-semibold text-lg mb-2 text-gray-900">Key Benefits:</h4>
                     <ul className="list-disc pl-5 mb-6 space-y-1">
