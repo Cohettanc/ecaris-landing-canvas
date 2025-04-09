@@ -66,7 +66,7 @@ const ServiceDailyRate = () => {
               <Card className="overflow-hidden">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/images/resource-flexibility.jpg" 
+                    src="/public/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png" 
                     alt="Resource flexibility" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                   />
@@ -87,7 +87,7 @@ const ServiceDailyRate = () => {
               <Card className="overflow-hidden">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src="/images/specialized-expertise.jpg" 
+                    src="/public/lovable-uploads/f980c288-3118-4697-9b32-90b150f12368.png" 
                     alt="Specialized expertise" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                   />
@@ -135,7 +135,7 @@ const ServiceDailyRate = () => {
             <div className="flex flex-col md:flex-row gap-8 mb-10">
               <div className="md:w-1/2">
                 <img 
-                  src="/images/daily-rate-benefits.jpg" 
+                  src="/public/lovable-uploads/7c1ab946-adcb-4577-ae92-6699efe5c3d8.png" 
                   alt="Professionals working together" 
                   className="rounded-lg shadow-md w-full h-full object-cover"
                 />
