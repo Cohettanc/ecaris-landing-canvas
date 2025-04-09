@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -17,8 +16,8 @@ const ServiceDailyRate = () => {
     <div className="min-h-screen antialiased">
       <Navbar />
       
-      {/* Header Section - Significantly increased padding top to pt-56 to ensure it's fully visible below navbar */}
-      <section className="pt-56 pb-16 bg-ecaris-green text-white">
+      {/* Header Section - Significantly increased padding top to pt-64 to ensure it's fully visible below navbar */}
+      <section className="pt-64 pb-16 bg-ecaris-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
