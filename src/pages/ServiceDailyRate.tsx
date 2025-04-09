@@ -21,7 +21,7 @@ const ServiceDailyRate = () => {
       <section className="pt-72 pb-24 bg-ecaris-green text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 mix-blend-overlay">
           <img 
-            src="/lovable-uploads/a766b90c-3881-4690-b129-aad84671a6e3.png" 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
             alt="Professional consultants working" 
             className="w-full h-full object-cover"
           />
@@ -62,7 +62,7 @@ const ServiceDailyRate = () => {
                 <CardContent>
                   <div className="mb-4">
                     <img 
-                      src="/lovable-uploads/751b4c6a-6e04-4a09-9903-73498e1a11b4.png" 
+                      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
                       alt="Resource scaling visualization" 
                       className="w-full h-40 object-cover rounded-md mb-4"
                     />
@@ -81,7 +81,7 @@ const ServiceDailyRate = () => {
                 <CardContent>
                   <div className="mb-4">
                     <img 
-                      src="/lovable-uploads/3c35e841-2a19-4149-afe6-610b8807c475.png" 
+                      src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
                       alt="Expert consultant working" 
                       className="w-full h-40 object-cover rounded-md mb-4"
                     />
@@ -100,7 +100,7 @@ const ServiceDailyRate = () => {
                 <CardContent>
                   <div className="mb-4">
                     <img 
-                      src="/lovable-uploads/a766b90c-3881-4690-b129-aad84671a6e3.png" 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
                       alt="Seamless team integration" 
                       className="w-full h-40 object-cover rounded-md mb-4"
                     />
@@ -126,7 +126,7 @@ const ServiceDailyRate = () => {
                   <p className="mt-2 text-gray-700">Transparent pricing with agreed-upon daily rates and no hidden costs.</p>
                   <div className="mt-3">
                     <img 
-                      src="/lovable-uploads/f5fa7a37-f599-4636-b917-76c629e2d161.png" 
+                      src="https://images.unsplash.com/photo-1460574283810-2aab119d8511" 
                       alt="Cost control visualization" 
                       className="w-full h-32 object-cover rounded-md"
                     />
@@ -143,7 +143,7 @@ const ServiceDailyRate = () => {
                   <p className="mt-2 text-gray-700">Easily adjust to changing requirements or priorities without contract renegotiation.</p>
                   <div className="mt-3">
                     <img 
-                      src="/lovable-uploads/404c1b2e-1a2b-47cc-9ddb-0e7fdf059c91.png" 
+                      src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df" 
                       alt="Adaptable project management" 
                       className="w-full h-32 object-cover rounded-md"
                     />
@@ -160,7 +160,7 @@ const ServiceDailyRate = () => {
                   <p className="mt-2 text-gray-700">Our consultants work closely with your team, sharing expertise and best practices.</p>
                   <div className="mt-3">
                     <img 
-                      src="/lovable-uploads/e20fc593-7e73-40ac-8298-42c274f72386.png" 
+                      src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" 
                       alt="Knowledge transfer session" 
                       className="w-full h-32 object-cover rounded-md"
                     />
@@ -177,7 +177,7 @@ const ServiceDailyRate = () => {
                   <p className="mt-2 text-gray-700">Rapid deployment of resources without lengthy procurement processes.</p>
                   <div className="mt-3">
                     <img 
-                      src="/lovable-uploads/f980c288-3118-4697-9b32-90b150f12368.png" 
+                      src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3" 
                       alt="Quick project startup" 
                       className="w-full h-32 object-cover rounded-md"
                     />
@@ -190,7 +190,7 @@ const ServiceDailyRate = () => {
           <div className="bg-gray-50 p-8 rounded-lg relative overflow-hidden">
             <div className="absolute inset-0 opacity-5">
               <img 
-                src="/lovable-uploads/a766b90c-3881-4690-b129-aad84671a6e3.png" 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
                 alt="Background pattern" 
                 className="w-full h-full object-cover"
               />
@@ -228,7 +228,7 @@ const ServiceDailyRate = () => {
                 </div>
                 <div className="flex items-center justify-center">
                   <img 
-                    src="/lovable-uploads/7c1ab946-adcb-4577-ae92-6699efe5c3d8.png" 
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
                     alt="Teams collaborating" 
                     className="max-w-full h-auto rounded-lg shadow-lg"
                   />
@@ -263,7 +263,7 @@ const ServiceDailyRate = () => {
               </div>
               <div className="bg-gray-100">
                 <img 
-                  src="/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png" 
+                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952" 
                   alt="IT transformation case study" 
                   className="w-full h-full object-cover"
                 />
@@ -277,7 +277,7 @@ const ServiceDailyRate = () => {
       <section className="py-16 bg-ecaris-green text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img 
-            src="/lovable-uploads/a766b90c-3881-4690-b129-aad84671a6e3.png" 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978" 
             alt="Background pattern" 
             className="w-full h-full object-cover"
           />
