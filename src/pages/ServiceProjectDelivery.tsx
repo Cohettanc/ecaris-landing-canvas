@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ArrowRight, ArrowDown, Circle, Server, Shield, Database, Plug, FileCode } from 'lucide-react';
+import { Check, ArrowRight, ArrowDown, Circle, Server, Shield, Database, Plug, FileCode, Brain, Cloud, Layout, GitBranch, Workflow } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
@@ -163,93 +163,172 @@ const ServiceProjectDelivery = () => {
             </div>
           </div>
           
-          {/* Project Categories - NEW SECTION */}
+          {/* Project Categories - UPDATED SECTION */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Project Categories</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card 1: New Product Development */}
+            <div className="grid grid-cols-1 gap-6">
+              {/* Category 1: AI, Data Products & Data Governance */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <FileCode className="h-6 w-6 text-ecaris-green" />
+                      <Brain className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">New Product Development</CardTitle>
+                    <CardTitle className="text-xl">AI, Data Products & Data Governance</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Development of new products or secondary products included in the product roadmap, including version updates and quality assurance.
-                  </p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Design and implementation of AI and data-driven products (e.g., recommendation systems, predictive models, data analytics platforms)</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Data Governance Kickstart: maturity assessment, policy definition, and tooling roadmap (e.g., cataloging, lineage, access control)</p>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
               
-              {/* Card 2: IT Infrastructure */}
+              {/* Category 2: Cloud & Infrastructure */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Server className="h-6 w-6 text-ecaris-green" />
+                      <Cloud className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">IT Infrastructure</CardTitle>
+                    <CardTitle className="text-xl">Cloud & Infrastructure</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Deployment and management of new hardware, software, or networks to support your business operations and growth.
-                  </p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Cloud Strategy and Implementation (public, private, or hybrid)</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Cloud Migration Programs: current state assessment, target architecture design, migration planning, execution, and optimization (including FinOps & cost modeling)</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">FinOps Optimization: cloud cost transparency, budgeting, and governance setup (focused on aligning cloud spend with business KPIs)</p>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
               
-              {/* Card 3: Systems Integration */}
+              {/* Category 3: ERP & Business Applications */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Plug className="h-6 w-6 text-ecaris-green" />
+                      <Layout className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">Systems Integration</CardTitle>
+                    <CardTitle className="text-xl">ERP & Business Applications</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Connecting different IT systems to work together seamlessly, ensuring data flows efficiently across your organization.
-                  </p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">ERP Modernization Sprints: architecture review, cloud-readiness, UX improvements, and integration with third-party systems</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">ERP Implementation or Transformation Projects (scope-limited): modules rollout, customization, change management</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Note: full ERP migrations are rarely feasible as fixed-price projects unless the scope is clearly limited</p>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
               
-              {/* Card 4: IT Security */}
+              {/* Category 4: System Integration & API Management */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Shield className="h-6 w-6 text-ecaris-green" />
+                      <GitBranch className="h-6 w-6 text-ecaris-green" />
                     </div>
-                    <CardTitle className="text-xl">IT Security Assessments</CardTitle>
+                    <CardTitle className="text-xl">System Integration & API Management</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Comprehensive security assessments to identify vulnerabilities and implement robust protection measures for your IT assets.
-                  </p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Design and implementation of system integration architectures (e.g., ESB, iPaaS, event-driven)</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">API Strategy & Enablement: API gateway setup, lifecycle management, developer portal, and security policies</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Legacy system integration and data synchronization through microservices or middleware</p>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
               
-              {/* Card 5: Business Process Automation */}
+              {/* Category 5: Business Process Automation */}
               <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
-                      <Database className="h-6 w-6 text-ecaris-green" />
+                      <Workflow className="h-6 w-6 text-ecaris-green" />
                     </div>
                     <CardTitle className="text-xl">Business Process Automation</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">
-                    Using technology to streamline workflows, reduce manual effort, and improve overall operational efficiency.
-                  </p>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Automation of operational workflows using RPA, low-code platforms (e.g., Power Automate, UiPath) or BPM tools</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">End-to-end process redesign and automation (e.g., order-to-cash, procurement-to-pay) with performance monitoring dashboards</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 text-ecaris-green mt-1">
+                        <Circle className="h-2 w-2" />
+                      </div>
+                      <p className="ml-3">Integration of bots with internal tools and third-party services (e.g., CRM, ERP, ticketing systems)</p>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>
