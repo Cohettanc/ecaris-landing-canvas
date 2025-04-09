@@ -1,24 +1,47 @@
 
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Clock, Users, FileCheck } from 'lucide-react';
+import { ArrowRight, Clock, Users, FileCheck, ChevronDown, ChevronUp } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const MainServices = () => {
   const navigate = useNavigate();
+  const [expandedService, setExpandedService] = useState<string | null>(null);
+  
+  const toggleExpand = (serviceId: string) => {
+    setExpandedService(expandedService === serviceId ? null : serviceId);
+  };
   
   const services = [
     {
       id: "daily-rate",
       title: "Daily Rate Services",
-      description: "Expert consultants available on a daily rate basis for flexible staffing needs and specialized skills. Our consultants seamlessly integrate with your teams to provide targeted expertise exactly when you need it, allowing for maximum flexibility and knowledge transfer while maintaining cost control.",
+      description: "Expert consultants available on a daily rate basis for flexible staffing needs and specialized skills.",
+      longDescription: "Our consultants seamlessly integrate with your teams to provide targeted expertise exactly when you need it, allowing for maximum flexibility and knowledge transfer while maintaining cost control. We carefully match consultants with your specific technical and business requirements to ensure successful outcomes.",
       icon: <Clock className="w-10 h-10 text-ecaris-green" />,
-      path: "/service-daily-rate"
+      path: "/service-daily-rate",
+      benefits: [
+        "Flexible engagement model to adapt to changing project needs",
+        "Access to specialized skills when you need them",
+        "Knowledge transfer to your internal teams",
+        "Cost-effective way to fill skill gaps",
+        "Quick onboarding and integration with your teams"
+      ]
     },
     {
       id: "project-delivery",
       title: "Project Delivery Services",
-      description: "Full project management and delivery with fixed scope, timeline and budget for your transformation initiatives. We take full responsibility for delivering your projects from initial planning through execution to final delivery, managing risks and ensuring quality outcomes that align perfectly with your business objectives.",
+      description: "Full project management and delivery with fixed scope, timeline and budget for your transformation initiatives.",
+      longDescription: "We take full responsibility for delivering your projects from initial planning through execution to final delivery, managing risks and ensuring quality outcomes that align perfectly with your business objectives. Our experienced project teams use proven methodologies to ensure successful delivery on time and within budget.",
       icon: <FileCheck className="w-10 h-10 text-ecaris-green" />,
-      path: "/service-project-delivery"
+      path: "/service-project-delivery",
+      benefits: [
+        "End-to-end project management and delivery",
+        "Fixed scope, timeline, and budget for better planning",
+        "Risk management and mitigation",
+        "Regular reporting and transparent communication",
+        "Quality assurance throughout the project lifecycle"
+      ]
     }
   ];
 
@@ -37,22 +60,60 @@ const MainServices = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-6">
           {services.map((service) => (
-            <div
+            <Card
               key={service.id}
-              className="bg-white shadow-md hover:shadow-lg rounded-lg p-8 transition-all duration-300 flex flex-col"
+              className={`overflow-hidden transition-all duration-300 ${
+                expandedService === service.id ? 'shadow-lg' : 'shadow-md hover:shadow-lg'
+              }`}
             >
-              <div className="mb-6">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">{service.title}</h3>
-              <p className="text-gray-700 mb-6 flex-grow">{service.description}</p>
-              <button
-                onClick={() => navigate(service.path)}
-                className="self-start flex items-center text-ecaris-green hover:text-ecaris-green/80 font-medium"
+              <div 
+                className="p-6 cursor-pointer"
+                onClick={() => toggleExpand(service.id)}
               >
-                Learn more <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </div>
+                <div className="flex items-start justify-between">
+                  <div className="flex gap-4 items-start">
+                    <div className="rounded-full bg-ecaris-green/10 p-3">
+                      {service.icon}
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">{service.title}</h3>
+                      <p className="text-gray-700">{service.description}</p>
+                    </div>
+                  </div>
+                  <div className="text-ecaris-green">
+                    {expandedService === service.id ? (
+                      <ChevronUp className="h-6 w-6" />
+                    ) : (
+                      <ChevronDown className="h-6 w-6" />
+                    )}
+                  </div>
+                </div>
+              </div>
+              
+              {expandedService === service.id && (
+                <CardContent className="px-6 pt-0 pb-6 border-t border-gray-100 animate-fade-in">
+                  <div className="mt-4 text-gray-700">
+                    <p className="mb-4">{service.longDescription}</p>
+                    
+                    <h4 className="font-semibold text-lg mb-2 text-gray-900">Key Benefits:</h4>
+                    <ul className="list-disc pl-5 mb-6 space-y-1">
+                      {service.benefits.map((benefit, index) => (
+                        <li key={index}>{benefit}</li>
+                      ))}
+                    </ul>
+                    
+                    <button
+                      onClick={() => navigate(service.path)}
+                      className="bg-ecaris-green hover:bg-ecaris-green/90 text-white font-medium py-2 px-4 rounded-md inline-flex items-center transition-colors"
+                    >
+                      Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                    </button>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
           ))}
         </div>
         
