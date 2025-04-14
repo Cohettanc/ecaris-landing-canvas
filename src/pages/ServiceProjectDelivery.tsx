@@ -60,9 +60,8 @@ const ServiceProjectDelivery = () => {
                 
                 {/* Text column - takes 3/5 of the space */}
                 <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
-                  <h2 className="text-2xl font-bold text-ecaris-green mb-6 relative">
-                    Precision-Driven Project Delivery
-                    <span className="absolute bottom-0 left-0 w-16 h-1 bg-ecaris-green transform -translate-y-2"></span>
+                  <h2 className="text-2xl font-bold text-ecaris-green mb-6">
+                    Project-Based Delivery
                   </h2>
                   <div className="space-y-4">
                     <p className="text-gray-700">
