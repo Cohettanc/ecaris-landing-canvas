@@ -1,4 +1,6 @@
+
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,12 +15,18 @@ import {
 } from "@/components/ui/accordion";
 
 const ServiceProjectDelivery = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Update document title
     document.title = "ECARIS | Project Delivery Services";
     // Scroll to top when page loads
     window.scrollTo(0, 0);
   }, []);
+
+  const handleContactClick = () => {
+    navigate('/#contact');
+  };
 
   return (
     <div className="min-h-screen antialiased">
@@ -354,7 +362,10 @@ const ServiceProjectDelivery = () => {
           <p className="text-xl mb-8 text-ecaris-light">
             Contact us today to discuss how our project-based services can help you achieve your business objectives.
           </p>
-          <Button className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-6 rounded-md font-medium transition-colors duration-300">
+          <Button 
+            onClick={handleContactClick}
+            className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-6 rounded-md font-medium transition-colors duration-300"
+          >
             Contact Us
           </Button>
         </div>

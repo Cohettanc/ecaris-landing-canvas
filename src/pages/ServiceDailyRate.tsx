@@ -1,4 +1,6 @@
+
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,12 +8,18 @@ import { Check } from 'lucide-react';
 import FeatureCard from '@/components/services/FeatureCard';
 
 const ServiceDailyRate = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Update document title
     document.title = "ECARIS | Services on Daily Rate Basis";
     // Scroll to top when page loads
     window.scrollTo(0, 0);
   }, []);
+
+  const handleContactClick = () => {
+    navigate('/#contact');
+  };
 
   return (
     <div className="min-h-screen antialiased">
@@ -154,7 +162,10 @@ const ServiceDailyRate = () => {
           <p className="text-xl mb-8 text-ecaris-light">
             Contact us today to discuss how our daily rate services can address your specific challenges.
           </p>
-          <button className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors duration-300">
+          <button 
+            onClick={handleContactClick}
+            className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors duration-300"
+          >
             Contact Us
           </button>
         </div>
