@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -45,11 +46,17 @@ const ServiceProjectDelivery = () => {
       {/* Main Content */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Introduction */}
+          {/* Introduction - UPDATED WITH NEW CONTENT */}
           <div className="mb-16 flex items-center gap-8">
             <div className="prose max-w-none flex-1">
               <p className="text-lg text-gray-700 mb-6">
-                ECARIS is also able to provide its services in a project-based mode. These projects typically focus on delivering specific IT initiatives within a defined timeline and budget.
+                ECARIS delivers strategic and technical projects through a structured, fixed-price model. This approach is designed for initiatives with clear objectives, timelines, and budgets — where execution discipline and accountability are key.
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                Our senior consultants lead end-to-end delivery, from scoping and design to implementation, bringing a mix of deep expertise and strong delivery capabilities. We ensure that each engagement is aligned with business priorities and delivers measurable impact.
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                This model is particularly suited for complex IT transformations, targeted technology deployments, and high-impact delivery sprints — across domains such as data, cloud, ERP, integration, and automation.
               </p>
             </div>
             <div className="w-1/3 rounded-lg overflow-hidden shadow-md">
