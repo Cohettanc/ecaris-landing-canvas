@@ -154,12 +154,6 @@ const ServiceDailyRate = () => {
                 <p className="text-gray-700 mb-4">
                   Integrated directly into the project team, the consultant played a key role in harmonizing finance processes, adapting global standards to local realities, and ensuring smooth implementation and adoption across countries. The flexibility of our daily rate model allowed the client to scale involvement based on project phases, maintaining efficiency and control throughout the rollout.
                 </p>
-                <div className="flex items-center mt-6">
-                  <div>
-                    <p className="font-medium">Client Finance Director</p>
-                    <p className="text-sm text-gray-600">Pharmaceutical Industry</p>
-                  </div>
-                </div>
               </div>
               <div className="bg-gray-100">
                 <img 
