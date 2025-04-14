@@ -168,10 +168,10 @@ const CloudService = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Healthcare Organization</h3>
-                  <p className="text-gray-600 mb-2">Multi-Cloud Strategy</p>
+                  <h3 className="text-xl font-bold mb-3">Energy Sector – Azure FinOps Optimization</h3>
+                  <p className="text-gray-600 mb-2">Cloud Cost Reduction & Architecture Rationalization</p>
                   <p className="text-gray-700 mb-4">
-                    We designed and implemented a secure multi-cloud strategy for a healthcare organization, enabling them to leverage best-in-class services from different cloud providers while maintaining stringent data protection standards.
+                    We conducted a FinOps assessment and optimization plan for the Azure infrastructure supporting a greenhouse gas reduction application at a major energy company. The project resulted in a complete rationalization of the cloud environment and a 3x reduction in infrastructure costs, while maintaining performance and scalability.
                   </p>
                   <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
