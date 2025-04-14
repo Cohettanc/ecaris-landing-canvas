@@ -304,8 +304,8 @@ const ServiceProjectDelivery = () => {
           <div className="mb-16">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
-                alt="Software Development" 
+                src="/lovable-uploads/7590a5b0-f362-47c1-b847-cb0b95ea38de.png" 
+                alt="Detailed Circuit Board Technology" 
                 className="w-full h-72 object-cover"
               />
             </div>
