@@ -1,10 +1,9 @@
-
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Home } from 'lucide-react';
+import { Home, ArrowLeft } from 'lucide-react';
 
 const DataProtection = () => {
   const navigate = useNavigate();
@@ -16,25 +15,22 @@ const DataProtection = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleBackToHome = () => {
-    navigate('/');
-  };
-
   return (
     <div className="min-h-screen antialiased">
       <Navbar />
       
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6">
-            <Button 
-              variant="outline" 
-              className="flex items-center gap-2"
-              onClick={handleBackToHome}
-            >
-              <Home size={16} />
-              Back to Homepage
-            </Button>
+          <div className="mb-6 flex items-center space-x-4">
+            <Link to="/">
+              <Button 
+                variant="outline" 
+                className="flex items-center gap-2"
+              >
+                <Home size={16} />
+                Back to Home
+              </Button>
+            </Link>
           </div>
         
           <h1 className="text-3xl font-bold text-gray-900 mb-8 relative">
