@@ -1,6 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -362,12 +362,12 @@ const ServiceProjectDelivery = () => {
           <p className="text-xl mb-8 text-ecaris-light">
             Contact us today to discuss how our project-based services can help you achieve your business objectives.
           </p>
-          <Button 
-            onClick={handleContactClick}
-            className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-6 rounded-md font-medium transition-colors duration-300"
+          <Link 
+            to="/#contact" 
+            className="inline-block bg-white text-ecaris-green hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors duration-300"
           >
             Contact Us
-          </Button>
+          </Link>
         </div>
       </section>
       
