@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Database, ClipboardCheck, BarChart2, Layers, Shield } from 'lucide-react';
+import { ArrowLeft, Database, ClipboardCheck, BarChart2, Layers, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -74,27 +74,15 @@ const DataGovernance = () => {
           <div className="section-container">
             <h2 className="heading-md text-center mb-12">Our Data Governance Services</h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card className="border-t-4 border-t-ecaris-green">
                 <CardContent className="pt-6">
                   <div className="mb-4">
                     <Database className="h-10 w-10 text-ecaris-green" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Data Governance Frameworks</h3>
+                  <h3 className="text-xl font-bold mb-3">Data Strategy & Governance</h3>
                   <p className="text-gray-700">
-                    We help you establish comprehensive data governance frameworks with clear roles, responsibilities, and processes to ensure consistent data management across your organization.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-t-4 border-t-ecaris-green">
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <ClipboardCheck className="h-10 w-10 text-ecaris-green" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Data Quality Management</h3>
-                  <p className="text-gray-700">
-                    Our data quality solutions implement systematic processes to measure, monitor, and improve data accuracy, completeness, consistency, and reliability throughout your data lifecycle.
+                    We help you define and operationalize your data strategy: governance models, data ownership, quality management, and metadata/catalog tools — all tailored to your organization's maturity and priorities.
                   </p>
                 </CardContent>
               </Card>
@@ -104,9 +92,9 @@ const DataGovernance = () => {
                   <div className="mb-4">
                     <BarChart2 className="h-10 w-10 text-ecaris-green" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">BI & Analytics Solutions</h3>
+                  <h3 className="text-xl font-bold mb-3">Data Products & AI/BI Use Cases</h3>
                   <p className="text-gray-700">
-                    We design and implement business intelligence and analytics solutions that transform raw data into meaningful insights through dashboards, reports, and visualizations.
+                    We support the design and delivery of high-impact data products, from BI dashboards to machine learning models, ensuring alignment with business goals and user adoption.
                   </p>
                 </CardContent>
               </Card>
@@ -116,9 +104,21 @@ const DataGovernance = () => {
                   <div className="mb-4">
                     <Layers className="h-10 w-10 text-ecaris-green" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">DataOps Implementation</h3>
+                  <h3 className="text-xl font-bold mb-3">DataOps & Industrialization</h3>
                   <p className="text-gray-700">
-                    Our DataOps practices streamline and automate data pipelines, enhancing collaboration between data engineers, scientists, and analysts to deliver higher quality data products faster.
+                    Our teams implement DataOps practices to streamline data pipelines, automate delivery cycles, and enable scalable, reliable data product development.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-t-4 border-t-ecaris-green">
+                <CardContent className="pt-6">
+                  <div className="mb-4">
+                    <Users className="h-10 w-10 text-ecaris-green" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Data Organization & Operating Model</h3>
+                  <p className="text-gray-700">
+                    We assist in structuring your data function: roles, responsibilities, and tooling — ensuring your teams are equipped to support data-driven initiatives at scale.
                   </p>
                 </CardContent>
               </Card>
@@ -128,9 +128,9 @@ const DataGovernance = () => {
                   <div className="mb-4">
                     <Shield className="h-10 w-10 text-ecaris-green" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Regulatory Compliance</h3>
+                  <h3 className="text-xl font-bold mb-3">Compliance & Regulation</h3>
                   <p className="text-gray-700">
-                    We ensure your data practices comply with relevant regulations such as GDPR, CCPA, and industry-specific standards, minimizing compliance risks while maximizing data utility.
+                    We help you stay compliant with GDPR and industry regulations through pragmatic approaches that combine governance, security, and operational efficiency.
                   </p>
                 </CardContent>
               </Card>
