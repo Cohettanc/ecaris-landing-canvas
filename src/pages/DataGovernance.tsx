@@ -134,12 +134,10 @@ const DataGovernance = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Global Financial Institution</h3>
-                  <p className="text-gray-600 mb-2">Data Governance Transformation</p>
+                  <h3 className="text-xl font-bold mb-3">Global Retail Leader</h3>
+                  <p className="text-gray-600 mb-2">Product Master Data Transformation</p>
                   <p className="text-gray-700 mb-4">
-                    We helped a multinational bank establish an enterprise-wide data governance program that improved data quality by 45%, 
-                    reduced regulatory reporting time by 30%, and created a trusted foundation for their analytics initiatives. The program 
-                    included data ownership frameworks, quality metrics, and automated data lineage tracking.
+                    We supported a global retail group in the scoping and implementation of a centralized product master data solution using TIBCO EBX, covering worldwide operations. The project focused on aligning product data structures and governance across business units, with frequent interaction with the executive committee. It established a consistent foundation for product information management, improving data quality, traceability, and time-to-market for new launches.
                   </p>
                 </CardContent>
               </Card>
