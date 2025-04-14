@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -5,13 +6,14 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import FeatureCard from '@/components/services/FeatureCard';
-import { Link } from 'react-router-dom';
 
 const ServiceDailyRate = () => {
   const navigate = useNavigate();
   
   useEffect(() => {
+    // Update document title
     document.title = "ECARIS | Services on Daily Rate Basis";
+    // Scroll to top when page loads
     window.scrollTo(0, 0);
   }, []);
 
@@ -23,6 +25,7 @@ const ServiceDailyRate = () => {
     <div className="min-h-screen antialiased">
       <Navbar />
       
+      {/* Header with background image */}
       <section className="pt-72 pb-24 bg-ecaris-green text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 mix-blend-overlay">
           <img 
@@ -46,6 +49,7 @@ const ServiceDailyRate = () => {
         </div>
       </section>
       
+      {/* Main Content */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16 md:mb-24">
@@ -121,6 +125,7 @@ const ServiceDailyRate = () => {
             </div>
           </div>
           
+          {/* Case Study Section */}
           <div className="my-16 md:my-24 bg-white rounded-lg shadow-md overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-8">
@@ -150,18 +155,19 @@ const ServiceDailyRate = () => {
         </div>
       </section>
       
-      <section className="py-16 bg-ecaris-green text-white">
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-ecaris-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6">Ready to enhance your team with our expertise?</h2>
           <p className="text-xl mb-8 text-ecaris-light">
             Contact us today to discuss how our daily rate services can address your specific challenges.
           </p>
-          <Link 
-            to="/#contact" 
-            className="inline-block bg-white text-ecaris-green hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors duration-300"
+          <button 
+            onClick={handleContactClick}
+            className="bg-white text-ecaris-green hover:bg-gray-100 px-8 py-3 rounded-md font-medium transition-colors duration-300"
           >
             Contact Us
-          </Link>
+          </button>
         </div>
       </section>
       
