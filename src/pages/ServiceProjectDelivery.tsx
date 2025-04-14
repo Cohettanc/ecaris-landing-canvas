@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -46,25 +45,38 @@ const ServiceProjectDelivery = () => {
       {/* Main Content */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Introduction - UPDATED WITH NEW CONTENT */}
-          <div className="mb-16 flex items-center gap-8">
-            <div className="prose max-w-none flex-1">
-              <p className="text-lg text-gray-700 mb-6">
-                ECARIS delivers strategic and technical projects through a structured, fixed-price model. This approach is designed for initiatives with clear objectives, timelines, and budgets — where execution discipline and accountability are key.
-              </p>
-              <p className="text-lg text-gray-700 mb-6">
-                Our senior consultants lead end-to-end delivery, from scoping and design to implementation, bringing a mix of deep expertise and strong delivery capabilities. We ensure that each engagement is aligned with business priorities and delivers measurable impact.
-              </p>
-              <p className="text-lg text-gray-700 mb-6">
-                This model is particularly suited for complex IT transformations, targeted technology deployments, and high-impact delivery sprints — across domains such as data, cloud, ERP, integration, and automation.
-              </p>
-            </div>
-            <div className="w-1/3 rounded-lg overflow-hidden shadow-md">
-              <img 
-                src="/lovable-uploads/0d165bd2-ad63-4226-9adf-52abd159c180.png" 
-                alt="Team collaborating on project delivery" 
-                className="w-full h-auto object-cover"
-              />
+          {/* Introduction - REDESIGNED FOR ELEGANCE */}
+          <div className="mb-16">
+            <div className="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+              <div className="grid md:grid-cols-5">
+                {/* Image column - takes 2/5 of the space */}
+                <div className="md:col-span-2 h-full">
+                  <img 
+                    src="/lovable-uploads/0d165bd2-ad63-4226-9adf-52abd159c180.png" 
+                    alt="Team collaborating on project delivery" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Text column - takes 3/5 of the space */}
+                <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
+                  <h2 className="text-2xl font-bold text-ecaris-green mb-6 relative">
+                    Project Delivery Excellence
+                    <span className="absolute bottom-0 left-0 w-16 h-1 bg-ecaris-green transform -translate-y-2"></span>
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-gray-700">
+                      <span className="font-semibold text-ecaris-green">ECARIS</span> delivers strategic and technical projects through a structured, fixed-price model. This approach is designed for initiatives with <span className="font-medium">clear objectives, timelines, and budgets</span> — where execution discipline and accountability are key.
+                    </p>
+                    <p className="text-gray-700">
+                      Our senior consultants lead end-to-end delivery, from scoping and design to implementation, bringing a mix of deep expertise and strong delivery capabilities. We ensure that each engagement is aligned with business priorities and delivers measurable impact.
+                    </p>
+                    <p className="text-gray-700">
+                      This model is particularly suited for <span className="italic">complex IT transformations, targeted technology deployments, and high-impact delivery sprints</span> — across domains such as data, cloud, ERP, integration, and automation.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
