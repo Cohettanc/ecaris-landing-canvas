@@ -1,8 +1,10 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import FeatureCard from '@/components/services/FeatureCard';
 
 const ServiceDailyRate = () => {
   useEffect(() => {
@@ -53,41 +55,20 @@ const ServiceDailyRate = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <Card className="relative overflow-hidden border-t-4 border-t-ecaris-green">
-                <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-ecaris-green/10 rounded-full"></div>
-                <CardHeader>
-                  <CardTitle>Resource Flexibility</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Scale resources up or down based on your project needs. Bring in experts only when you need them.
-                  </p>
-                </CardContent>
-              </Card>
+              <FeatureCard 
+                title="Resource Flexibility"
+                description="Scale resources up or down based on your project needs. Bring in experts only when you need them. Our flexible model allows you to maintain control over your budget while accessing specialized expertise exactly when required."
+              />
               
-              <Card className="relative overflow-hidden border-t-4 border-t-ecaris-green">
-                <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-ecaris-green/10 rounded-full"></div>
-                <CardHeader>
-                  <CardTitle>Specialized Expertise</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Access to consultants with specific skills and industry knowledge to address your unique challenges.
-                  </p>
-                </CardContent>
-              </Card>
+              <FeatureCard 
+                title="Specialized Expertise"
+                description="Access to consultants with specific skills and industry knowledge to address your unique challenges. Our experts bring deep technical and domain expertise to help you solve complex problems and deliver successful outcomes."
+              />
               
-              <Card className="relative overflow-hidden border-t-4 border-t-ecaris-green">
-                <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 bg-ecaris-green/10 rounded-full"></div>
-                <CardHeader>
-                  <CardTitle>Team Integration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    Our consultants work seamlessly with your team, following your processes while bringing external perspective.
-                  </p>
-                </CardContent>
-              </Card>
+              <FeatureCard 
+                title="Team Integration"
+                description="Our consultants work seamlessly with your team, following your processes while bringing external perspective. We focus on knowledge transfer and collaboration to ensure sustainable results long after our engagement ends."
+              />
             </div>
           </div>
           
