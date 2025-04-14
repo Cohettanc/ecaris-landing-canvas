@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ArrowRight, ArrowDown, Circle, Server, Shield, Database, Plug, FileCode, Cloud, BarChart, Settings, Users, Activity } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const ServiceProjectDelivery = () => {
   useEffect(() => {
@@ -79,103 +85,125 @@ const ServiceProjectDelivery = () => {
             </div>
           </div>
           
-          {/* Project Approach - New Modern Diagram */}
+          {/* Project Approach - Interactive Accordion */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Project Approach</h2>
             
             <div className="bg-gray-50 rounded-xl p-8 shadow-lg">
-              <div className="grid grid-cols-1 gap-4">
-                {/* Step 1: Diagnosis */}
-                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
-                      1
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="step-1">
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                        1
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Diagnosis</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Diagnosis</h3>
-                  </div>
-                  <p className="ml-16 text-gray-700 mt-2">
-                    Understand needs and define the solution's scope.
-                  </p>
-                </div>
-
-                {/* Arrow Connector */}
-                <div className="flex justify-center">
-                  <ArrowDown className="text-ecaris-green h-8 w-8" />
-                </div>
-
-                {/* Step 2: Scoping */}
-                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
-                      2
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-16">
+                    <div className="space-y-4 text-gray-700">
+                      <p>During the diagnosis phase, we:</p>
+                      <ul className="list-disc pl-6 space-y-2">
+                        <li>Conduct thorough needs assessment</li>
+                        <li>Analyze current systems and processes</li>
+                        <li>Identify pain points and opportunities</li>
+                        <li>Define project scope and objectives</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Scoping (Specification Drafting)</h3>
-                  </div>
-                  <p className="ml-16 text-gray-700 mt-2">
-                    Establish business and technical architecture; define the roadmap.
-                  </p>
-                </div>
+                  </AccordionContent>
+                </AccordionItem>
 
-                {/* Arrow Connector */}
-                <div className="flex justify-center">
-                  <ArrowDown className="text-ecaris-green h-8 w-8" />
-                </div>
-
-                {/* Step 3: Build */}
-                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
-                      3
+                <AccordionItem value="step-2">
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                        2
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Scoping (Specification Drafting)</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Build</h3>
-                  </div>
-                  <p className="ml-16 text-gray-700 mt-2">
-                    Collect data, implement the model, and optimize performance.
-                  </p>
-                </div>
-
-                {/* Arrow Connector */}
-                <div className="flex justify-center">
-                  <ArrowDown className="text-ecaris-green h-8 w-8" />
-                </div>
-
-                {/* Step 4: Integration and Deployment */}
-                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
-                      4
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-16">
+                    <div className="space-y-4 text-gray-700">
+                      <p>In the scoping phase, we:</p>
+                      <ul className="list-disc pl-6 space-y-2">
+                        <li>Define technical architecture requirements</li>
+                        <li>Create detailed project specifications</li>
+                        <li>Establish project milestones</li>
+                        <li>Draft implementation roadmap</li>
+                      </ul>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Integration and Deployment</h3>
-                  </div>
-                  <p className="ml-16 text-gray-700 mt-2">
-                    Integrate the solution into the environment and conduct necessary tests.
-                  </p>
-                </div>
+                  </AccordionContent>
+                </AccordionItem>
 
-                {/* Arrow Connector */}
-                <div className="flex justify-center">
-                  <ArrowDown className="text-ecaris-green h-8 w-8" />
-                </div>
-
-                {/* Step 5: Continuous Improvement */}
-                <div className="bg-white rounded-xl p-6 border-l-4 border-ecaris-green">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
-                      5
+                <AccordionItem value="step-3">
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                        3
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Build</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">Continuous Improvement</h3>
-                  </div>
-                  <p className="ml-16 text-gray-700 mt-2">
-                    Analyze user feedback and plan future enhancements.
-                  </p>
-                </div>
-              </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-16">
+                    <div className="space-y-4 text-gray-700">
+                      <p>During the build phase, we:</p>
+                      <ul className="list-disc pl-6 space-y-2">
+                        <li>Implement core functionality</li>
+                        <li>Develop and test features</li>
+                        <li>Optimize performance</li>
+                        <li>Conduct code reviews</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="step-4">
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                        4
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Integration and Deployment</h3>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-16">
+                    <div className="space-y-4 text-gray-700">
+                      <p>In the integration phase, we:</p>
+                      <ul className="list-disc pl-6 space-y-2">
+                        <li>Set up deployment environments</li>
+                        <li>Perform integration testing</li>
+                        <li>Execute deployment procedures</li>
+                        <li>Validate system functionality</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="step-5">
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-ecaris-green text-white font-bold text-2xl rounded-lg h-12 w-12 flex items-center justify-center">
+                        5
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">Continuous Improvement</h3>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-16">
+                    <div className="space-y-4 text-gray-700">
+                      <p>During continuous improvement, we:</p>
+                      <ul className="list-disc pl-6 space-y-2">
+                        <li>Monitor system performance</li>
+                        <li>Gather user feedback</li>
+                        <li>Implement improvements</li>
+                        <li>Plan future enhancements</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
               
               <div className="mt-8 text-center text-gray-700 max-w-2xl mx-auto">
-                <p>
-                  Our structured approach ensures successful project delivery from initial diagnosis 
-                  through continuous improvement, with a focus on quality and client satisfaction.
-                </p>
+                <p>Our structured approach ensures successful project delivery from initial diagnosis through continuous improvement, with a focus on quality and client satisfaction.</p>
               </div>
             </div>
           </div>
