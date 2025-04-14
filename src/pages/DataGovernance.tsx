@@ -149,12 +149,10 @@ const DataGovernance = () => {
                   <h3 className="text-xl font-bold mb-3">Luxury Retail – Supply Chain Analytics</h3>
                   <p className="text-gray-600 mb-2">Data Products & Analytics</p>
                   <p className="text-gray-700 mb-4">
-                    For a global luxury brand, ECARIS supported the implementation and deployment of Power BI dashboards 
-                    across the entire European region, focusing on Order-to-Cash supply chain processes. The project was 
-                    part of a broader ERP migration and aimed to restore operational visibility during the transition.
-                    Over five dashboards were designed, implemented, and rolled out across more than 25 countries, enabling 
-                    both local teams and central management to monitor order flows, lead times, and inventory dynamics in 
-                    real time — significantly improving coordination and data-driven decision-making at scale.
+                    For a global luxury brand, ECARIS implemented and deployed Power BI dashboards across 25+ European countries, 
+                    covering Order-to-Cash supply chain processes. Delivered in the context of an ERP migration, the dashboards 
+                    restored end-to-end visibility on orders, lead times, and inventory — enabling better coordination and faster 
+                    decision-making.
                   </p>
                 </CardContent>
               </Card>
