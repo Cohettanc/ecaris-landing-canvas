@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-8 justify-center items-start">
           <div>
             <img 
               src="/lovable-uploads/e39cb3b2-abde-4150-8b2f-0b3efdd5efee.png" 
@@ -22,24 +22,28 @@ const Footer = () => {
             </p>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">Who Are We</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Our Services</a></li>
-              <li><a href="#clients" className="text-gray-400 hover:text-white transition-colors duration-300">Our Clients</a></li>
-              <li><a href="#offices" className="text-gray-400 hover:text-white transition-colors duration-300">Our Offices</a></li>
-              <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors duration-300">Careers</Link></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-300">Contact Us</a></li>
-            </ul>
+          <div className="flex justify-center">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">Who Are We</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Our Services</a></li>
+                <li><a href="#clients" className="text-gray-400 hover:text-white transition-colors duration-300">Our Clients</a></li>
+                <li><a href="#offices" className="text-gray-400 hover:text-white transition-colors duration-300">Our Offices</a></li>
+                <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors duration-300">Careers</Link></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-300">Contact Us</a></li>
+              </ul>
+            </div>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li><Link to="/legal-notice" className="text-gray-400 hover:text-white transition-colors duration-300">Legal Notice</Link></li>
-              <li><Link to="/data-protection" className="text-gray-400 hover:text-white transition-colors duration-300">Data Protection</Link></li>
-            </ul>
+          <div className="flex justify-center">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li><Link to="/legal-notice" className="text-gray-400 hover:text-white transition-colors duration-300">Legal Notice</Link></li>
+                <li><Link to="/data-protection" className="text-gray-400 hover:text-white transition-colors duration-300">Data Protection</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
         
