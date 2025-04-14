@@ -147,12 +147,15 @@ const DataGovernance = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Healthcare Provider Network</h3>
+                  <h3 className="text-xl font-bold mb-3">Luxury Retail – Supply Chain Analytics</h3>
                   <p className="text-gray-600 mb-2">Data Products & Analytics</p>
                   <p className="text-gray-700 mb-4">
-                    For a network of regional hospitals, we developed a suite of data products that provided operational insights across 
-                    facilities. Our solution integrated data from 12 disparate systems, creating a unified view of patient care, resource 
-                    utilization, and clinical outcomes that drove a 15% improvement in operational efficiency.
+                    For a global luxury brand, ECARIS supported the implementation and deployment of Power BI dashboards 
+                    across the entire European region, focusing on Order-to-Cash supply chain processes. The project was 
+                    part of a broader ERP migration and aimed to restore operational visibility during the transition.
+                    Over five dashboards were designed, implemented, and rolled out across more than 25 countries, enabling 
+                    both local teams and central management to monitor order flows, lead times, and inventory dynamics in 
+                    real time — significantly improving coordination and data-driven decision-making at scale.
                   </p>
                   <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
