@@ -1,12 +1,14 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Home } from 'lucide-react';
 
 const LegalNotice = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Update document title
     document.title = "ECARIS | Legal Notice";
@@ -14,22 +16,25 @@ const LegalNotice = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleBackToHome = () => {
+    navigate('/');
+  };
+
   return (
     <div className="min-h-screen antialiased">
       <Navbar />
       
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 flex items-center justify-start">
-            <Link to="/">
-              <Button 
-                variant="outline" 
-                className="flex items-center gap-2"
-              >
-                <Home size={16} />
-                Back to Home
-              </Button>
-            </Link>
+          <div className="mb-6">
+            <Button 
+              onClick={handleBackToHome}
+              variant="outline" 
+              className="flex items-center gap-2"
+            >
+              <Home size={16} />
+              Back to Homepage
+            </Button>
           </div>
         
           <h1 className="text-3xl font-bold text-gray-900 mb-8 relative">
