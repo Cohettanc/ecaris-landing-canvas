@@ -1,10 +1,11 @@
+
 import { Workflow, Building2, ServerCog, Database, Archive, BarChart2, ClipboardCheck, Layers, Shield, CreditCard, LayoutGrid, Laptop, ArrowRightLeft, Boxes } from 'lucide-react';
 import { ServiceType } from './types';
 
 export const services: ServiceType[] = [
   {
     id: "data-governance",
-    title: "AI & Data Governance",
+    title: "AI, data products and data governance",
     description: "We help you build a strong data foundation through strategic governance, data cataloging, quality frameworks, and role definitions. We also design and deliver advanced data products – BI, AI, ML, dashboards – and industrialize data pipelines via DataOps practices, all while ensuring compliance with GDPR and other regulations.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +96,7 @@ export const services: ServiceType[] = [
   },
   {
     id: "erp-applications",
-    title: "ERP & Applications",
+    title: "ERP, Business Platforms and Applications",
     description: "We modernize and integrate critical ERP systems and business applications, including CRM and SaaS platforms. Our teams manage core application projects, optimize application lifecycles (ALM), and enable application cloudification to enhance agility, scalability, and performance.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-ecaris-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
