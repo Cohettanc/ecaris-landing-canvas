@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Home, ArrowLeft } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 const DataProtection = () => {
-  const navigate = useNavigate();
-  
   useEffect(() => {
     // Update document title
     document.title = "ECARIS | Data Protection";
@@ -21,7 +19,7 @@ const DataProtection = () => {
       
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 flex items-center space-x-4">
+          <div className="mb-6 flex items-center justify-start">
             <Link to="/">
               <Button 
                 variant="outline" 
