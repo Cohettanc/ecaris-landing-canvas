@@ -137,6 +137,47 @@ const ServiceDailyRate = () => {
             </div>
           </div>
           
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Ideal for</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Teams needing temporary specialized expertise</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Projects with evolving requirements</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Multi-phase initiatives where needs may change</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 text-ecaris-green">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <p className="ml-3 text-gray-700">Organizations seeking to augment their internal capabilities</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" 
+                  alt="Teams collaborating" 
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+          
           {/* Case Study Section */}
           <div className="my-16 bg-white rounded-lg shadow-md overflow-hidden">
             <div className="grid md:grid-cols-2">
