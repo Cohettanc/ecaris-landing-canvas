@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -50,7 +49,7 @@ const ServiceDailyRate = () => {
               Our daily rate service model provides you with access to skilled consultants who can augment your team, provide specialized expertise, or lead key initiatives on a flexible basis.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              This approach is ideal for projects where scope might evolve, or when you need specialized support without committing to a fixed-price project.
+              Most of our consultants are senior professionals with over 8 years of experience, bringing deep technical, functional, and industry-specific expertise to accelerate your projects and deliver tangible impact.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
