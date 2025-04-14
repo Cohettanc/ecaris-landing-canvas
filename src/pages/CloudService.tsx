@@ -68,7 +68,7 @@ const CloudService = () => {
         {/* Services Grid */}
         <section className="py-16 bg-white">
           <div className="section-container">
-            <h2 className="heading-md text-center mb-12">Our Cloud Services</h2>
+            <h2 className="heading-md text-center mb-12">Our Cloud, Infrastructure & Operations Services</h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="border-t-4 border-t-ecaris-green">
