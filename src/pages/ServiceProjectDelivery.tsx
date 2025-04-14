@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,17 +53,6 @@ const ServiceProjectDelivery = () => {
               </p>
             </div>
             <div className="w-1/3 rounded-lg overflow-hidden shadow-md">
-              <img 
-                src="/lovable-uploads/0d165bd2-ad63-4226-9adf-52abd159c180.png" 
-                alt="Team collaborating on project delivery" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-          
-          {/* Image Section - REPLACED WITH SINGLE IMAGE */}
-          <div className="mb-16">
-            <div className="rounded-lg overflow-hidden shadow-md">
               <img 
                 src="/lovable-uploads/0d165bd2-ad63-4226-9adf-52abd159c180.png" 
                 alt="Team collaborating on project delivery" 
