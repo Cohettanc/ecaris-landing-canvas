@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -56,18 +55,18 @@ const ServiceDailyRate = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <FeatureCard 
-                title="Long-Term Vision"
-                description="Our consultants typically stay on assignments for around 2 years, allowing them to build trust, drive sustainable change, and contribute meaningfully over time."
+                title="Long-Term Engagement"
+                description="Our consultants typically stay on assignments for around two years. This long-term presence allows them to go beyond quick fixes — they gain deep context, build trust with stakeholders, and contribute to strategic initiatives over time. It's a model that fosters real ownership and sustainable results."
               />
               
               <FeatureCard 
-                title="Senior, Cross-Functional Expertise"
-                description="All our consultants are senior professionals, with over 8 years of experience. They bring a blend of technical, functional, and/or industry-specific expertise. Example: Head of Transformation, specialized in Supply Chain ERP deployment for the retail industry."
+                title="Senior & Specialized Profiles"
+                description="We provide senior consultants with 8+ years of experience, combining technical, functional, and sector-specific expertise. Example: Head of Transformation, specialized in Supply Chain ERP deployment for the retail industry."
               />
               
               <FeatureCard 
-                title="Seamless Team Integration"
-                description="Our consultants embed fully into your teams, follow your internal processes, and collaborate closely with stakeholders. We prioritize knowledge transfer and sustainable delivery, so the value we bring continues after our mission ends."
+                title="Seamless Integration"
+                description="Our consultants embed themselves fully within your teams. They follow your internal processes while contributing fresh external perspective. We emphasize collaboration and knowledge transfer to ensure value remains after the mission ends."
               />
             </div>
           </div>
