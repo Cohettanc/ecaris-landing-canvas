@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -6,18 +5,16 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { offices } from '@/data/officeData';
 
-// Define the structure for dropdown menu items
 interface DropdownItem {
   name: string;
   path: string;
 }
 
-// Define the structure for navigation items
 interface NavItem {
   name: string;
-  id?: string; // For scroll to section functionality
-  path?: string; // For direct navigation
-  dropdown?: DropdownItem[]; // For dropdown menus
+  id?: string;
+  path?: string;
+  dropdown?: DropdownItem[];
 }
 
 const Navbar = () => {
@@ -25,12 +22,11 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRefs = useRef<{[key: string]: HTMLDivElement | null}>({});
-  
+
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
-  
-  // Define navigation items with their dropdowns
+
   const navItems: NavItem[] = [
     { 
       name: "Who Are We", 
@@ -52,10 +48,10 @@ const Navbar = () => {
       name: "Our Expertise", 
       dropdown: [
         { name: "All Our Expertise", path: "/#services" },
-        { name: "Cloud Services", path: "/cloud-service" },
+        { name: "AI & Data Governance", path: "/data-governance" },
         { name: "Strategy & Architecture", path: "/strategy-architecture" },
-        { name: "Data Governance", path: "/data-governance" },
-        { name: "ERP Applications", path: "/erp-applications" }
+        { name: "Cloud Services", path: "/cloud-service" },
+        { name: "ERP & Applications", path: "/erp-applications" }
       ]
     },
     { 
@@ -79,7 +75,7 @@ const Navbar = () => {
       id: "contact" 
     }
   ];
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
