@@ -46,11 +46,18 @@ const ServiceProjectDelivery = () => {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Introduction */}
-          <div className="mb-16">
-            <div className="prose max-w-none">
+          <div className="mb-16 flex items-center gap-8">
+            <div className="prose max-w-none flex-1">
               <p className="text-lg text-gray-700 mb-6">
                 ECARIS is also able to provide its services in a project-based mode. These projects typically focus on delivering specific IT initiatives within a defined timeline and budget.
               </p>
+            </div>
+            <div className="w-1/3 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src="/lovable-uploads/0d165bd2-ad63-4226-9adf-52abd159c180.png" 
+                alt="Team collaborating on project delivery" 
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
           
