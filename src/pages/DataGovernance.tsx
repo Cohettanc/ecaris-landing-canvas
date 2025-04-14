@@ -226,7 +226,7 @@ const DataGovernance = () => {
               Let our data experts help you unlock the full potential of your data assets and drive informed decision-making across your organization.
             </p>
             <Link to="/#contact">
-              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+              <Button className="bg-white text-ecaris-green px-8 py-3 hover:bg-white/90">
                 Contact Us
               </Button>
             </Link>

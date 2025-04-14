@@ -230,7 +230,7 @@ const CloudService = () => {
               Let our cloud experts help you build a future-ready infrastructure that drives innovation and operational excellence.
             </p>
             <Link to="/#contact">
-              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+              <Button className="bg-white text-ecaris-green px-8 py-3 hover:bg-white/90">
                 Contact Us
               </Button>
             </Link>

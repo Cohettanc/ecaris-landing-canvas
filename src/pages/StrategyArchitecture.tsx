@@ -229,7 +229,7 @@ const StrategyArchitecture = () => {
               Let our experts help you build a future-proof IT foundation that aligns with your business objectives and drives growth.
             </p>
             <Link to="/#contact">
-              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+              <Button className="bg-white text-ecaris-green px-8 py-3 hover:bg-white/90">
                 Contact Us
               </Button>
             </Link>

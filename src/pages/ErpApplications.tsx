@@ -230,7 +230,7 @@ const ErpApplications = () => {
               Let our application experts help you modernize your enterprise systems to drive innovation, efficiency, and growth.
             </p>
             <Link to="/#contact">
-              <Button className="bg-white text-ecaris-green hover:bg-white/90">
+              <Button className="bg-white text-ecaris-green px-8 py-3 hover:bg-white/90">
                 Contact Us
               </Button>
             </Link>
