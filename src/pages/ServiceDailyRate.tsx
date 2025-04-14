@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -164,8 +163,8 @@ const ServiceDailyRate = () => {
               </div>
               <div className="bg-gray-100">
                 <img 
-                  src="/lovable-uploads/f76c8ba3-2287-446c-aa5c-f33beb96c8c7.png" 
-                  alt="IT consultants collaborating on code at multiple monitors" 
+                  src="/lovable-uploads/4cb1f7f5-676f-4804-a339-1b7491f9f96a.png" 
+                  alt="IT consultants collaborating in a modern office" 
                   className="w-full h-full object-cover"
                 />
               </div>
