@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -144,20 +145,23 @@ const ServiceDailyRate = () => {
                 <div className="inline-block px-3 py-1 text-xs font-medium text-ecaris-green bg-ecaris-green/10 rounded-full mb-4">
                   Case Study
                 </div>
-                <h3 className="text-2xl font-bold mb-4">IT Transformation Support</h3>
+                <h3 className="text-2xl font-bold mb-4">Finance ERP Rollout Support – Pharmaceutical Sector</h3>
                 <p className="text-gray-700 mb-4">
-                  A global manufacturing company needed specialized support during their IT transformation. They engaged ECARIS consultants on a daily rate basis to provide expertise in cloud migration and ERP implementation.
+                  A global pharmaceutical company engaged ECARIS to support the rollout of the finance module of Microsoft Dynamics 365 across several international subsidiaries.
                 </p>
                 <p className="text-gray-700 mb-4">
-                  Our flexible engagement model allowed them to scale resources as needed throughout different project phases, resulting in a successful transformation with minimized disruption to operations.
+                  ECARIS provided a senior consultant with over 10 years of experience in finance, ERP deployments, and the pharmaceutical sector — bringing exactly the mix of expertise required for the project.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  Integrated directly into the project team, the consultant played a key role in harmonizing finance processes, adapting global standards to local realities, and ensuring smooth implementation and adoption across countries. The flexibility of our daily rate model allowed the client to scale involvement based on project phases, maintaining efficiency and control throughout the rollout.
                 </p>
                 <div className="flex items-center mt-6">
                   <div className="mr-4 h-12 w-12 rounded-full bg-ecaris-green flex items-center justify-center text-white text-xl font-bold">
                     C
                   </div>
                   <div>
-                    <p className="font-medium">Client CIO</p>
-                    <p className="text-sm text-gray-600">Manufacturing Industry</p>
+                    <p className="font-medium">Client Finance Director</p>
+                    <p className="text-sm text-gray-600">Pharmaceutical Industry</p>
                   </div>
                 </div>
               </div>
