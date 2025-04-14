@@ -1,5 +1,4 @@
-
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ExternalLink, Workflow, Building2, ServerCog, Database, Archive } from 'lucide-react';
@@ -90,7 +89,6 @@ const Services = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
-  // Check if we should scroll to this section on mount
   useEffect(() => {
     if (location.hash === '#services' && sectionRef.current) {
       setTimeout(() => {
@@ -226,7 +224,10 @@ const Services = () => {
                 
                 <div className="mt-8 flex justify-center">
                   <button
-                    onClick={closeServiceDetail}
+                    onClick={() => {
+                      closeServiceDetail();
+                      navigate('/#contact');
+                    }}
                     className="bg-ecaris-green hover:bg-ecaris-green/90 text-white px-6 py-3 rounded transition-colors"
                   >
                     Contact Us About This Service
