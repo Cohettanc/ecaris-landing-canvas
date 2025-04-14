@@ -162,7 +162,6 @@ const CloudService = () => {
                     including Microsoft Fabric components, across operations in the Benelux, Spain, and North Africa. The initiative 
                     enabled greater infrastructure scalability, cost control, and autonomy post-separation.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
               
@@ -173,7 +172,6 @@ const CloudService = () => {
                   <p className="text-gray-700 mb-4">
                     We conducted a FinOps assessment and optimization plan for the Azure infrastructure supporting a greenhouse gas reduction application at a major energy company. The project resulted in a complete rationalization of the cloud environment and a 3x reduction in infrastructure costs, while maintaining performance and scalability.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
             </div>

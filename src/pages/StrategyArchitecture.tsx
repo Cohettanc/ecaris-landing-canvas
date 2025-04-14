@@ -154,7 +154,6 @@ const StrategyArchitecture = () => {
                   <p className="text-gray-700 mb-4">
                     We supported a major logistics operator in defining the IT master plan for a large vehicle port on the Suez Canal. The project involved designing the deployment roadmap for key systems — including WMS, TMS, and cybersecurity solutions — to streamline port operations, improve traceability, and ensure secure, scalable infrastructure aligned with business growth.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
               
@@ -167,7 +166,6 @@ const StrategyArchitecture = () => {
                     innovation while maintaining regulatory compliance. The new architecture reduced time-to-market for new 
                     capabilities by 40% while strengthening their security posture.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
             </div>

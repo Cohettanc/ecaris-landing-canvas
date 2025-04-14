@@ -159,7 +159,6 @@ const ErpApplications = () => {
                   <p className="text-gray-700 mb-4">
                     We led a comprehensive ERP transformation for a global manufacturing company, consolidating multiple legacy systems into a unified platform, resulting in a 35% reduction in operational costs and a 50% improvement in supply chain visibility.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
               
@@ -170,7 +169,6 @@ const ErpApplications = () => {
                   <p className="text-gray-700 mb-4">
                     We designed and implemented an omnichannel CRM solution for a major retail organization, enabling seamless customer experiences across online and physical stores, which led to a 28% increase in customer retention and a 15% boost in sales.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
             </div>
