@@ -141,7 +141,6 @@ const DataGovernance = () => {
                     reduced regulatory reporting time by 30%, and created a trusted foundation for their analytics initiatives. The program 
                     included data ownership frameworks, quality metrics, and automated data lineage tracking.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
               
@@ -157,7 +156,6 @@ const DataGovernance = () => {
                     both local teams and central management to monitor order flows, lead times, and inventory dynamics in 
                     real time — significantly improving coordination and data-driven decision-making at scale.
                   </p>
-                  <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
               </Card>
             </div>
