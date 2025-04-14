@@ -149,12 +149,10 @@ const StrategyArchitecture = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Global Retail Chain</h3>
+                  <h3 className="text-xl font-bold mb-3">Global Logistics Leader – Suez Canal</h3>
                   <p className="text-gray-600 mb-2">IT Strategy & Architecture Transformation</p>
                   <p className="text-gray-700 mb-4">
-                    A global retail chain with operations in 15 countries faced challenges with their fragmented IT landscape 
-                    after years of acquisitions and organic growth. ECARIS consultants developed a comprehensive 3-year IT strategy 
-                    that reduced their application portfolio by 30% and created a flexible integration architecture.
+                    We supported a major logistics operator in defining the IT master plan for a large vehicle port on the Suez Canal. The project involved designing the deployment roadmap for key systems — including WMS, TMS, and cybersecurity solutions — to streamline port operations, improve traceability, and ensure secure, scalable infrastructure aligned with business growth.
                   </p>
                   <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
