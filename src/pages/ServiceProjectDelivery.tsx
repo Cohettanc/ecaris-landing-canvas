@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -55,20 +54,13 @@ const ServiceProjectDelivery = () => {
             </div>
           </div>
           
-          {/* Image Section */}
-          <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Image Section - REPLACED WITH SINGLE IMAGE */}
+          <div className="mb-16">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
-                alt="Software Development" 
-                className="w-full h-64 object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-md">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                alt="Team Collaboration" 
-                className="w-full h-64 object-cover"
+                src="/lovable-uploads/0d165bd2-ad63-4226-9adf-52abd159c180.png" 
+                alt="Team collaborating on project delivery" 
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
