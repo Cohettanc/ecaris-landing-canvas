@@ -56,18 +56,18 @@ const ServiceDailyRate = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <FeatureCard 
-                title="Resource Flexibility"
-                description="Scale resources up or down based on your project needs. Bring in experts only when you need them. Our flexible model allows you to maintain control over your budget while accessing specialized expertise exactly when required."
+                title="Long-Term Vision"
+                description="Our consultants typically stay on assignments for around 2 years, allowing them to build trust, drive sustainable change, and contribute meaningfully over time."
               />
               
               <FeatureCard 
-                title="Specialized Expertise"
-                description="Access to consultants with specific skills and industry knowledge to address your unique challenges. Our experts bring deep technical and domain expertise to help you solve complex problems and deliver successful outcomes."
+                title="Senior, Cross-Functional Expertise"
+                description="All our consultants are senior professionals, with over 8 years of experience. They bring a blend of technical, functional, and/or industry-specific expertise. Example: Head of Transformation, specialized in Supply Chain ERP deployment for the retail industry."
               />
               
               <FeatureCard 
-                title="Team Integration"
-                description="Our consultants work seamlessly with your team, following your processes while bringing external perspective. We focus on knowledge transfer and collaboration to ensure sustainable results long after our engagement ends."
+                title="Seamless Team Integration"
+                description="Our consultants embed fully into your teams, follow your internal processes, and collaborate closely with stakeholders. We prioritize knowledge transfer and sustainable delivery, so the value we bring continues after our mission ends."
               />
             </div>
           </div>
