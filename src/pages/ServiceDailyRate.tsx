@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -80,8 +81,8 @@ const ServiceDailyRate = () => {
                   <Check className="h-6 w-6" />
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-lg font-medium text-gray-900">Cost Control</h3>
-                  <p className="mt-2 text-gray-700">Transparent pricing with agreed-upon daily rates and no hidden costs.</p>
+                  <h3 className="text-lg font-medium text-gray-900">Embedded Collaboration</h3>
+                  <p className="mt-2 text-gray-700">Our consultants become part of your team, driving progress from within and fostering strong relationships with stakeholders.</p>
                 </div>
               </div>
               
@@ -90,8 +91,8 @@ const ServiceDailyRate = () => {
                   <Check className="h-6 w-6" />
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-lg font-medium text-gray-900">Adaptability</h3>
-                  <p className="mt-2 text-gray-700">Easily adjust to changing requirements or priorities without contract renegotiation.</p>
+                  <h3 className="text-lg font-medium text-gray-900">Scalable and Flexible Engagement</h3>
+                  <p className="mt-2 text-gray-700">Easily adjust the level of support as your project evolves — no rigid contracts, just responsiveness to your pace and priorities.</p>
                 </div>
               </div>
               
@@ -100,8 +101,8 @@ const ServiceDailyRate = () => {
                   <Check className="h-6 w-6" />
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-lg font-medium text-gray-900">Knowledge Transfer</h3>
-                  <p className="mt-2 text-gray-700">Our consultants work closely with your team, sharing expertise and best practices.</p>
+                  <h3 className="text-lg font-medium text-gray-900">Top-Tier Talent, Immediately Operational</h3>
+                  <p className="mt-2 text-gray-700">Our consultants are senior professionals with deep expertise — they hit the ground running, with no ramp-up time required.</p>
                 </div>
               </div>
               
@@ -110,8 +111,8 @@ const ServiceDailyRate = () => {
                   <Check className="h-6 w-6" />
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-lg font-medium text-gray-900">Quick Start</h3>
-                  <p className="mt-2 text-gray-700">Rapid deployment of resources without lengthy procurement processes.</p>
+                  <h3 className="text-lg font-medium text-gray-900">Specialized Expertise, Precisely Matched</h3>
+                  <p className="mt-2 text-gray-700">We don't just provide consultants — we bring the right profiles, with the technical, functional, and sector knowledge your project demands.</p>
                 </div>
               </div>
             </div>
