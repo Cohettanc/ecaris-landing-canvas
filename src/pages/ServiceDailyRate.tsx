@@ -163,8 +163,8 @@ const ServiceDailyRate = () => {
               </div>
               <div className="bg-gray-100">
                 <img 
-                  src="/lovable-uploads/4b920f3e-2f6a-4945-87c8-8a0cf974ab16.png" 
-                  alt="IT transformation collaborative workspace" 
+                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952" 
+                  alt="IT transformation case study" 
                   className="w-full h-full object-cover"
                 />
               </div>
