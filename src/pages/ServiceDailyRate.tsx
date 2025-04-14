@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -156,9 +155,6 @@ const ServiceDailyRate = () => {
                   Integrated directly into the project team, the consultant played a key role in harmonizing finance processes, adapting global standards to local realities, and ensuring smooth implementation and adoption across countries. The flexibility of our daily rate model allowed the client to scale involvement based on project phases, maintaining efficiency and control throughout the rollout.
                 </p>
                 <div className="flex items-center mt-6">
-                  <div className="mr-4 h-12 w-12 rounded-full bg-ecaris-green flex items-center justify-center text-white text-xl font-bold">
-                    C
-                  </div>
                   <div>
                     <p className="font-medium">Client Finance Director</p>
                     <p className="text-sm text-gray-600">Pharmaceutical Industry</p>
