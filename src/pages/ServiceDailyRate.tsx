@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -43,9 +42,9 @@ const ServiceDailyRate = () => {
       </section>
       
       {/* Main Content */}
-      <section className="py-16 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
+          <div className="mb-16 md:mb-24">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">How it works</h2>
             <p className="text-lg text-gray-700 mb-4">
               Our daily rate service model provides you with access to skilled consultants who can augment your team, provide specialized expertise, or lead key initiatives on a flexible basis.
@@ -72,7 +71,7 @@ const ServiceDailyRate = () => {
             </div>
           </div>
           
-          <div className="mb-16">
+          <div className="mb-16 md:mb-24">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
@@ -119,7 +118,7 @@ const ServiceDailyRate = () => {
           </div>
           
           {/* Case Study Section */}
-          <div className="my-16 bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="my-16 md:my-24 bg-white rounded-lg shadow-md overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-8">
                 <div className="inline-block px-3 py-1 text-xs font-medium text-ecaris-green bg-ecaris-green/10 rounded-full mb-4">
@@ -149,7 +148,7 @@ const ServiceDailyRate = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-ecaris-green text-white">
+      <section className="py-16 md:py-24 bg-ecaris-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-6">Ready to enhance your team with our expertise?</h2>
           <p className="text-xl mb-8 text-ecaris-light">
