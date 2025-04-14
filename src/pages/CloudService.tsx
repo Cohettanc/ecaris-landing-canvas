@@ -154,10 +154,13 @@ const CloudService = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Financial Services Provider</h3>
+                  <h3 className="text-xl font-bold mb-3">Water Services Company – Europe & North Africa</h3>
                   <p className="text-gray-600 mb-2">Hybrid Cloud Migration</p>
                   <p className="text-gray-700 mb-4">
-                    We helped a major financial services company migrate their core banking applications to a hybrid cloud environment, resulting in a 40% reduction in infrastructure costs and a 60% improvement in application performance.
+                    We supported a major water treatment company in a large-scale move to cloud as part of an IT carve-out. 
+                    The project involved migrating over 400 virtual machines from on-premise infrastructure to Microsoft Azure, 
+                    including Microsoft Fabric components, across operations in the Benelux, Spain, and North Africa. The initiative 
+                    enabled greater infrastructure scalability, cost control, and autonomy post-separation.
                   </p>
                   <p className="text-ecaris-green">Read case study →</p>
                 </CardContent>
