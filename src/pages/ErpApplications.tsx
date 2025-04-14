@@ -154,10 +154,10 @@ const ErpApplications = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Manufacturing Company</h3>
-                  <p className="text-gray-600 mb-2">ERP Transformation</p>
+                  <h3 className="text-xl font-bold mb-3">Energy Sector – SAP Modernization</h3>
+                  <p className="text-gray-600 mb-2">ECC to S/4HANA Migration</p>
                   <p className="text-gray-700 mb-4">
-                    We led a comprehensive ERP transformation for a global manufacturing company, consolidating multiple legacy systems into a unified platform, resulting in a 35% reduction in operational costs and a 50% improvement in supply chain visibility.
+                    We supported the migration from SAP ECC to SAP S/4HANA for a major energy company, focusing on the FI (Financial Accounting), CO (Controlling), and PM (Plant Maintenance) modules. The project aimed to modernize core financial and maintenance processes, enhance data consistency, and improve overall system performance and scalability.
                   </p>
                 </CardContent>
               </Card>
