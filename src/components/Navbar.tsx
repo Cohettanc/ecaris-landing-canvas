@@ -67,10 +67,6 @@ const Navbar = () => {
       ]
     },
     { 
-      name: "Careers", 
-      path: "/careers" 
-    },
-    { 
       name: "Contact Us", 
       id: "contact" 
     }
