@@ -32,9 +32,9 @@ const ServiceProjectDelivery = () => {
             <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
               <span className="text-ecaris-light font-medium">Defined Timelines & Budgets</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
-              Project Delivery Services
-            </h1>
+            <h2 className="text-2xl font-bold text-ecaris-green mb-6">
+              Project-Based Delivery
+            </h2>
             <p className="text-xl md:text-2xl text-ecaris-light max-w-3xl mx-auto">
               Delivering targeted IT initiatives within defined timelines and budgets
             </p>
