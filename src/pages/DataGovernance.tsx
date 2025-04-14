@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Database, ClipboardCheck, BarChart2, Layers, Shield, Users } from 'lucide-react';
+import { ArrowLeft, Database, BarChart2, Layers, Shield, ClipboardCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -107,18 +107,6 @@ const DataGovernance = () => {
                   <h3 className="text-xl font-bold mb-3">DataOps & Industrialization</h3>
                   <p className="text-gray-700">
                     Our teams implement DataOps practices to streamline data pipelines, automate delivery cycles, and enable scalable, reliable data product development.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-t-4 border-t-ecaris-green">
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <Users className="h-10 w-10 text-ecaris-green" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Data Organization & Operating Model</h3>
-                  <p className="text-gray-700">
-                    We assist in structuring your data function: roles, responsibilities, and tooling — ensuring your teams are equipped to support data-driven initiatives at scale.
                   </p>
                 </CardContent>
               </Card>
