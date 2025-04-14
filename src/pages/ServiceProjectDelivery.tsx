@@ -214,7 +214,7 @@ const ServiceProjectDelivery = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Card 1: AI, Data & Governance */}
-              <Card className="border-l-4 border-ecaris-green hover:border-ecaris-green/80 transition-colors duration-300">
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
@@ -231,7 +231,7 @@ const ServiceProjectDelivery = () => {
               </Card>
               
               {/* Card 2: Cloud & Infrastructure */}
-              <Card className="border-l-4 border-ecaris-green hover:border-ecaris-green/80 transition-colors duration-300">
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
@@ -248,7 +248,7 @@ const ServiceProjectDelivery = () => {
               </Card>
               
               {/* Card 3: ERP & Business Applications */}
-              <Card className="border-l-4 border-ecaris-green hover:border-ecaris-green/80 transition-colors duration-300">
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
@@ -265,7 +265,7 @@ const ServiceProjectDelivery = () => {
               </Card>
               
               {/* Card 4: System Integration & APIs */}
-              <Card className="border-l-4 border-ecaris-green hover:border-ecaris-green/80 transition-colors duration-300">
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
@@ -282,7 +282,7 @@ const ServiceProjectDelivery = () => {
               </Card>
               
               {/* Card 5: Business Process Automation */}
-              <Card className="border-l-4 border-ecaris-green hover:border-ecaris-green/80 transition-colors duration-300 md:col-span-2 lg:col-span-1 lg:col-start-1 lg:col-end-3">
+              <Card className="border-l-4 border-ecaris-green hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1 lg:col-start-1 lg:col-end-3">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-3">
                     <div className="bg-ecaris-green/10 p-2 rounded-full">
