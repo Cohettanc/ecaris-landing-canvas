@@ -159,12 +159,10 @@ const StrategyArchitecture = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Financial Services Provider</h3>
-                  <p className="text-gray-600 mb-2">Enterprise Architecture Redesign</p>
+                  <h3 className="text-xl font-bold mb-3">Insurance Group – IT Strategy & Architecture</h3>
+                  <p className="text-gray-600 mb-2">Carve-Out Planning & Execution</p>
                   <p className="text-gray-700 mb-4">
-                    We helped a leading financial services company redesign their enterprise architecture to support rapid 
-                    innovation while maintaining regulatory compliance. The new architecture reduced time-to-market for new 
-                    capabilities by 40% while strengthening their security posture.
+                    We defined the IT carve-out strategy for the subsidiary of a major insurance group, supporting its transition to full operational and technological autonomy. The engagement covered the separation of infrastructure, applications, and data, with a strong focus on business continuity, security, and regulatory compliance. Our work provided a clear roadmap for the stand-alone entity's future IT landscape, enabling it to scale independently while maintaining alignment with group standards during the transition phase.
                   </p>
                 </CardContent>
               </Card>
