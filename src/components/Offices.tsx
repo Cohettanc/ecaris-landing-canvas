@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { offices } from '@/data/officeData';
@@ -6,8 +5,8 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Array of all city names for the carousel
-const cityNames = ["Luxembourg", "Paris", "Geneva", "London", "Berlin"];
+// Updated array of city names for the carousel
+const cityNames = ["Luxembourg", "Paris", "Geneva", "London", "Berlin", "Milan"];
 
 const Offices = () => {
   const location = useLocation();
