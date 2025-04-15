@@ -1,6 +1,6 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -34,32 +34,26 @@ const Contact = () => {
     };
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    try {
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // You'll need to replace this
-        'YOUR_TEMPLATE_ID', // You'll need to replace this
-        {
-          from_name: name,
-          from_email: email,
-          message: message,
-          to_email: 'contact@ecaris.io',
-        },
-        'YOUR_PUBLIC_KEY' // You'll need to replace this
-      );
-      
-      toast.success("Message sent successfully. We'll get back to you soon!");
+    // Prepare email content
+    const subject = `Contact Form Submission from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:contact@ecaris.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Show success message and reset form
+    setTimeout(() => {
+      toast.success("Message prepared in your email client!");
       setName('');
       setEmail('');
       setMessage('');
-    } catch (error) {
-      toast.error("Failed to send message. Please try again.");
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
