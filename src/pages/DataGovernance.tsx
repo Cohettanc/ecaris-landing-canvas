@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Database, BarChart2, Layers, Shield, ClipboardCheck } from 'lucide-react';
@@ -134,10 +135,10 @@ const DataGovernance = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Global Retail Leader</h3>
-                  <p className="text-gray-600 mb-2">Product Master Data Transformation</p>
+                  <h3 className="text-xl font-bold mb-3">Global Pharmaceutical Leader – Product Master Data Transformation</h3>
+                  <p className="text-gray-600 mb-2">Product Master Data Solution</p>
                   <p className="text-gray-700 mb-4">
-                    We supported a global retail group in the scoping and implementation of a centralized product master data solution using TIBCO EBX, covering worldwide operations. The project focused on aligning product data structures and governance across business units, with frequent interaction with the executive committee. It established a consistent foundation for product information management, improving data quality, traceability, and time-to-market for new launches.
+                    We supported a major pharmaceutical group in the scoping and implementation of a centralized product master data solution using TIBCO EBX, covering global operations. The project focused on harmonizing product data structures and governance across business units, with regular interaction with the executive committee. It established a consistent foundation for product information management, enhancing data quality, regulatory traceability, and time-to-market for new product launches.
                   </p>
                 </CardContent>
               </Card>
