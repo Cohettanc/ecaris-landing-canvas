@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
 
@@ -37,8 +38,17 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Prepare email content
+    const subject = `Contact Form Submission from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:contact@ecaris.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Show success message and reset form
     setTimeout(() => {
-      toast.success("Message sent successfully. We'll get back to you soon!");
+      toast.success("Message prepared in your email client!");
       setName('');
       setEmail('');
       setMessage('');
