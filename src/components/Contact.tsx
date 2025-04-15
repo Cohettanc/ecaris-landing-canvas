@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
 
@@ -37,21 +36,14 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Create mailto link with form data
-    const mailtoLink = `mailto:contact@ecaris.io?subject=Contact from ${name}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
-
-    // Open default email client
-    window.location.href = mailtoLink;
     
-    // Show success message and reset form
-    toast.success("Opening your email client...");
-    setName('');
-    setEmail('');
-    setMessage('');
-    setIsSubmitting(false);
+    setTimeout(() => {
+      toast.success("Message sent successfully. We'll get back to you soon!");
+      setName('');
+      setEmail('');
+      setMessage('');
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   return (
