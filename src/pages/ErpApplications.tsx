@@ -164,10 +164,10 @@ const ErpApplications = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Retail Organization</h3>
-                  <p className="text-gray-600 mb-2">Omnichannel CRM Implementation</p>
+                  <h3 className="text-xl font-bold mb-3">Telecom Group – ERP Consolidation</h3>
+                  <p className="text-gray-600 mb-2">Microsoft Dynamics Migration</p>
                   <p className="text-gray-700 mb-4">
-                    We designed and implemented an omnichannel CRM solution for a major retail organization, enabling seamless customer experiences across online and physical stores, which led to a 28% increase in customer retention and a 15% boost in sales.
+                    We led the deployment of Microsoft Dynamics ERP for the subsidiary of a major telecom group. The project focused on harmonizing key business processes and laying the groundwork for broader ERP standardization across the organization.
                   </p>
                 </CardContent>
               </Card>
