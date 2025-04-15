@@ -154,7 +154,7 @@ const ErpApplications = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Energy Sector – SAP Modernization</h3>
+                  <h3 className="text-xl font-bold mb-3">Global Energy Company – SAP S/4HANA Migration</h3>
                   <p className="text-gray-600 mb-2">ECC to S/4HANA Migration</p>
                   <p className="text-gray-700 mb-4">
                     We supported the migration from SAP ECC to SAP S/4HANA for a major energy company, focusing on the FI (Financial Accounting), CO (Controlling), and PM (Plant Maintenance) modules. The project aimed to modernize core financial and maintenance processes, enhance data consistency, and improve overall system performance and scalability.
@@ -164,7 +164,7 @@ const ErpApplications = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Telecom Group – ERP Deployment</h3>
+                  <h3 className="text-xl font-bold mb-3">Telecom Industry Leader – Microsoft 365 Dynamics ERP Deployment</h3>
                   <p className="text-gray-600 mb-2">Microsoft 365 Dynamics Migration</p>
                   <p className="text-gray-700 mb-4">
                     We led the deployment of Microsoft 365 Dynamics ERP for the subsidiary of a major telecom group. The project focused on harmonizing key business processes and laying the groundwork for broader ERP standardization across the organization.

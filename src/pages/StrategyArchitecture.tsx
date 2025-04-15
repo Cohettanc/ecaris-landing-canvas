@@ -149,7 +149,7 @@ const StrategyArchitecture = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Global Logistics Leader – Suez Canal</h3>
+                  <h3 className="text-xl font-bold mb-3">Global Logistics Leader - Port Operations IT Strategy</h3>
                   <p className="text-gray-600 mb-2">IT Strategy & Architecture Transformation</p>
                   <p className="text-gray-700 mb-4">
                     We supported a major logistics operator in defining the IT master plan for a large vehicle port on the Suez Canal. The project involved designing the deployment roadmap for key systems — including WMS, TMS, and cybersecurity solutions — to streamline port operations, improve traceability, and ensure secure, scalable infrastructure aligned with business growth.
@@ -159,7 +159,7 @@ const StrategyArchitecture = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Insurance Group – IT Strategy & Architecture</h3>
+                  <h3 className="text-xl font-bold mb-3">Top-Tier Insurance Group – IT Carve-Out Strategy</h3>
                   <p className="text-gray-600 mb-2">Carve-Out Planning & Execution</p>
                   <p className="text-gray-700 mb-4">
                     We defined the IT carve-out strategy for the subsidiary of a major insurance group, supporting its transition to full operational and technological autonomy. The engagement covered the separation of infrastructure, applications, and data, with a strong focus on business continuity, security, and regulatory compliance. Our work provided a clear roadmap for the stand-alone entity's future IT landscape, enabling it to scale independently while maintaining alignment with group standards during the transition phase.
