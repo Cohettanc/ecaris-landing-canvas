@@ -164,7 +164,7 @@ const ErpApplications = () => {
               
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3">Telecom Group – ERP Consolidation</h3>
+                  <h3 className="text-xl font-bold mb-3">Telecom Group – ERP Deployment</h3>
                   <p className="text-gray-600 mb-2">Microsoft Dynamics Migration</p>
                   <p className="text-gray-700 mb-4">
                     We led the deployment of Microsoft Dynamics ERP for the subsidiary of a major telecom group. The project focused on harmonizing key business processes and laying the groundwork for broader ERP standardization across the organization.
