@@ -18,12 +18,11 @@ const OfficePageLayout = () => {
     }
     window.scrollTo(0, 0);
 
-    // Get navbar height on component mount
     const navbar = document.querySelector('header');
     if (navbar) {
       setNavbarHeight(navbar.offsetHeight);
     }
-  }, [office, officeId]); // Add officeId to dependency array
+  }, [office, officeId]);
 
   if (!office) {
     return (
@@ -49,16 +48,14 @@ const OfficePageLayout = () => {
     return 'object-right-top';
   };
 
-  // Set a smaller height for the hero section
-  const heroHeight = "50vh"; // Reduced from 70vh to 50vh
+  const heroHeight = "50vh";
 
-  // Office-specific information
   const getOfficeSpecificInfo = () => {
     if (officeId === 'luxembourg') {
       return {
         description: 'Our Luxembourg headquarters serves as the primary hub for our European operations. Located in the heart of Luxembourg City, this modern facility houses our executive team and primary administrative functions.',
         teamSize: '40+ professionals',
-        established: 'Established in 2019', // Updated from 2005 to 2019
+        established: 'Established in 2019',
         specialties: ['Corporate Strategy', 'Finance Consulting', 'Digital Transformation', 'Enterprise Architecture'],
         workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM',
         facilities: ['Modern conference rooms', 'Innovation lab', 'Client meeting spaces', 'Cafeteria', 'Recreation area']
@@ -67,7 +64,7 @@ const OfficePageLayout = () => {
       return {
         description: 'Our Paris office is strategically positioned on the iconic Champs-Élysées, providing our clients with easy access to our consulting services in one of Europe\'s major business centers.',
         teamSize: '10+ consultants',
-        established: 'Established in 2024', // Updated from 2012 to 2024
+        established: 'Established in 2024',
         specialties: [
           'Pharmaceutical Laboratory', 
           'Insurance', 
@@ -84,7 +81,7 @@ const OfficePageLayout = () => {
       teamSize: '30+ consultants',
       established: 'Recently established',
       specialties: ['Business Consulting', 'Technology Advisory', 'Digital Strategy'],
-      workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM', // Updated working hours for consistency
+      workingHours: 'Monday - Friday: 9:00 AM - 8:00 PM',
       facilities: ['Meeting rooms', 'Collaborative workspace', 'Client lounge']
     };
   };
@@ -99,8 +96,8 @@ const OfficePageLayout = () => {
         <div 
           className="relative bg-gray-900 overflow-hidden"
           style={{ 
-            marginTop: `${navbarHeight}px`, // Add margin equal to navbar height
-            height: heroHeight // Set height to 50vh (smaller than previous 70vh)
+            marginTop: `${navbarHeight}px`,
+            height: heroHeight
           }}
         >
           <div className="absolute inset-0">
@@ -123,7 +120,6 @@ const OfficePageLayout = () => {
           </div>
         </div>
         
-        {/* Office Overview Section */}
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 relative inline-block">
@@ -210,7 +206,7 @@ const OfficePageLayout = () => {
                 <div className="text-gray-700">
                   <div className="flex items-center">
                     <Mail className="h-4 w-4 mr-2 text-ecaris-green" />
-                    <p>info@ecaris.com</p>
+                    <p>contact@ecaris.io</p>
                   </div>
                 </div>
               </div>
@@ -219,7 +215,7 @@ const OfficePageLayout = () => {
             <div>
               <h2 className="text-2xl font-bold mb-4">Location</h2>
               <Map 
-                key={officeId} // Add a key prop with officeId to force re-render
+                key={officeId}
                 latitude={office.coordinates[1]} 
                 longitude={office.coordinates[0]} 
                 title={office.title}
@@ -228,7 +224,6 @@ const OfficePageLayout = () => {
             </div>
           </div>
           
-          {/* CTA Section - updated with Contact Us button */}
           <div className="bg-gray-50 rounded-xl p-8 mb-12">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-4">Visit Our {office.city} Office</h2>

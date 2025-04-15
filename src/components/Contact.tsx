@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
 
@@ -100,7 +99,7 @@ const Contact = () => {
                   </svg>
                   <div>
                     <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-gray-700">contact@ecaris.com</p>
+                    <p className="text-gray-700">contact@ecaris.io</p>
                   </div>
                 </div>
               </div>
