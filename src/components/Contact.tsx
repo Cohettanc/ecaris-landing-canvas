@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
 import { createClient } from '@supabase/supabase-js';
@@ -39,10 +40,29 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const supabase = createClient(
-        import.meta.env.VITE_SUPABASE_URL,
-        import.meta.env.VITE_SUPABASE_ANON_KEY
-      );
+      // Check if Supabase environment variables are available
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      if (!supabaseUrl || !supabaseKey) {
+        // Fallback to mailto link if Supabase is not configured
+        const subject = `Contact Form Submission from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:contact@ecaris.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        toast.success("Message prepared in your email client!");
+        setName('');
+        setEmail('');
+        setMessage('');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // If Supabase is configured, use it to send the email
+      const supabase = createClient(supabaseUrl, supabaseKey);
 
       const { data, error } = await supabase.functions.invoke('send-email', {
         body: {
