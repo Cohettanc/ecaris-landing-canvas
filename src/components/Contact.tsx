@@ -1,6 +1,6 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
+import { createClient } from '@supabase/supabase-js';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -34,26 +34,37 @@ const Contact = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Prepare email content
-    const subject = `Contact Form Submission from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:contact@ecaris.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Show success message and reset form
-    setTimeout(() => {
-      toast.success("Message prepared in your email client!");
+
+    try {
+      const supabase = createClient(
+        import.meta.env.VITE_SUPABASE_URL,
+        import.meta.env.VITE_SUPABASE_ANON_KEY
+      );
+
+      const { data, error } = await supabase.functions.invoke('send-email', {
+        body: {
+          name,
+          email,
+          message,
+          to: 'contact@ecaris.io'
+        }
+      });
+
+      if (error) throw error;
+
+      toast.success("Message sent successfully!");
       setName('');
       setEmail('');
       setMessage('');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
