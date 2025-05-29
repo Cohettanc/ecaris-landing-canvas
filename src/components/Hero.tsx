@@ -27,7 +27,7 @@ const Hero = () => {
             className="text-xl md:text-2xl text-gray-700 mb-8 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
           >
-            At Ecaris, we provide the best talent on a consulting basis to support your business. We work with you in a freelance model, without long-term commitment.
+            ECARIS empowers business and IT teams with senior experts to deliver impactful data and AI solutions, from systems integration to data platform deployment.
           </p>
           
           <div 
