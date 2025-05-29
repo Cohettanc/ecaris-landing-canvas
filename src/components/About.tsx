@@ -43,10 +43,19 @@ const About = () => {
               </span>
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              We connect businesses with the best talent. Thanks to our extensive network and expertise, we can quickly identify the most valuable and sought-after resources.
+              ECARIS is a consulting firm that supports business and IT teams in their digital transformation initiatives.
+            </p>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              We cover the full data value chain — from integrating business applications (ERP, WMS, CRM, HRIS, accounting) to designing and deploying data platforms (cloud, on-premise, hybrid) that enable high-value data and AI use cases.
+            </p>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Our mission: deliver tangible outcomes across supply chain, industrial operations, finance, and HR.
+            </p>
+            <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+              Our projects are led by senior independent experts who combine deep technical skills with strong business understanding.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              With Ecaris, you gain access to rare skills, ensuring the success of your most ambitious projects.
+              Our hybrid model blends the agility of independent talent with the quality standards of top-tier consulting firms.
             </p>
           </div>
           <div 
