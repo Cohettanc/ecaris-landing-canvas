@@ -1,6 +1,5 @@
 
 import { useEffect, useRef } from 'react';
-import { Truck, Factory, DollarSign, Users } from 'lucide-react';
 
 const BusinessExpertise = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -9,25 +8,25 @@ const BusinessExpertise = () => {
 
   const expertiseAreas = [
     {
-      icon: <Truck className="h-12 w-12 text-ecaris-green" />,
+      logo: "/lovable-uploads/751b4c6a-6e04-4a09-9903-73498e1a11b4.png",
       emoji: "🚚",
       title: "Supply Chain",
       description: "We optimize supply chain processes through smart data integration, advanced analytics, and AI use cases — from demand forecasting to logistics flow optimization."
     },
     {
-      icon: <Factory className="h-12 w-12 text-ecaris-green" />,
+      logo: "/lovable-uploads/be172d23-d8ae-44b5-8647-63dc27d0ea1f.png",
       emoji: "🏭",
       title: "Industrial Operations",
       description: "We support manufacturing excellence by leveraging real-time data, automation, and predictive insights to enhance productivity, quality, and agility on the shop floor."
     },
     {
-      icon: <DollarSign className="h-12 w-12 text-ecaris-green" />,
+      logo: "/lovable-uploads/f76c8ba3-2287-446c-aa5c-f33beb96c8c7.png",
       emoji: "💰",
       title: "Finance & Performance Management",
       description: "We help finance teams streamline reporting, improve cost control, and enable scenario planning through data-driven platforms and performance dashboards."
     },
     {
-      icon: <Users className="h-12 w-12 text-ecaris-green" />,
+      logo: "/lovable-uploads/98e2239d-0e1b-498a-b688-07b4f67aa13e.png",
       emoji: "👥",
       title: "Human Resources & Organizational Efficiency",
       description: "We enable HR transformation and organizational design by integrating workforce data, aligning structures to strategy, and supporting change management through actionable insights."
@@ -92,9 +91,13 @@ const BusinessExpertise = () => {
               className="bg-gray-50 p-8 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 opacity-0"
             >
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl" role="img" aria-label={area.title}>
-                  {area.emoji}
-                </span>
+                <div className="flex-shrink-0">
+                  <img 
+                    src={area.logo} 
+                    alt={`${area.title} logo`}
+                    className="h-12 w-12 object-contain"
+                  />
+                </div>
                 <h3 className="text-xl font-bold text-gray-900">
                   {area.title}
                 </h3>
