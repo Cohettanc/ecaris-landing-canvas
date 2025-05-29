@@ -66,9 +66,8 @@ const BusinessExpertise = () => {
           ref={titleRef}
           className="text-center mb-16 opacity-0"
         >
-          <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
+          <h2 className="heading-lg text-gray-900 mb-4">
             Business Expertise
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-24 h-1 bg-ecaris-green"></span>
           </h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
             At ECARIS, we combine deep technical know-how with a sharp understanding of business needs. Our consultants deliver high-impact solutions tailored to the operational challenges of today's organizations.
