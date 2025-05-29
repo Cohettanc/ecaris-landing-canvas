@@ -70,7 +70,7 @@ const BusinessExpertise = () => {
             <h2 className="heading-lg text-gray-900 mb-3">
               Business Expertise
             </h2>
-            <div className="w-full h-1 bg-ecaris-green mb-4"></div>
+            <div className="w-full h-1 bg-ecaris-green mb-6"></div>
           </div>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
             At ECARIS, we combine deep technical know-how with a sharp understanding of business needs. Our consultants deliver high-impact solutions tailored to the operational challenges of today's organizations.
