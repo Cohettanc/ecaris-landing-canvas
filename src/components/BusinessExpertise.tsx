@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Truck, Factory, TrendingUp, Users } from 'lucide-react';
 
@@ -75,7 +74,7 @@ const BusinessExpertise = () => {
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
             At ECARIS, we combine deep technical know-how with a sharp understanding of business needs. Our consultants deliver high-impact solutions tailored to the operational challenges of today's organizations.
           </p>
-          <p className="text-lg font-medium text-gray-900 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             We bring value across four key domains:
           </p>
         </div>
