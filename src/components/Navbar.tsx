@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -46,7 +47,7 @@ const Navbar = () => {
       ]
     },
     { 
-      name: "Our Expertise", 
+      name: "Our IT Expertise", 
       dropdown: [
         { name: "All Our IT Expertise", path: "/#services" },
         { name: "AI & Data Governance", path: "/data-governance" },
@@ -341,3 +342,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
