@@ -1,11 +1,12 @@
 
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { offices } from '@/data/officeData';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitch from './LanguageSwitch';
 
 interface DropdownItem {
   name: string;
@@ -28,52 +29,53 @@ const Navbar = () => {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems: NavItem[] = [
     { 
-      name: "Who Are We", 
+      name: t('nav.whoAreWe'), 
       dropdown: [
-        { name: "About Us", path: "/#about" },
-        { name: "Our Team", path: "/our-team" },
-        { name: "Our Values", path: "/our-values" }
+        { name: t('nav.aboutUs'), path: "/#about" },
+        { name: t('nav.ourTeam'), path: "/our-team" },
+        { name: t('nav.ourValues'), path: "/our-values" }
       ]
     },
     { 
-      name: "Our Services", 
+      name: t('nav.ourServices'), 
       dropdown: [
-        { name: "All Our Services", path: "/#main-services" },
-        { name: "Daily Rate Services", path: "/service-daily-rate" },
-        { name: "Project Delivery Services", path: "/service-project-delivery" }
+        { name: t('nav.allOurServices'), path: "/#main-services" },
+        { name: t('nav.dailyRateServices'), path: "/service-daily-rate" },
+        { name: t('nav.projectDeliveryServices'), path: "/service-project-delivery" }
       ]
     },
     { 
-      name: "Business Expertise", 
+      name: t('nav.businessExpertise'), 
       id: "business-expertise" 
     },
     { 
-      name: "Our IT Expertise", 
+      name: t('nav.ourITExpertise'), 
       dropdown: [
-        { name: "All Our IT Expertise", path: "/#services" },
-        { name: "AI & Data Governance", path: "/data-governance" },
-        { name: "Strategy & Architecture", path: "/strategy-architecture" },
-        { name: "Cloud Services", path: "/cloud-service" },
-        { name: "ERP & Applications", path: "/erp-applications" }
+        { name: t('nav.allOurITExpertise'), path: "/#services" },
+        { name: t('nav.aiDataGovernance'), path: "/data-governance" },
+        { name: t('nav.strategyArchitecture'), path: "/strategy-architecture" },
+        { name: t('nav.cloudServices'), path: "/cloud-service" },
+        { name: t('nav.erpApplications'), path: "/erp-applications" }
       ]
     },
     { 
-      name: "ECARIS at a glance", 
+      name: t('nav.ecarisAtGlance'), 
       id: "clients" 
     },
     { 
-      name: "Our Offices", 
+      name: t('nav.ourOffices'), 
       dropdown: [
-        { name: "All Our Offices", path: "/#offices" },
-        { name: "Luxembourg", path: "/office/luxembourg" },
-        { name: "Paris", path: "/office/paris" }
+        { name: t('nav.allOurOffices'), path: "/#offices" },
+        { name: t('nav.luxembourg'), path: "/office/luxembourg" },
+        { name: t('nav.paris'), path: "/office/paris" }
       ]
     },
     { 
-      name: "Contact Us", 
+      name: t('nav.contactUs'), 
       id: "contact" 
     }
   ];
@@ -261,20 +263,26 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="md:hidden">
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-ecaris-green focus:outline-none"
-              aria-expanded={mobileMenuOpen}
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:block">
+              <LanguageSwitch />
+            </div>
+            
+            <div className="md:hidden">
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-gray-700 hover:text-ecaris-green focus:outline-none"
+                aria-expanded={mobileMenuOpen}
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -287,6 +295,10 @@ const Navbar = () => {
         style={{ top: '140px' }}
       >
         <div className="px-4 py-6 space-y-1 bg-white overflow-y-auto max-h-[calc(100vh-140px)]">
+          <div className="mb-4 pb-4 border-b border-gray-100">
+            <LanguageSwitch />
+          </div>
+          
           {navItems.map((item) => (
             <div key={item.name} className="border-b border-gray-100">
               {item.dropdown ? (
@@ -346,4 +358,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

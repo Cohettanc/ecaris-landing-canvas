@@ -1,7 +1,9 @@
 
 import { useEffect, useRef } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -38,24 +40,24 @@ const About = () => {
           >
             <h2 className="heading-lg text-gray-900 mb-6 relative">
               <span className="inline-block pb-2 relative">
-                Who Are We?
+                {t('about.title')}
                 <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
               </span>
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              ECARIS is a consulting firm that supports business and IT teams in their digital transformation initiatives.
+              {t('about.p1')}
             </p>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              We cover the full data value chain — from integrating business applications (ERP, WMS, CRM, HRIS, accounting) to designing and deploying data platforms (cloud, on-premise, hybrid) that enable high-value data and AI use cases.
+              {t('about.p2')}
             </p>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Our mission: deliver tangible outcomes across supply chain, industrial operations, finance, and HR.
+              {t('about.p3')}
             </p>
             <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-              Our projects are led by senior independent experts who combine deep technical skills with strong business understanding.
+              {t('about.p4')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Our hybrid model blends the agility of independent talent with the quality standards of top-tier consulting firms.
+              {t('about.p5')}
             </p>
           </div>
           <div 
@@ -66,12 +68,12 @@ const About = () => {
               <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
                 <img 
                   src="/lovable-uploads/3c35e841-2a19-4149-afe6-610b8807c475.png" 
-                  alt="Tech professionals collaborating on code" 
+                  alt={t('about.imageAlt')} 
                   className="object-cover w-full h-full"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
-                <p className="text-ecaris-green font-medium">Connecting top talent with leading businesses</p>
+                <p className="text-ecaris-green font-medium">{t('about.tagline')}</p>
               </div>
             </div>
           </div>

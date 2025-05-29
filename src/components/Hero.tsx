@@ -1,7 +1,10 @@
 
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -20,14 +23,14 @@ const Hero = () => {
             className="heading-xl mb-4 text-gray-900 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
-            <span className="text-ecaris-green">Seeking Excellence</span>
+            <span className="text-ecaris-green">{t('hero.title')}</span>
           </h1>
           
           <p 
             className="text-xl md:text-2xl text-gray-700 mb-8 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
           >
-            ECARIS empowers business and IT teams with senior experts to deliver impactful data and AI solutions, from systems integration to data platform deployment.
+            {t('hero.description')}
           </p>
           
           <div 
@@ -38,13 +41,13 @@ const Hero = () => {
               onClick={() => scrollToSection('services')}
               className="px-8 py-3 rounded-md bg-ecaris-green text-white hover:bg-ecaris-green/90 transition-colors duration-300 transform hover:scale-[1.02] font-medium"
             >
-              Our Services
+              {t('hero.ourServices')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="px-8 py-3 rounded-md border border-ecaris-green text-ecaris-green hover:bg-ecaris-green/5 transition-colors duration-300 transform hover:scale-[1.02] font-medium"
             >
-              Contact Us
+              {t('hero.contactUs')}
             </button>
           </div>
         </div>

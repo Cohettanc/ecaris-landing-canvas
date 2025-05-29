@@ -1,30 +1,33 @@
+
 import { useEffect, useRef } from 'react';
 import { Truck, Factory, TrendingUp, Users } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const BusinessExpertise = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const expertiseAreas = [
     {
-      title: "Supply Chain",
-      description: "We optimize supply chain processes through smart data integration, advanced analytics, and AI use cases — from demand forecasting to logistics flow optimization.",
+      title: t('businessExpertise.supplyChain.title'),
+      description: t('businessExpertise.supplyChain.description'),
       icon: <Truck className="h-10 w-10 text-ecaris-green" />
     },
     {
-      title: "Industrial Operations",
-      description: "We support manufacturing excellence by leveraging real-time data, automation, and predictive insights to enhance productivity, quality, and agility on the shop floor.",
+      title: t('businessExpertise.industrial.title'),
+      description: t('businessExpertise.industrial.description'),
       icon: <Factory className="h-10 w-10 text-ecaris-green" />
     },
     {
-      title: "Finance & Performance Management",
-      description: "We help finance teams streamline reporting, improve cost control, and enable scenario planning through data-driven platforms and performance dashboards.",
+      title: t('businessExpertise.finance.title'),
+      description: t('businessExpertise.finance.description'),
       icon: <TrendingUp className="h-10 w-10 text-ecaris-green" />
     },
     {
-      title: "Human Resources & Organizational Efficiency",
-      description: "We enable HR transformation and organizational design by integrating workforce data, aligning structures to strategy, and supporting change management through actionable insights.",
+      title: t('businessExpertise.hr.title'),
+      description: t('businessExpertise.hr.description'),
       icon: <Users className="h-10 w-10 text-ecaris-green" />
     }
   ];
@@ -67,15 +70,15 @@ const BusinessExpertise = () => {
         >
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
             <span className="inline-block pb-2 relative">
-              Business Expertise
+              {t('businessExpertise.title')}
               <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
             </span>
           </h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8">
-            At ECARIS, we combine deep technical know-how with a sharp understanding of business needs. Our consultants deliver high-impact solutions tailored to the operational challenges of today's organizations.
+            {t('businessExpertise.intro1')}
           </p>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            We bring value across four key domains:
+            {t('businessExpertise.intro2')}
           </p>
         </div>
         
