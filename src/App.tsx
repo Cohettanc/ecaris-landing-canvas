@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import LegalNotice from "./pages/LegalNotice";
 import DataProtection from "./pages/DataProtection";
@@ -46,15 +45,13 @@ const AppRoutes = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <LanguageProvider>
-        <BrowserRouter>
-          <div className="app-container bg-background">
-            <AppRoutes />
-            <Toaster />
-            <Sonner />
-          </div>
-        </BrowserRouter>
-      </LanguageProvider>
+      <BrowserRouter>
+        <div className="app-container bg-background">
+          <AppRoutes />
+          <Toaster />
+          <Sonner />
+        </div>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { services } from './serviceData';
 import ServiceCard from './ServiceCard';
 import ServiceDetail from './ServiceDetail';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -72,12 +70,12 @@ const Services = () => {
         >
           <h2 className="heading-lg text-gray-900 mb-4 inline-block relative">
             <span className="inline-block pb-2 relative">
-              {t('services.title')}
+              Our IT Expertise
               <span className="absolute left-0 bottom-0 w-full h-1 bg-ecaris-green"></span>
             </span>
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            {t('services.description')}
+            We focus on our core expertise sectors, to provide you with our most relevant Subject Matter Experts for each industry.
           </p>
         </div>
         

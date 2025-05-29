@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const { t } = useLanguage();
   const year = new Date().getFullYear();
   
   return (
@@ -16,39 +14,39 @@ const Footer = () => {
               className="h-12 w-auto mb-4 invert brightness-0"
             />
             <p className="text-gray-400 mb-4">
-              {t('footer.description')}
+              Providing the best talent on a consulting basis to support your business since 2019.
             </p>
             <p className="text-gray-400">
-              {t('footer.locations')}
+              Luxembourg – Paris – Geneva – London – Berlin
             </p>
           </div>
           
           <div className="flex justify-center">
             <div>
-              <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">{t('nav.whoAreWe')}</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">{t('nav.ourServices')}</a></li>
-                <li><a href="#clients" className="text-gray-400 hover:text-white transition-colors duration-300">{t('nav.ecarisAtGlance')}</a></li>
-                <li><a href="#offices" className="text-gray-400 hover:text-white transition-colors duration-300">{t('nav.ourOffices')}</a></li>
-                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-300">{t('nav.contactUs')}</a></li>
+                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">Who Are We</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-300">Our Services</a></li>
+                <li><a href="#clients" className="text-gray-400 hover:text-white transition-colors duration-300">Our Clients</a></li>
+                <li><a href="#offices" className="text-gray-400 hover:text-white transition-colors duration-300">Our Offices</a></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-300">Contact Us</a></li>
               </ul>
             </div>
           </div>
           
           <div className="flex justify-center">
             <div>
-              <h3 className="text-lg font-semibold mb-4">{t('footer.legal')}</h3>
+              <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><Link to="/legal-notice" className="text-gray-400 hover:text-white transition-colors duration-300">{t('footer.legalNotice')}</Link></li>
-                <li><Link to="/data-protection" className="text-gray-400 hover:text-white transition-colors duration-300">{t('footer.dataProtection')}</Link></li>
+                <li><Link to="/legal-notice" className="text-gray-400 hover:text-white transition-colors duration-300">Legal Notice</Link></li>
+                <li><Link to="/data-protection" className="text-gray-400 hover:text-white transition-colors duration-300">Data Protection</Link></li>
               </ul>
             </div>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">© {year} {t('footer.copyright')}</p>
+          <p className="text-gray-400">© {year} Ecaris. All rights reserved.</p>
           <div className="mt-4 md:mt-0">
             <a href="https://fr.linkedin.com/company/ecaris" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
               <span className="sr-only">LinkedIn</span>
