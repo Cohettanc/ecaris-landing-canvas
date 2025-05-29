@@ -47,6 +47,10 @@ const Navbar = () => {
       ]
     },
     { 
+      name: "Business Expertise", 
+      id: "business-expertise" 
+    },
+    { 
       name: "Our IT Expertise", 
       dropdown: [
         { name: "All Our IT Expertise", path: "/#services" },
