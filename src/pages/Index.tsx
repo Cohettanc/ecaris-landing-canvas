@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -45,8 +44,8 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <BusinessExpertise />
       <MainServices />
+      <BusinessExpertise />
       <Services />
       <Stats />
       <Offices />
