@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import BusinessExpertise from '@/components/BusinessExpertise';
 import Services from '@/components/services/Services';
 import MainServices from '@/components/MainServices';
 import Stats from '@/components/Stats';
@@ -44,6 +45,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
+      <BusinessExpertise />
       <MainServices />
       <Services />
       <Stats />
